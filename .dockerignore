@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+.nx
+.next
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# CI/CD
+.github
+
+# Documentation
+*.md
+docs/
+LICENSE
+
+# Terraform
+infra/
+
+# Test
+coverage/
+*.test.ts
+*.spec.ts
+__tests__/
+
+# Environment
+.env*
+*.local
+
+# Universe governance (not needed in Docker)
+**/universe/

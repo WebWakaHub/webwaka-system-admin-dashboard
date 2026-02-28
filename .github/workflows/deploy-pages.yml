@@ -1,0 +1,67 @@
+# ============================================================================
+# Cloudflare Pages Deploy — SAD Frontend
+# Deploys the System Admin Dashboard to Cloudflare Pages on merge to main
+# ============================================================================
+
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/sad/**'
+      - 'shared/**'
+      - 'pnpm-lock.yaml'
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+  PNPM_VERSION: '9'
+
+jobs:
+  deploy:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://webwaka.site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build SAD frontend
+        run: npx nx build sad
+        env:
+          VITE_API_URL: https://api.webwaka.site
+          VITE_APP_VERSION: ${{ github.sha }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy apps/sad/dist --project-name=webwaka-sad --branch=main
+
+      - name: Deployment summary
+        run: |
+          echo "## Pages Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** https://webwaka.site" >> $GITHUB_STEP_SUMMARY
+          echo "**Pages URL:** https://webwaka-sad.pages.dev" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY

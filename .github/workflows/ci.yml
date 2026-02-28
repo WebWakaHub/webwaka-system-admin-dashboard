@@ -1,0 +1,251 @@
+# ============================================================================
+# CI Workflow — Lint, Type-Check, Test on every PR
+# Uses Nx affected commands for optimal performance
+# ============================================================================
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+  PNPM_VERSION: '9'
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+
+jobs:
+  # ── Setup & Install ──────────────────────────────────────────────────────
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    outputs:
+      affected: ${{ steps.affected.outputs.affected }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Derive Nx SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Check affected projects
+        id: affected
+        run: |
+          AFFECTED=$(npx nx show projects --affected --json 2>/dev/null || echo '[]')
+          echo "affected=$AFFECTED" >> $GITHUB_OUTPUT
+          echo "Affected projects: $AFFECTED"
+
+  # ── Lint ─────────────────────────────────────────────────────────────────
+  lint:
+    name: Lint
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Derive Nx SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx Cache
+        uses: actions/cache@v4
+        with:
+          path: .nx/cache
+          key: nx-lint-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          restore-keys: |
+            nx-lint-${{ hashFiles('pnpm-lock.yaml') }}-
+            nx-lint-
+
+      - name: Run lint (affected)
+        run: npx nx affected -t lint --parallel=3
+
+  # ── Type Check ───────────────────────────────────────────────────────────
+  typecheck:
+    name: Type Check
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Derive Nx SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx Cache
+        uses: actions/cache@v4
+        with:
+          path: .nx/cache
+          key: nx-typecheck-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          restore-keys: |
+            nx-typecheck-${{ hashFiles('pnpm-lock.yaml') }}-
+            nx-typecheck-
+
+      - name: Run type-check (affected)
+        run: npx nx affected -t typecheck --parallel=3
+
+  # ── Test ─────────────────────────────────────────────────────────────────
+  test:
+    name: Test
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Derive Nx SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx Cache
+        uses: actions/cache@v4
+        with:
+          path: .nx/cache
+          key: nx-test-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          restore-keys: |
+            nx-test-${{ hashFiles('pnpm-lock.yaml') }}-
+            nx-test-
+
+      - name: Run tests (affected)
+        run: npx nx affected -t test --parallel=3 --coverage
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: coverage/
+          retention-days: 7
+
+  # ── Build ────────────────────────────────────────────────────────────────
+  build:
+    name: Build
+    needs: [lint, typecheck, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Derive Nx SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx Cache
+        uses: actions/cache@v4
+        with:
+          path: .nx/cache
+          key: nx-build-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          restore-keys: |
+            nx-build-${{ hashFiles('pnpm-lock.yaml') }}-
+            nx-build-
+
+      - name: Build (affected)
+        run: npx nx affected -t build --parallel=3
+
+  # ── CI Gate ──────────────────────────────────────────────────────────────
+  ci-gate:
+    name: CI Gate
+    needs: [lint, typecheck, test, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check CI results
+        run: |
+          if [[ "${{ needs.lint.result }}" == "failure" ]] || \
+             [[ "${{ needs.typecheck.result }}" == "failure" ]] || \
+             [[ "${{ needs.test.result }}" == "failure" ]] || \
+             [[ "${{ needs.build.result }}" == "failure" ]]; then
+            echo "❌ CI Gate FAILED"
+            echo "  Lint: ${{ needs.lint.result }}"
+            echo "  Type Check: ${{ needs.typecheck.result }}"
+            echo "  Test: ${{ needs.test.result }}"
+            echo "  Build: ${{ needs.build.result }}"
+            exit 1
+          fi
+          echo "✅ CI Gate PASSED"
+          echo "  Lint: ${{ needs.lint.result }}"
+          echo "  Type Check: ${{ needs.typecheck.result }}"
+          echo "  Test: ${{ needs.test.result }}"
+          echo "  Build: ${{ needs.build.result }}"

@@ -1,0 +1,38 @@
+# ============================================================================
+# Dockerfile.migration — WebWaka Database Migration Runner
+# Runs Prisma migrations against the production database
+# ============================================================================
+
+ARG NODE_VERSION=22
+FROM node:${NODE_VERSION}-alpine AS deps
+
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY nx.json tsconfig.base.json ./
+COPY packages/ packages/
+COPY apps/ apps/
+COPY shared/ shared/
+
+RUN pnpm install --frozen-lockfile
+
+# ── Production ─────────────────────────────────────────────────────────────
+FROM node:${NODE_VERSION}-alpine AS production
+
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/package.json ./
+COPY --from=deps /app/pnpm-lock.yaml ./
+
+# Copy prisma schema and migrations
+COPY packages/**/prisma/ ./prisma/
+
+ENV NODE_ENV=production
+
+# Default command runs migrations
+CMD ["npx", "prisma", "migrate", "deploy"]

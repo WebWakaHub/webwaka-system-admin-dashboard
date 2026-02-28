@@ -1,0 +1,382 @@
+# ============================================================================
+# CD Workflow — Build Docker images, push to ECR, deploy to ECS Fargate
+# Triggered on merge to main branch
+# Uses rolling update strategy for zero-downtime deployments
+# ============================================================================
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+      - '.github/CODEOWNERS'
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  ECS_CLUSTER: webwaka-production
+  ECS_SERVICE: webwaka-production-api
+  NODE_VERSION: '22'
+  PNPM_VERSION: '9'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  # ── Determine Changes ────────────────────────────────────────────────────
+  changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      api: ${{ steps.filter.outputs.api }}
+      web: ${{ steps.filter.outputs.web }}
+      worker: ${{ steps.filter.outputs.worker }}
+      migration: ${{ steps.filter.outputs.migration }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed paths
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            api:
+              - 'packages/organisms/**'
+              - 'packages/systems/**'
+              - 'packages/organs/**'
+              - 'packages/tissues/**'
+              - 'packages/cells/**'
+              - 'packages/organelles/**'
+              - 'apps/api/**'
+              - 'shared/**'
+              - 'Dockerfile.api'
+              - 'pnpm-lock.yaml'
+            web:
+              - 'apps/sad/**'
+              - 'shared/**'
+              - 'pnpm-lock.yaml'
+            worker:
+              - 'packages/**'
+              - 'apps/worker/**'
+              - 'shared/**'
+              - 'Dockerfile.worker'
+              - 'pnpm-lock.yaml'
+            migration:
+              - 'packages/**/migrations/**'
+              - 'packages/**/schema/**'
+              - 'Dockerfile.migration'
+
+  # ── Build & Push API Image ──────────────────────────────────────────────
+  build-api:
+    name: Build API Image
+    needs: changes
+    if: needs.changes.outputs.api == 'true'
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.build.outputs.image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push API image
+        id: build
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          IMAGE_URI="${ECR_REGISTRY}/webwaka/api:${IMAGE_TAG}"
+          IMAGE_LATEST="${ECR_REGISTRY}/webwaka/api:latest"
+
+          docker buildx build \
+            --platform linux/amd64 \
+            --file Dockerfile.api \
+            --tag "${IMAGE_URI}" \
+            --tag "${IMAGE_LATEST}" \
+            --build-arg NODE_VERSION=${{ env.NODE_VERSION }} \
+            --build-arg BUILD_SHA=${{ github.sha }} \
+            --build-arg BUILD_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --push \
+            .
+
+          echo "image=${IMAGE_URI}" >> $GITHUB_OUTPUT
+
+  # ── Build & Push Worker Image ───────────────────────────────────────────
+  build-worker:
+    name: Build Worker Image
+    needs: changes
+    if: needs.changes.outputs.worker == 'true'
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.build.outputs.image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Worker image
+        id: build
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          IMAGE_URI="${ECR_REGISTRY}/webwaka/worker:${IMAGE_TAG}"
+          IMAGE_LATEST="${ECR_REGISTRY}/webwaka/worker:latest"
+
+          docker buildx build \
+            --platform linux/amd64 \
+            --file Dockerfile.worker \
+            --tag "${IMAGE_URI}" \
+            --tag "${IMAGE_LATEST}" \
+            --build-arg NODE_VERSION=${{ env.NODE_VERSION }} \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --push \
+            .
+
+          echo "image=${IMAGE_URI}" >> $GITHUB_OUTPUT
+
+  # ── Build & Push Migration Image ────────────────────────────────────────
+  build-migration:
+    name: Build Migration Image
+    needs: changes
+    if: needs.changes.outputs.migration == 'true'
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.build.outputs.image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Migration image
+        id: build
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          IMAGE_URI="${ECR_REGISTRY}/webwaka/migration:${IMAGE_TAG}"
+          IMAGE_LATEST="${ECR_REGISTRY}/webwaka/migration:latest"
+
+          docker buildx build \
+            --platform linux/amd64 \
+            --file Dockerfile.migration \
+            --tag "${IMAGE_URI}" \
+            --tag "${IMAGE_LATEST}" \
+            --build-arg NODE_VERSION=${{ env.NODE_VERSION }} \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --push \
+            .
+
+          echo "image=${IMAGE_URI}" >> $GITHUB_OUTPUT
+
+  # ── Run Migrations ──────────────────────────────────────────────────────
+  migrate:
+    name: Run Migrations
+    needs: [build-migration]
+    if: needs.build-migration.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Run migration task
+        run: |
+          aws ecs run-task \
+            --cluster ${{ env.ECS_CLUSTER }} \
+            --task-definition webwaka-production-migration \
+            --launch-type FARGATE \
+            --network-configuration "awsvpcConfiguration={subnets=[${{ secrets.PRIVATE_SUBNET_IDS }}],securityGroups=[${{ secrets.ECS_SECURITY_GROUP }}]}" \
+            --overrides '{"containerOverrides":[{"name":"migration","command":["npx","prisma","migrate","deploy"]}]}' \
+            --count 1
+
+  # ── Deploy API to ECS ───────────────────────────────────────────────────
+  deploy-api:
+    name: Deploy API
+    needs: [build-api, migrate]
+    if: always() && needs.build-api.result == 'success' && (needs.migrate.result == 'success' || needs.migrate.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://api.webwaka.site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Download current task definition
+        run: |
+          aws ecs describe-task-definition \
+            --task-definition webwaka-production-api \
+            --query 'taskDefinition' \
+            --output json > task-definition.json
+
+      - name: Update task definition with new image
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: api
+          image: ${{ needs.build-api.outputs.image }}
+
+      - name: Deploy to ECS (rolling update)
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ env.ECS_SERVICE }}
+          cluster: ${{ env.ECS_CLUSTER }}
+          wait-for-service-stability: true
+          wait-for-minutes: 10
+
+      - name: Verify deployment
+        run: |
+          echo "🚀 API deployed successfully"
+          echo "Image: ${{ needs.build-api.outputs.image }}"
+          echo "Cluster: ${{ env.ECS_CLUSTER }}"
+          echo "Service: ${{ env.ECS_SERVICE }}"
+
+  # ── Deploy Worker to ECS ────────────────────────────────────────────────
+  deploy-worker:
+    name: Deploy Worker
+    needs: [build-worker, migrate]
+    if: always() && needs.build-worker.result == 'success' && (needs.migrate.result == 'success' || needs.migrate.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Download current task definition
+        run: |
+          aws ecs describe-task-definition \
+            --task-definition webwaka-production-worker \
+            --query 'taskDefinition' \
+            --output json > task-definition.json
+
+      - name: Update task definition with new image
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: worker
+          image: ${{ needs.build-worker.outputs.image }}
+
+      - name: Deploy worker to ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: webwaka-production-worker
+          cluster: ${{ env.ECS_CLUSTER }}
+          wait-for-service-stability: true
+          wait-for-minutes: 10
+
+  # ── Deployment Notification ─────────────────────────────────────────────
+  notify:
+    name: Deployment Notification
+    needs: [deploy-api, deploy-worker]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create deployment summary
+        run: |
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Component | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| API | ${{ needs.deploy-api.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Worker | ${{ needs.deploy-worker.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Post to GitHub Discussions (on success)
+        if: needs.deploy-api.result == 'success' || needs.deploy-worker.result == 'success'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: 1
+          body: |
+            ### 🚀 Deployment Complete — ${{ github.sha }}
+            | Component | Status |
+            |-----------|--------|
+            | API | ${{ needs.deploy-api.result }} |
+            | Worker | ${{ needs.deploy-worker.result }} |
+            **Commit:** `${{ github.sha }}`
+            **Actor:** ${{ github.actor }}
+        continue-on-error: true
+
+      - name: Notify on failure
+        if: needs.deploy-api.result == 'failure' || needs.deploy-worker.result == 'failure'
+        run: |
+          echo "::error::Deployment failed! Check the workflow logs for details."
+          echo "API: ${{ needs.deploy-api.result }}"
+          echo "Worker: ${{ needs.deploy-worker.result }}"

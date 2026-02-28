@@ -1,0 +1,50 @@
+# ============================================================================
+# Dockerfile.worker — WebWaka Background Worker
+# Multi-stage build for production deployment to ECS Fargate
+# ============================================================================
+
+ARG NODE_VERSION=22
+FROM node:${NODE_VERSION}-alpine AS deps
+
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY nx.json tsconfig.base.json ./
+COPY packages/ packages/
+COPY apps/ apps/
+COPY shared/ shared/
+
+RUN pnpm install --frozen-lockfile --prod
+
+# ── Build ──────────────────────────────────────────────────────────────────
+FROM node:${NODE_VERSION}-alpine AS build
+
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
+WORKDIR /app
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN npx nx build worker --prod
+
+# ── Production ─────────────────────────────────────────────────────────────
+FROM node:${NODE_VERSION}-alpine AS production
+
+ARG BUILD_SHA=unknown
+
+RUN addgroup -g 1001 -S webwaka && \
+    adduser -S webwaka -u 1001 -G webwaka
+
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=build /app/dist/apps/worker ./dist
+COPY --from=build /app/package.json ./
+
+ENV NODE_ENV=production
+ENV BUILD_SHA=${BUILD_SHA}
+
+USER webwaka
+
+CMD ["node", "dist/main.js"]
