@@ -1,0 +1,16 @@
+{
+  "organelleId": "ORG-TB-BOUNDARY_CONTEXT-v0.1.0",
+  "name": "BoundaryContext",
+  "version": "0.1.0",
+  "layer": "organelle",
+  "status": "VERIFIED",
+  "interfaces": [
+    "IBoundaryContext",
+    "IBoundaryContextStorage",
+    "IBoundaryContextEvents",
+    "IBoundaryContextObservability"
+  ],
+  "dependencies": [],
+  "registeredAt": "2026-02-27T00:00:00Z",
+  "verifiedAt": "2026-02-27T00:00:00Z"
+}

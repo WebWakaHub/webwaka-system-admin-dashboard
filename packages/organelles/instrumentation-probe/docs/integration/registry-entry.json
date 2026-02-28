@@ -1,0 +1,16 @@
+{
+  "organelleId": "ORG-IN-INSTRUMENTATION_PROBE-v0.1.0",
+  "name": "InstrumentationProbe",
+  "version": "0.1.0",
+  "layer": "organelle",
+  "status": "VERIFIED",
+  "interfaces": [
+    "IInstrumentationProbe",
+    "IInstrumentationProbeStorage",
+    "IInstrumentationProbeEvents",
+    "IInstrumentationProbeObservability"
+  ],
+  "dependencies": [],
+  "registeredAt": "2026-02-27T00:00:00Z",
+  "verifiedAt": "2026-02-27T00:00:00Z"
+}

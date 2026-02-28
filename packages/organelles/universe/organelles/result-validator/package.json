@@ -1,0 +1,19 @@
+{
+  "name": "@webwaka/orgn-ai-result-validator",
+  "version": "0.1.0",
+  "description": "ORGN-AI-RESULT_VALIDATOR — AI output validation with schema checking, PII detection, hallucination detection, and hash-chained certificates",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": ["webwaka", "ai", "validation", "pii", "hallucination", "certificate"],
+  "author": "webwakaagent5",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@webwaka/orgn-ai-cognitive-port": "^0.1.0",
+    "@webwaka/orgn-ai-audit-emitter": "^0.1.0"
+  }
+}

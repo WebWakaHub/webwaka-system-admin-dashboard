@@ -1,0 +1,14 @@
+{
+  "name": "@webwaka/organelle-external-adapter",
+  "version": "0.1.0",
+  "description": "ORG-EI-EXTERNAL_ADAPTER — Unified external service integration with circuit breaker, rate limiting, offline queue, and compliance filtering",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": ["webwaka", "organelle", "external-adapter", "circuit-breaker", "rate-limiter"],
+  "license": "UNLICENSED"
+}
