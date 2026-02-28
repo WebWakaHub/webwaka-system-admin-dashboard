@@ -5,6 +5,6 @@ packages:
   - 'packages/tissues/*'
   - 'packages/organs/*'
   - 'packages/systems/*'
-  - 'packages/organism'
+  - 'packages/organism/*'
   - 'packages/shared/*'
   - 'infra/*'

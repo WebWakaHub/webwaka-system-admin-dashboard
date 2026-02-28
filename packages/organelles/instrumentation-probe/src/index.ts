@@ -1,10 +1,15 @@
-export { InstrumentationProbeOrchestrator } from "./instrumentation-probe-orchestrator";
-export { InstrumentationProbeEntity } from "./instrumentation-probe-entity";
-export { InstrumentationProbeStateMachine } from "./state-machine";
-export { InMemoryInstrumentationProbeStorage } from "./storage-interface";
-export type { IInstrumentationProbeStorage } from "./storage-interface";
-export { InstrumentationProbeEventBus } from "./event-interface";
-export type { IInstrumentationProbeEvents } from "./event-interface";
-export { DefaultInstrumentationProbeObservability } from "./observability-interface";
-export type { IInstrumentationProbeObservability } from "./observability-interface";
-export * from "./types";
+/**
+ * ORG-IN-INSTRUMENTATION_PROBE-v0.1.0
+ * Public API
+ *
+ * Agent: webwakaagent4 (Engineering & Delivery)
+ * Issue: webwaka-organelle-universe#479 (P3-T01)
+ */
+
+export { InstrumentationProbe } from './InstrumentationProbe';
+export { FlushOrchestrator, NetworkTier } from './FlushOrchestrator';
+export { MetricRegistry } from './MetricRegistry';
+export * from './types';
+export * from './ports';
+export * from './errors';
+export * from './adapters';

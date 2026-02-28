@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/platform-core",
+  "name": "@webwaka/shared-platform",
   "version": "0.1.0",
   "description": "WebWaka Platform Core - Minimal Kernel",
   "main": "dist/index.js",

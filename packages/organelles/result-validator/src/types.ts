@@ -1,23 +1,134 @@
-export enum ResultValidatorState { IDLE = "IDLE", PROCESSING = "PROCESSING", COMPLETED = "COMPLETED", ERROR = "ERROR", TERMINATED = "TERMINATED" }
+/**
+ * ORGN-AI-RESULT_VALIDATOR-v0.1.0 — Core Types
+ * Agent: webwakaagent5 (Quality, Security & Reliability)
+ */
 
-export interface ResultValidatorConfig { readonly id: string; readonly name: string; readonly maxConcurrency: number; readonly timeoutMs: number; readonly retryPolicy: RetryPolicy; }
+export type ValidationMode = 'STRICT' | 'LENIENT' | 'BEST_EFFORT';
 
-export interface RetryPolicy { readonly maxRetries: number; readonly backoffMs: number; readonly backoffMultiplier: number; }
+export type ValidationStatus = 'PASSED' | 'FAILED' | 'PARTIAL';
 
-export interface ResultValidatorCommand { readonly type: string; readonly payload: Record<string, unknown>; readonly correlationId: string; readonly timestamp: number; }
+export type ViolationSeverity = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
 
-export interface ResultValidatorResult { readonly success: boolean; readonly data?: Record<string, unknown>; readonly error?: ResultValidatorError; readonly duration: number; readonly correlationId: string; }
+export interface ValidationRequest {
+  resultId: string;
+  modelId: string;
+  promptHash: string;
+  output: unknown;
+  expectedSchema: string;
+  contentPolicyId: string;
+  tokenCount: number;
+  tokenBudget: number;
+  confidenceScore: number;
+  correlationId: string;
+  tenantId: string;
+  timestamp: number;
+  metadata: Record<string, unknown>;
+}
 
-export interface ResultValidatorQuery { readonly type: string; readonly filters?: Record<string, unknown>; }
+export interface ValidationResult {
+  resultId: string;
+  status: ValidationStatus;
+  sanitizedOutput: unknown;
+  violations: Violation[];
+  warnings: Warning[];
+  confidenceAdjusted: number;
+  certificateId: string | null;
+  latencyMs: number;
+  timestamp: number;
+}
 
-export interface ResultValidatorQueryResult { readonly data: Record<string, unknown>; readonly timestamp: number; }
+export interface Violation {
+  code: string;
+  severity: ViolationSeverity;
+  message: string;
+  stage: string;
+}
 
-export interface ResultValidatorEvent { readonly type: string; readonly source: string; readonly data: Record<string, unknown>; readonly timestamp: number; readonly correlationId: string; }
+export interface Warning {
+  code: string;
+  message: string;
+  stage: string;
+}
 
-export interface ResultValidatorError { readonly code: string; readonly message: string; readonly details?: Record<string, unknown>; }
+export interface ValidationCertificate {
+  certificateId: string;
+  resultId: string;
+  status: ValidationStatus;
+  validationHash: string;
+  previousCertificateHash: string | null;
+  issuedAt: number;
+  issuedBy: string;
+  schemaId: string;
+  policyId: string;
+  confidenceScore: number;
+  signature: string;
+}
 
-export interface AuditEntry { readonly id: string; readonly timestamp: number; readonly action: string; readonly actor: string; readonly before: string; readonly after: string; readonly correlationId: string; }
+export interface ContentPolicy {
+  policyId: string;
+  rules: ContentPolicyRule[];
+  culturalContext: string;
+}
 
-export interface OperationMetrics { readonly totalOperations: number; readonly successCount: number; readonly errorCount: number; readonly averageDuration: number; readonly lastOperationAt: number; }
+export interface ContentPolicyRule {
+  ruleId: string;
+  type: 'BLOCKLIST' | 'REGEX' | 'SEMANTIC';
+  pattern: string;
+  severity: ViolationSeverity;
+  message: string;
+}
 
-export interface TelemetryData { readonly organelleId: string; readonly state: ResultValidatorState; readonly metrics: OperationMetrics; readonly timestamp: number; }
+export interface PIIMatch {
+  type: string;
+  value: string;
+  startIndex: number;
+  endIndex: number;
+  confidence: number;
+}
+
+export interface HallucinationAssessment {
+  isLikelyHallucinated: boolean;
+  confidence: number;
+  indicators: string[];
+}
+
+export interface SchemaValidationResult {
+  valid: boolean;
+  errors: Array<{ path: string; message: string }>;
+}
+
+export interface PolicyCheckResult {
+  passed: boolean;
+  violations: Violation[];
+}
+
+export interface ValidationMetrics {
+  totalValidations: number;
+  passedCount: number;
+  failedCount: number;
+  partialCount: number;
+  averageLatencyMs: number;
+  p99LatencyMs: number;
+  certificatesIssued: number;
+}
+
+export interface ValidationEvent {
+  type: string;
+  correlationId: string;
+  tenantId: string;
+  timestamp: number;
+  payload: Record<string, unknown>;
+}
+
+export interface ResultValidatorConfig {
+  mode: ValidationMode;
+  maxConcurrent: number;
+  timeoutMs: number;
+  maxOutputSizeBytes: number;
+  schemaCacheSize: number;
+  schemaCacheTtlMs: number;
+  dedupCacheSize: number;
+  dedupTtlMs: number;
+  certificateChainSize: number;
+  hmacSecret: string;
+}

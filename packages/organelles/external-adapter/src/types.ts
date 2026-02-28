@@ -1,23 +1,128 @@
-export enum ExternalAdapterState { IDLE = "IDLE", PROCESSING = "PROCESSING", COMPLETED = "COMPLETED", ERROR = "ERROR", TERMINATED = "TERMINATED" }
+/**
+ * ORG-EI-EXTERNAL_ADAPTER-v0.1.0 — Core Types
+ * Agent: webwakaagent4 (Engineering & Delivery)
+ * Issue: #508 (P3-T01)
+ */
 
-export interface ExternalAdapterConfig { readonly id: string; readonly name: string; readonly maxConcurrency: number; readonly timeoutMs: number; readonly retryPolicy: RetryPolicy; }
+export enum ServiceCategory {
+  PAYMENT = 'payment',
+  MESSAGING = 'messaging',
+  IDENTITY = 'identity',
+  GEOLOCATION = 'geolocation',
+  STORAGE = 'storage',
+  EMAIL = 'email',
+  AI_INFERENCE = 'ai_inference',
+}
 
-export interface RetryPolicy { readonly maxRetries: number; readonly backoffMs: number; readonly backoffMultiplier: number; }
+export enum RequestPriority {
+  CRITICAL = 0,
+  HIGH = 1,
+  NORMAL = 2,
+  LOW = 3,
+}
 
-export interface ExternalAdapterCommand { readonly type: string; readonly payload: Record<string, unknown>; readonly correlationId: string; readonly timestamp: number; }
+export enum CircuitState {
+  CLOSED = 'closed',
+  OPEN = 'open',
+  HALF_OPEN = 'half_open',
+}
 
-export interface ExternalAdapterResult { readonly success: boolean; readonly data?: Record<string, unknown>; readonly error?: ExternalAdapterError; readonly duration: number; readonly correlationId: string; }
+export interface ExternalRequest<T = unknown> {
+  readonly serviceId: string;
+  readonly operation: string;
+  readonly payload: T;
+  readonly tenantId: string;
+  readonly correlationId: string;
+  readonly priority: RequestPriority;
+  readonly timeout: number;
+  readonly idempotencyKey?: string;
+  readonly cachePolicy?: CachePolicy;
+  readonly metadata?: Record<string, string>;
+}
 
-export interface ExternalAdapterQuery { readonly type: string; readonly filters?: Record<string, unknown>; }
+export interface ExternalResponse<T = unknown> {
+  readonly success: boolean;
+  readonly data?: T;
+  readonly error?: ExternalError;
+  readonly latencyMs: number;
+  readonly cached: boolean;
+  readonly queued: boolean;
+  readonly vendorId: string;
+  readonly correlationId: string;
+  readonly timestamp: number;
+}
 
-export interface ExternalAdapterQueryResult { readonly data: Record<string, unknown>; readonly timestamp: number; }
+export interface ExternalError {
+  readonly code: string;
+  readonly message: string;
+  readonly retryable: boolean;
+  readonly retryAfterMs?: number;
+  readonly vendorCode?: string;
+  readonly vendorMessage?: string;
+}
 
-export interface ExternalAdapterEvent { readonly type: string; readonly source: string; readonly data: Record<string, unknown>; readonly timestamp: number; readonly correlationId: string; }
+export interface CachePolicy {
+  readonly enabled: boolean;
+  readonly ttlSeconds: number;
+  readonly staleWhileRevalidate: boolean;
+}
 
-export interface ExternalAdapterError { readonly code: string; readonly message: string; readonly details?: Record<string, unknown>; }
+export interface VendorConfig {
+  readonly vendorId: string;
+  readonly baseUrl: string;
+  readonly apiKey: string;
+  readonly category: ServiceCategory;
+  readonly timeout: number;
+  readonly maxRetries: number;
+  readonly rateLimitPerSecond: number;
+  readonly burstSize: number;
+  readonly circuitBreaker: CircuitBreakerConfig;
+  readonly region: string;
+}
 
-export interface AuditEntry { readonly id: string; readonly timestamp: number; readonly action: string; readonly actor: string; readonly before: string; readonly after: string; readonly correlationId: string; }
+export interface CircuitBreakerConfig {
+  readonly failureThreshold: number;
+  readonly successThreshold: number;
+  readonly timeoutMs: number;
+  readonly halfOpenMaxCalls: number;
+}
 
-export interface OperationMetrics { readonly totalOperations: number; readonly successCount: number; readonly errorCount: number; readonly averageDuration: number; readonly lastOperationAt: number; }
+export interface RetryPolicy {
+  readonly maxRetries: number;
+  readonly baseDelayMs: number;
+  readonly maxDelayMs: number;
+  readonly backoffMultiplier: number;
+  readonly jitterEnabled: boolean;
+}
 
-export interface TelemetryData { readonly organelleId: string; readonly state: ExternalAdapterState; readonly metrics: OperationMetrics; readonly timestamp: number; }
+export interface VendorHealthStatus {
+  readonly vendorId: string;
+  readonly status: 'healthy' | 'degraded' | 'unhealthy' | 'unknown';
+  readonly latencyP50Ms: number;
+  readonly latencyP99Ms: number;
+  readonly errorRate: number;
+  readonly circuitState: CircuitState;
+  readonly lastChecked: number;
+  readonly rateLimitRemaining: number;
+}
+
+export interface QueueEntry<T = unknown> {
+  readonly id: string;
+  readonly request: ExternalRequest<T>;
+  readonly enqueuedAt: number;
+  readonly retryCount: number;
+  readonly maxRetries: number;
+}
+
+export interface ExternalAdapterConfig {
+  readonly defaultTimeout: number;
+  readonly maxConcurrentRequests: number;
+  readonly offlineQueueMaxSize: number;
+  readonly offlineQueueMaxBytes: number;
+  readonly queueDrainRate: number;
+  readonly cacheMaxEntries: number;
+  readonly cacheDefaultTtl: number;
+  readonly enableComplianceLogging: boolean;
+  readonly enableTelemetry: boolean;
+  readonly vendors: Record<string, VendorConfig>;
+}
