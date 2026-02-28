@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "input": "webwaka007|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwaka007",
+        "agent_email": "webwaka007@gmail.com",
+        "agent_role": "Founder Agent, Meta-Governance & Structural Audit Agent",
+        "identity_repos_found": "WebWakaHub/webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/0_NjTrZARkdX85Iaj3guVqor_1772179936710_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent1|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent1",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Strategic & Governance Department Agent, Chief of Staff",
+        "identity_repos_found": "webwaka-factory/webwaka-agent-factory,WebWakaHub/webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/1_unS3G43BKF4yQV6OdZuo3P_1772179892798_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent2|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent2",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Product & Platform Strategy Lead",
+        "identity_repos_found": "webwaka-agent-factory,webwaka-refounding-documents,webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/2_Kl3evZaPZulXvG1kPXw9rD_1772179983172_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent3|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent3",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Core Platform Architect",
+        "identity_repos_found": "webwaka-agent-factory,webwaka-refounding-documents,webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/3_so91lhBbZRAWGYuDsYTSdC_1772179939242_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent4|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent4",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Backend Engineering Agent",
+        "identity_repos_found": "webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/4_I1Ttkwo2uxvnlltraSTalO_1772179920385_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent5|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent5",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Verification",
+        "identity_repos_found": "webwaka-factory/webwaka-agent-factory,WebWakaHub/webwaka-implementation-governance",
+        "identity_report": "/home/ubuntu/identity_report/5_dMGDeLEvMNqplKGuGfeJrt_1772179980204_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent6|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent6",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Release Management Agent",
+        "identity_repos_found": "webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/6_O11zNnKzxpEtFxqIPRuzAr_1772179941964_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent7|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent7",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "Developer Experience (DX) Agent",
+        "identity_repos_found": "WebWakaHub/webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/7_74kVREhVsnexeS3lJAzuzo_1772179932841_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.md"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent8|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent8",
+        "agent_email": "webwakaagent8@webwaka.com",
+        "agent_role": "Data, Analytics & Intelligence Department Agent",
+        "identity_repos_found": "webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/8_uPBJpE00XPtGLGpga6Dw36_1772179937286_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent9|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent9",
+        "agent_email": "NOT_FOUND",
+        "agent_role": "NOT_FOUND",
+        "identity_repos_found": "webwaka-implementation-governance",
+        "identity_report": "/home/ubuntu/identity_report/9_xiR0FvMfHCUSZyqLgF40y2_1772179907544_na1fn_L2hvbWUvdWJ1bnR1L3dlYndha2FhZ2VudDkvaWRlbnRpdHlfcmVwb3J0.txt"
+      },
+      "error": ""
+    },
+    {
+      "input": "webwakaagent10|REDACTED_PAT",
+      "output": {
+        "agent_username": "webwakaagent10",
+        "agent_email": "webwakaagent10@webwaka.com",
+        "agent_role": "User Research & Behavior Agent for Research & Future Exploration",
+        "identity_repos_found": "webwaka-governance",
+        "identity_report": "/home/ubuntu/identity_report/10_JQwqhflYPABZJHJjERSJdC_1772179990564_na1fn_L2hvbWUvdWJ1bnR1L2lkZW50aXR5X3JlcG9ydA.txt"
+      },
+      "error": ""
+    }
+  ]
+}

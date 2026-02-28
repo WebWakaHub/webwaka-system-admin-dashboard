@@ -1,0 +1,64 @@
+CANONICAL AGENT SPECIFICATION
+==============================
+
+webwaka007:
+  Role: Founder Agent, Meta-Governance & Structural Audit
+  PAT: REDACTED_PAT
+  Email: 259587399+webwaka007@users.noreply.github.com
+
+webwakaagent1:
+  Role: Strategic & Governance Department Agent, Chief of Staff
+  PAT: REDACTED_PAT
+  Email: 257380188+webwakaagent1@users.noreply.github.com
+
+webwakaagent2:
+  Role: Product & Platform Strategy Lead
+  PAT: REDACTED_PAT
+  Email: 258804562+webwakaagent2@users.noreply.github.com
+
+webwakaagent3:
+  Role: Core Platform Architect
+  PAT: REDACTED_PAT
+  Email: 258818377+webwakaagent3@users.noreply.github.com
+
+webwakaagent4:
+  Role: Backend Engineering Agent
+  PAT: REDACTED_PAT
+  Email: 258821409+webwakaagent4@users.noreply.github.com
+
+webwakaagent5:
+  Role: Verification Agent
+  PAT: REDACTED_PAT
+  Email: 258832693+webwakaagent5@users.noreply.github.com
+
+webwakaagent6:
+  Role: Release Management Agent
+  PAT: REDACTED_PAT
+  Email: 258900725+webwakaagent6@users.noreply.github.com
+
+webwakaagent7:
+  Role: Developer Experience (DX) Agent
+  PAT: REDACTED_PAT
+  Email: 258904491+webwakaagent7@users.noreply.github.com
+
+webwakaagent8:
+  Role: Data, Analytics & Intelligence Department Agent
+  PAT: REDACTED_PAT
+  Email: 258905510+webwakaagent8@users.noreply.github.com
+
+webwakaagent9:
+  Role: (Not found in governance docs)
+  PAT: REDACTED_PAT
+  Email: 258955306+webwakaagent9@users.noreply.github.com
+
+webwakaagent10:
+  Role: User Research & Behavior Agent
+  PAT: REDACTED_PAT
+  Email: 258956452+webwakaagent10@users.noreply.github.com
+
+AGENTS USED IN TISSUE-UNIVERSE ISSUES:
+- webwaka007 (Founder/Ratification)
+- webwakaagent3 (Architecture/Design)
+- webwakaagent4 (Backend Engineering/Implementation)
+- webwakaagent5 (Verification)
+- webwakaagent8 (Data & Analytics — 7 tasks in TIS-VALIDATE, TIS-RESOURCE, TIS-MONITOR)

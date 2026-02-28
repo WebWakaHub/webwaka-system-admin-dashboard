@@ -1,0 +1,389 @@
+{
+  "repo_summaries": [
+    {
+      "repo": "webwaka-governance",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Could not retrieve file contents due to GitHub API rate limiting. Analysis is based on file paths and names only."
+    },
+    {
+      "repo": "webwaka-platform-core",
+      "status": "OK",
+      "doc_count": 11,
+      "scan_notes": "Successfully scanned the webwaka-platform-core repository and identified 11 documentation files across 'main' and 'develop' branches. Summaries generated using LLM."
+    },
+    {
+      "repo": "webwaka-suite-modules",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the 'main' branch and found one documentation file."
+    },
+    {
+      "repo": "webwaka-infrastructure",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the webwaka-infrastructure repository and found one documentation file."
+    },
+    {
+      "repo": "webwaka-security-compliance",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the webwaka-security-compliance repository. Found one relevant documentation file: README.md. Extracted all required information and formatted it as per the schema."
+    },
+    {
+      "repo": "webwaka-data-analytics",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the main branch and found one relevant document."
+    },
+    {
+      "repo": "webwaka-developer-tools",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Scanned one branch and found one relevant documentation file."
+    },
+    {
+      "repo": "webwaka-marketplace-ecosystem",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Only one document (README.md) was found and processed."
+    },
+    {
+      "repo": "webwaka-mobile-apps",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the repository and processed one documentation file."
+    },
+    {
+      "repo": "webwaka-documentation",
+      "status": "OK",
+      "doc_count": 4,
+      "scan_notes": ""
+    },
+    {
+      "repo": "webwaka-platform",
+      "status": "FAILED",
+      "error": "The task could not be completed due to persistent issues with GitHub API rate limiting and process termination. Despite multiple attempts with various strategies, including resumable scripts and background processing, the process of fetching and analyzing documentation files was repeatedly interrupted. The GitHub API rate limit was consistently exceeded, and attempts to wait for the reset time were unsuccessful due to process timeouts. The inability to reliably fetch file content from the repository makes it impossible to proceed with the analysis and generate the required output.",
+      "doc_count": 0
+    },
+    {
+      "repo": "webwaka-modules-plugin-system",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": "Successfully scanned the repository and found one documentation file."
+    },
+    {
+      "repo": "webwaka-modules-event-system",
+      "status": "OK",
+      "doc_count": 0,
+      "scan_notes": ""
+    },
+    {
+      "repo": "webwaka-modules-module-system",
+      "status": "OK",
+      "doc_count": 1,
+      "scan_notes": ""
+    },
+    {
+      "repo": "webwaka-organelle-subject-registry",
+      "status": "OK",
+      "doc_count": 0,
+      "scan_notes": "No relevant documentation files found in the repository."
+    }
+  ],
+  "all_docs": [
+    {
+      "document_title": "webwaka-data-analytics",
+      "file_path": "README.md",
+      "branch": "main",
+      "last_modified": "unknown",
+      "context_category": "Governance",
+      "brief_description": "This document outlines the purpose, current status, and governance of the webwaka-data-analytics repository. It details the data pipelines, analytics, and intelligence objectives, noting that implementation is not yet authorized. The repository is governed by specific foundational models and structures, with no code authorized until explicitly permitted by Founder Decision. It also identifies the owning department and agent.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-data-analytics"
+    },
+    {
+      "document_title": "webwaka-developer-tools",
+      "file_path": "branch:main / README.md",
+      "last_modified": "2026-02-04T10:52:00Z",
+      "context_category": "Governance",
+      "brief_description": "This document outlines the purpose, current status, and governance structure for the webwaka-developer-tools repository. It details the ownership by the Platform Ecosystem & Extensibility department and specifies that no implementation code is authorized without explicit founder decision. The repository aims to provide CLI, SDKs, and developer experience tools.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-developer-tools"
+    },
+    {
+      "document_title": "webwaka-documentation",
+      "file_path": "branch:main / README.md",
+      "branch": "main",
+      "last_modified": "2026-02-04T10:52:37Z",
+      "context_category": "Strategic Principles",
+      "brief_description": "# webwaka-documentation\n\n**Owner:** Strategic & Governance (webwakaagent1)  ***Status:** Initialized (No Implementation Yet)\n\n## Purpose\n\nPublic documentation, guides, and API references\n\n## Current Status\n\n**Phase 0 Complete:** Repository created and initialized  ***Phase 1:** Governance and strategy documents (in progress)  ***Phase 2+:** Implementation (nat yet authorized)\n\n## Governance\n\nThis repository is governed by:\n- FD-2026-001: Governance Foundation & Authority Model\n- Canonical GitHub Repository Structure\n- Canonical Execution Sequence\n\nNo implementation code is authorized until explicitly permitted by Founder Decision.\n\n## Owner\n\n**Department:** Strategic & Governance  \n**Agent:** webwakaagent1  \n**Contact:** webwaka.agent.1@gmail.com",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-documentation"
+    },
+    {
+      "document_title": "Event Engine Architecture \u2014 Phase 2 Detailed Design",
+      "file_path": "branch:main / architecture/phase-2/EVENT_ENGINE_ARCHITECTURE.md",
+      "branch": "main",
+      "last_modified": "2026-02-06T13:24:52Z",
+      "context_category": "Strategic Principles",
+      "brief_description": "# Event Engine Architecture \u2014 Phase 2 Detailed Design\n\n**Document Type:** Phase 2 Architecture Specification  \n**Task ID:** WA3-P2-002  \n**Department:** Architecture & System Design  \n**Owning Agent:** webwakaagent3  \n**Status:** DRAFT  \n**Authority:** FD-2026-001, WEBWAKA_CANONICAL_EXECUTION_SEQUENCE.md  \n**Phase 1 Reference:** WEBWAKA_EVENT_DRIVEN_ARCHITECTURE_SPECIFICATION.md  \n**Version:** 1.0  \n**Date:** 2026-02-06  \n**Scope:** Detailed architecture for event sourcing, message queuing, real-time communication, and event-driven integration patterns  \n**GitHub Issue:** [WA3-P2-002](https://github.com/WebWakaHub/webwaka-governance/issues/2)  \n**Input Dependencies:** WA3-P2-001 (Identity System Architecture)\n\n---\n\n## 1. Executive Summary\n\nThis document provides the detailed architecture and design for the WebWaka Event Engine, the central nervous system of the platform. The Event Engine enables all cross-component communication through asynchronous, event-driven patterns, supporting loose coupling, offline operation, real-time synchronization, and comprehensive audit trails. Building on the Phase 1 conceptual architecture (WEBWAKA_EVENT_DRIVEN_ARCHITECTURE_SPECIFICATION.md), this specification defines the concrete event bus topology, event schemas, delivery guarantees, routing mechanisms, and integration patterns required for implementation. The design adheres to the principles of loose coupling and high cohesion, ensuring that platform components can evolve independently while maintaining system coherence....",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-documentation"
+    },
+    {
+      "document_title": "Identity System Architecture \u2014 Phase 2 Detailed Design",
+      "file_path": "branch:main / architecture/phase-2/IDENTITY_SYSTEM_ARCHITECTURE.md",
+      "branch": "main",
+      "last_modified": "2026-02-06T13:24:52Z",
+      "context_category": "Strategic Principles",
+      "brief_description": "# Identity System Architecture \u2014 Phase 2 Detailed Design\n\n**Document Type:** Phase 2 Architecture Specification  \n**Task ID:** WA3-P2-001  \n**Department:** Architecture & System Design  \n**Owning Agent:** webwakaagent3  \n**Status:** DRAFT  \n**Authority:** FD-2026-001, WEBWAKA_CANONICAL_EXECUTION_SEQUENCE.md  \n**Phase 1 Reference:** WEBWAKA_IDENTITY_ACCESS_CONTROL_ARCHITECTURE.md  \n**Version:** 1.0  \n**Date:** 2026-02-06  \n**Scope:** Detailed architecture and design for the Identity System including actor hierarchy, authentication, authorization, and delegation  \n**GitHub Issue:** [WA3-P2-001](https://github.com/WebWakaHub/webwaka-governance/issues/1)\n\n---\n\n## 1. Executive Summary\n\nThis document provides the detailed architecture and design for the WebWaka Identity System, transitioning from the Phase 1 conceptual architecture (WEBWAKA_IDENTITY_ACCESS_CONTROL_ARCHITECTURE.md) to an implementation-ready specification. The Identity System is the foundational layer upon which all other platform services depend, managing the complete actor hierarchy from Super Admin through End User. The design prioritizes Africa-first constraints: offline-capable identity verification, low-bandwidth token exchange, mobile-first authentication flows, and resilience under intermittent connectivity. ---\n\n## 2....",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-documentation"
+    },
+    {
+      "document_title": "Offline-First Architecture \u2014 Phase 2 Detailed Design",
+      "file_path": "branch:main / architecture/phase-2/OFFLINE_FIRST_ARCHITECTURE.md",
+      "branch": "main",
+      "last_modified": "2026-02-06T13:24:52Z",
+      "context_category": "Strategic Principles",
+      "brief_description": "# Offline-First Architecture \u2014 Phase 2 Detailed Design\n\n**Document Type:** Phase 2 Architecture Specification  \n**Task ID:** WA3-P2-003  \n**Department:** Architecture & System Design  \n**Owning Agent:** webwakaagent3  \n**Status:** DRAFT  \n**Authority:** FD-2026-001, WEBWAKA_CANONICAL_EXECUTION_SEQUENCE.md  \n**Phase 1 Reference:** WEBWAKA_OFFLINE_FIRST_ARCHITECTURE.md  \n**Version:** 1.0  \n**Date:** 2026-02-06  \n**Scope:** Detailed architecture for Offline Transaction Queues, Sync & Conflict Resolution mechanisms, and data integrity in low-connectivity environments  \n**GitHub Issue:** [WA3-P2-003](https://github.com/WebWakaHub/webwaka-governance/issues/3)  \n**Input Dependencies:** WA3-P2-001 (Identity System Architecture), WA3-P2-002 (Event Engine Architecture)\n\n---\n\n## 1. Executive Summary\n\nThis document provides the detailed architecture and design for the WebWaka Offline-First capabilities, the critical differentiator that enables the platform to operate reliably across Africa where connectivity is intermittent, unreliable, and expensive. Building on the Phase 1 conceptual architecture (WEBWAKA_OFFLINE_FIRST_ARCHITECTURE.md), this specification defines the concrete mechanisms for offline transaction queuing, synchronization protocols, conflict resolution strategies, and data integrity guarantees. The design prioritizes data integrity and resilience in low-connectivity environments, ensuring that business operations continue seamlessly regardless of network state, and that all offline transactions are eventually synchronized without data loss. ---\n\n## 2....",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-documentation"
+    },
+    {
+      "document_title": "webwaka-infrastructure",
+      "file_path": "main / README.md",
+      "branch": "main",
+      "last_modified": "unknown",
+      "context_category": "Governance",
+      "brief_description": "This document outlines the purpose, current status, governance, and ownership of the webwaka-infrastructure repository. It states that the repository is intended for Infrastructure as Code and deployment automation, with governance and strategy documentation currently in progress. The document also specifies that no implementation code is authorized without explicit founder decision, and details the governing policies and the owner's contact information.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-infrastructure"
+    },
+    {
+      "document_title": "webwaka-mobile-apps",
+      "file_path": "main / README.md",
+      "branch": "main",
+      "last_modified": "2026-02-04T10:52:25Z",
+      "context_category": "General Documentation",
+      "brief_description": "This document outlines the purpose, current status, governance, and ownership of the webwaka-mobile-apps repository. It details the phases of development, emphasizing that no implementation code is authorized until explicitly permitted by a Founder Decision. The repository is governed by specific foundational documents and structures.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-mobile-apps"
+    },
+    {
+      "document_title": "WebWaka Plugin System (Module 2)",
+      "file_path": "master / README.md",
+      "branch": "master",
+      "last_modified": "unknown",
+      "context_category": "Module Design",
+      "brief_description": "The WebWaka Plugin System is a core infrastructure module enabling extensibility and customization of the WebWaka platform. It provides a secure, sandboxed environment for third-party plugins to extend platform functionality without compromising security or stability. Key features include plugin lifecycle management, a secure sandbox, registry, dependency resolution, hot-reload, monitoring, and API versioning. The document also details its 7 core architectural components, installation, usage, development guidelines, testing procedures, and related modules.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-modules-plugin-system"
+    },
+    {
+      "document_title": "WebWaka Platform Core",
+      "file_path": "branch:main / README.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T21:57:06Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "The WebWaka Platform Core is a foundational, multi-tenant, offline-first, and event-driven platform designed to support various WebWaka applications. It emphasizes a \"Platform-for-Platforms\" model, modularity, and an \"Africa-First\" engineering reality. The platform provides essential components like Identity, Event Bus, Storage, and Sync services, built with TypeScript, Node.js, and PostgreSQL. Currently in Phase 2, Milestone 2, the project is actively developing its core services and adhering to a strict governance framework.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Week 3 Completion Report - Milestone 2",
+      "file_path": "branch:main / WEEK_3_COMPLETION_REPORT.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T21:59:22Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "Week 3 of Milestone 2, \"Core Platform Development,\" has been successfully completed by webwakaagent4, marking 25% progress on the milestone. All five deliverables for the week were achieved, including finalizing the core platform architecture, database schema, and API specification. Additionally, the development environment was fully set up, and the code repository with CI/CD integration was established. This foundational work sets the stage for the implementation of core services and APIs in the upcoming Week 4.",
+      "strategic_value": "High",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Week 4 Completion Report - Milestone 2",
+      "file_path": "branch:main / WEEK_4_COMPLETION_REPORT.md",
+      "branch": "main",
+      "last_modified": "2026-02-08T06:08:10Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "Week 4 of Milestone 2, focusing on Core Platform Development, has been successfully completed by webwakaagent4. All four deliverables, including core services, API, database implementation, and initial integration points, were achieved. This progress brings Milestone 2 to 50% completion, with key features like multi-tenant data models, JWT authentication, and an event-driven architecture now in place. The next steps involve webwakaagent5 beginning Milestone 3 for security and quality implementation, while webwakaagent4 continues with further core platform development in Week 5.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Database Schema Design",
+      "file_path": "branch:main / docs/architecture/DATABASE_SCHEMA_DESIGN.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T21:57:06Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "This document outlines the database schema design for the WebWaka Platform Core, emphasizing multi-tenant isolation, offline-first capabilities, and an event-driven architecture. Key design principles include an actor hierarchy for roles and permissions, an immutable audit trail, and data model versioning. The schema defines ten core tables, including `tenants`, `users`, `roles`, `capabilities`, `events`, and `audit_logs`, with detailed SQL definitions and indexing strategies. It also specifies relationships between tables and a migration strategy using Prisma Migrate.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Week 3 Architectural Guidance",
+      "file_path": "branch:main / docs/architecture/WEEK_3_ARCHITECTURAL_GUIDANCE.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T22:09:00Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "This architectural guidance document approves the WebWaka Platform Core's Week 3 deliverables, highlighting their strong multi-tenant, offline-first, and event-driven design. It provides detailed recommendations for Week 4, focusing on implementing core services like Storage, Event Bus, Identity, and Permissions, along with enhancing API specifications to include versioning, batch operations, and WebSocket support. The document also outlines best practices for architecture patterns, security, performance, and testing, concluding with a comprehensive checklist for the upcoming week's development.",
+      "strategic_value": "High",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Development Environment Setup Guide",
+      "file_path": "branch:main / docs/guides/DEVELOPMENT_SETUP.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T21:59:22Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "This guide outlines the complete process for setting up a local development environment for the WebWaka Platform Core. It details essential prerequisites like Node.js, pnpm, Docker, and Git, along with optional but recommended tools. The instructions cover cloning the repository, installing dependencies, configuring environment variables, and starting development services using either Docker Compose or manual installation. Finally, it provides steps for database setup, starting the development server, verifying the installation, and offers a comprehensive development workflow, IDE setup recommendations, and troubleshooting tips.",
+      "strategic_value": "High",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Module System Documentation",
+      "file_path": "branch:main / documentation/MODULE_SYSTEM_DOCUMENTATION.md",
+      "branch": "main",
+      "last_modified": "2026-02-10T01:02:49Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "This document outlines the WebWaka platform's Module System, a framework designed for dynamic management of platform modules. It details the system's architecture, including the Module Manager, Loader, and Registry, and defines a standardized `IModule` interface for module development. The documentation covers key features like dynamic loading, dependency management, and health monitoring, alongside best practices for module creation, error handling, and performance optimization. Ultimately, it serves as a comprehensive guide for developers to integrate and manage modules within the WebWaka ecosystem.",
+      "strategic_value": "High",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "webwaka-platform-core",
+      "file_path": "branch:develop / README.md",
+      "branch": "develop",
+      "last_modified": "2026-02-04T10:50:39Z",
+      "context_category": "Suite Architecture",
+      "brief_description": "The `webwaka-platform-core` repository is the foundational component for the WebWaka Digital Operating System, intended to house core platform primitives and shared services. Currently, it is in its initial \"Initialized\" state with no implementation code yet authorized. The project is progressing through phases, with Phase 0 (repository creation) complete and Phase 1 (governance and strategy) in progress. Governance is dictated by specific internal documents, and implementation is strictly prohibited until Phase 3.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "webwaka-security-compliance",
+      "file_path": "README.md",
+      "branch": "main",
+      "last_modified": "2026-02-04T10:51:36Z",
+      "context_category": "Governance",
+      "brief_description": "This document outlines the purpose, current status, and governance model for the webwaka-security-compliance repository. It details the initial setup, ongoing progress on governance and strategy documents, and future implementation phases. The repository is governed by specific foundational documents and canonical structures, with no implementation code authorized without explicit permission.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-security-compliance"
+    },
+    {
+      "document_title": "webwaka-suite-modules",
+      "file_path": "README.md",
+      "branch": "main",
+      "last_modified": "2026-02-04T10:50:55Z",
+      "context_category": "Governance",
+      "brief_description": "This document describes the webwaka-suite-modules repository, outlining its purpose for suite-level applications and modules. It details the current development status, indicating that initial repository setup is complete and governance/strategy documents are in progress, with implementation pending authorization. The document also specifies the governance framework, including foundational models and canonical structures, and identifies the Product & Platform Strategy department as the owner.",
+      "strategic_value": "High",
+      "contamination_risk": "Low",
+      "repo": "webwaka-suite-modules"
+    },
+    {
+      "document_title": "webwaka-marketplace-ecosystem",
+      "file_path": "main / README.md",
+      "branch": "main",
+      "last_modified": "2026-02-04T10:52:12Z",
+      "context_category": "Market Positioning",
+      "brief_description": "Marketplace, extensions, and third-party integrations This repository is governed by: - FD-2026-001: Governance Foundation & Authority Model - Canonical GitHub Repository Structure - Canonical Execution Sequence",
+      "strategic_value": "Medium",
+      "contamination_risk": "Medium",
+      "repo": "webwaka-marketplace-ecosystem"
+    },
+    {
+      "document_title": "WebWaka Module System (Module 4)",
+      "file_path": "master / README.md",
+      "branch": "master",
+      "last_modified": "unknown",
+      "context_category": "Deployment/Infrastructure",
+      "brief_description": "It enables dynamic module loading, dependency management, and lifecycle management for platform modules. **Key Features:**\n- \ud83d\udce6 Dynamic module loading and unloading\n- \ud83d\udd17 Module dependency resolution and...",
+      "strategic_value": "Medium",
+      "contamination_risk": "Low",
+      "repo": "webwaka-modules-module-system"
+    },
+    {
+      "document_title": "API Specification",
+      "file_path": "branch:main / docs/api/API_SPECIFICATION.md",
+      "branch": "main",
+      "last_modified": "2026-02-07T21:57:53Z",
+      "context_category": "Module Design",
+      "brief_description": "This API specification outlines the WebWaka Platform Core, offering both REST and GraphQL APIs for flexible development. It details core design principles like versioning, multi-tenancy, and authentication via JWT tokens, along with rate limiting and offline-first support. The document provides comprehensive endpoint definitions for authentication, user management, role management, events, and synchronization, including request/response examples for both REST and GraphQL. Finally, it defines a standardized error handling format and lists the next steps for implementation.",
+      "strategic_value": "Medium",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "AGENT_ACKNOWLEDGMENT_TEMPLATE.md",
+      "file_path": "branch:feature/webwakaagent3-doc-completion / AGENT_ACKNOWLEDGMENT_TEMPLATE.md",
+      "branch": "feature/webwakaagent3-doc-completion",
+      "last_modified": "unknown",
+      "context_category": "General Documentation",
+      "brief_description": "Documentation related to Agent Acknowledgment Template. Content could not be retrieved due to access restrictions.",
+      "strategic_value": "Low",
+      "contamination_risk": "Low",
+      "repo": "webwaka-governance"
+    },
+    {
+      "document_title": "Multi-Tenant Data Scoping - Test Coverage Report (Week 17)",
+      "file_path": "branch:main / MULTI_TENANT_TEST_COVERAGE_REPORT_WEEK_17.md",
+      "branch": "main",
+      "last_modified": "2026-02-10T02:07:38Z",
+      "context_category": "General Documentation",
+      "brief_description": "This report summarizes Week 17 unit testing for Multi-Tenant Data Scoping, achieving 77.51% code coverage, which significantly surpasses the 50% target. All 77 unit tests passed without failures, demonstrating strong test reliability and quality. While most components show excellent coverage, specific uncovered lines in `query-interceptor.ts`, `tenant-context.manager.ts`, and `tenant-validator.ts` are identified for coverage in Week 18. The next steps include aiming for 100% coverage, conducting integration tests, and performing performance tests.",
+      "strategic_value": "Low",
+      "contamination_risk": "Low",
+      "repo": "webwaka-platform-core"
+    },
+    {
+      "document_title": "Module System Test Coverage Report - Week 15",
+      "file_path": "branch:main / TEST_COVERAGE_REPORT_WEEK_15.md",
+      "branch": "main",
+      "last_modified": "2026-02-09T21:12:21Z",
+      "context_category": "General Documentation",
+      "brief_description": "The Module System has achieved 100% test coverage across all components, including statements, branches, functions, and lines, with all 165 unit and integration tests passing. This comprehensive testing validated various functionalities, such as module lifecycle, dependency management, and error handling, ensuring the system's robustness. The testing strategy successfully met all specified requirements, including full unit and integration testing with complete code coverage. As a result, the Module System is deemed complete, fully validated, and ready for production use.",
+      "strategic_value": "Low",
+      "contamination_risk": "High",
+      "repo": "webwaka-platform-core"
+    }
+  ],
+  "categories": {
+    "Governance": 5,
+    "Strategic Principles": 4,
+    "General Documentation": 4,
+    "Module Design": 2,
+    "Suite Architecture": 8,
+    "Market Positioning": 1,
+    "Deployment/Infrastructure": 1
+  },
+  "sv_counts": {
+    "High": 19,
+    "Medium": 3,
+    "Low": 3
+  },
+  "cr_counts": {
+    "Low": 18,
+    "High": 6,
+    "Medium": 1
+  }
+}

@@ -1,0 +1,1411 @@
+{
+  "scan_date": "2026-02-21T08:50:48.198611",
+  "repository": "webwaka-platform",
+  "total_files": 156,
+  "files": [
+    {
+      "path": "AI_ABSTRACTION_LAYER_BUG_FIXES.md",
+      "name": "AI_ABSTRACTION_LAYER_BUG_FIXES.md",
+      "size": 11011,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "7ff02745956f1838a1c4c9790274d55c1a234083",
+      "commit_date": "2026-02-10 14:14:13 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_ABSTRACTION_LAYER_CODE_REVIEW.md",
+      "name": "AI_ABSTRACTION_LAYER_CODE_REVIEW.md",
+      "size": 9904,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "16cccc774b83a780af42ae4d01aa16f7f2547e45",
+      "commit_date": "2026-02-10 14:05:35 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_ABSTRACTION_LAYER_FINAL_TEST_COVERAGE.md",
+      "name": "AI_ABSTRACTION_LAYER_FINAL_TEST_COVERAGE.md",
+      "size": 11823,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "1606d042ada7ee30be59f3c165a4e056518ed13c",
+      "commit_date": "2026-02-10 14:08:41 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_ABSTRACTION_LAYER_INTEGRATION_TEST_RESULTS.md",
+      "name": "AI_ABSTRACTION_LAYER_INTEGRATION_TEST_RESULTS.md",
+      "size": 12386,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "527785a871ecf2bce5b744a03569989c434ec387",
+      "commit_date": "2026-02-10 14:10:29 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_ABSTRACTION_LAYER_TEST_COVERAGE.md",
+      "name": "AI_ABSTRACTION_LAYER_TEST_COVERAGE.md",
+      "size": 14797,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "8279938781119e631c48703130e9df5ed40b36ff",
+      "commit_date": "2026-02-10 14:03:21 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_ABSTRACTION_LAYER_TEST_VERIFICATION.md",
+      "name": "AI_ABSTRACTION_LAYER_TEST_VERIFICATION.md",
+      "size": 7057,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "7ff02745956f1838a1c4c9790274d55c1a234083",
+      "commit_date": "2026-02-10 14:14:13 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AI_EXTENSION_FRAMEWORK_TEST_COVERAGE_REPORT.md",
+      "name": "AI_EXTENSION_FRAMEWORK_TEST_COVERAGE_REPORT.md",
+      "size": 13548,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "e04afc7c31a248c1780d8824ed4f964028a50476",
+      "commit_date": "2026-02-10 09:21:27 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AUDIT_SYSTEM_COVERAGE_REPORT.md",
+      "name": "AUDIT_SYSTEM_COVERAGE_REPORT.md",
+      "size": 0,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "66d8e2ac4d7d356acdcd02a034b5254cffbd223a",
+      "commit_date": "2026-02-10 09:59:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "AUDIT_SYSTEM_FINAL_COVERAGE_REPORT.md",
+      "name": "AUDIT_SYSTEM_FINAL_COVERAGE_REPORT.md",
+      "size": 11217,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "6de518483db2550f442d80999f869462284fb0e4",
+      "commit_date": "2026-02-10 09:08:46 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "CAMPAIGN_MANAGEMENT_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "CAMPAIGN_MANAGEMENT_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 3861,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "d768a8cdc3c1d40197d2b5d4af8a23031c788423",
+      "commit_date": "2026-02-12 21:06:45 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "CAMPAIGN_MANAGEMENT_CODE_REVIEW_AND_FIXES.md",
+      "name": "CAMPAIGN_MANAGEMENT_CODE_REVIEW_AND_FIXES.md",
+      "size": 11754,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "c32412428966d00916603dbebbcc7cbfa3d5aae3",
+      "commit_date": "2026-02-12 18:05:50 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "CONSTITUENCY_MANAGEMENT_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "CONSTITUENCY_MANAGEMENT_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 3253,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "01b911dd18cf2a2ece87e3c31b34b37960591881",
+      "commit_date": "2026-02-13 00:51:14 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "CONSTITUENCY_MANAGEMENT_DOCUMENTATION.md",
+      "name": "CONSTITUENCY_MANAGEMENT_DOCUMENTATION.md",
+      "size": 9366,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "01b911dd18cf2a2ece87e3c31b34b37960591881",
+      "commit_date": "2026-02-13 00:51:14 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "CONTRACT_MANAGEMENT_TEST_COVERAGE.md",
+      "name": "CONTRACT_MANAGEMENT_TEST_COVERAGE.md",
+      "size": 15137,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "9ffe0c9155d7c76cb36eef7b00f70bbc1bde55c9",
+      "commit_date": "2026-02-10 12:58:50 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "DEPLOYMENT_INTEGRATION.md",
+      "name": "DEPLOYMENT_INTEGRATION.md",
+      "size": 9494,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "2325c20a7d6467b04cf13df9718ff8256e280d10",
+      "commit_date": "2026-02-10 14:36:29 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "DEPLOYMENT_INTEGRATION_VERIFICATION.md",
+      "name": "DEPLOYMENT_INTEGRATION_VERIFICATION.md",
+      "size": 14480,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "6d24ee49b41f115de6b05eca12407931252e3e5d",
+      "commit_date": "2026-02-10 14:56:56 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "DEV_ENVIRONMENT_SETUP.md",
+      "name": "DEV_ENVIRONMENT_SETUP.md",
+      "size": 4862,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "d6cc60b35a7a106f2b13a2fb9346a509c6e6482f",
+      "commit_date": "2026-02-09 10:44:42 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "ECONOMIC_ENGINE_COVERAGE_REPORT.md",
+      "name": "ECONOMIC_ENGINE_COVERAGE_REPORT.md",
+      "size": 8423,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "f584a6a62a48996eeea9c8a5877bc4e11be89875",
+      "commit_date": "2026-02-10 09:54:01 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "EMAIL_CAMPAIGN_BUILDER_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "EMAIL_CAMPAIGN_BUILDER_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 3388,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "7cf77c2e339782561c9556ef65f62c84fe63df9c",
+      "commit_date": "2026-02-12 20:55:15 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "EMAIL_CAMPAIGN_BUILDER_DOCUMENTATION.md",
+      "name": "EMAIL_CAMPAIGN_BUILDER_DOCUMENTATION.md",
+      "size": 12000,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "0c051c410832d9615df33cdf24adfb744891b0be",
+      "commit_date": "2026-02-12 20:56:31 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "EMAIL_CAMPAIGN_BUILDER_INTEGRATION_TEST_RESULTS.md",
+      "name": "EMAIL_CAMPAIGN_BUILDER_INTEGRATION_TEST_RESULTS.md",
+      "size": 2523,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "ee1f535d038687095e9e47f0c94814d084cd9839",
+      "commit_date": "2026-02-12 20:52:18 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "EMAIL_CAMPAIGN_BUILDER_TEST_COVERAGE_REPORT.md",
+      "name": "EMAIL_CAMPAIGN_BUILDER_TEST_COVERAGE_REPORT.md",
+      "size": 2362,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "78ab7f48822f7c0a97beaeab38f676580351e5f9",
+      "commit_date": "2026-02-12 20:51:01 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FORM_BUILDER_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "FORM_BUILDER_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 3178,
+      "modified": "2026-02-21T08:50:22.031258",
+      "commit_sha": "3920a44cf86ec7a45fc5086ab6695059a000c23f",
+      "commit_date": "2026-02-12 20:44:57 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FORM_BUILDER_DOCUMENTATION.md",
+      "name": "FORM_BUILDER_DOCUMENTATION.md",
+      "size": 14060,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "9f4f06137f2c8cb88cbf836b99fd27b0569a50fb",
+      "commit_date": "2026-02-12 20:46:13 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FORM_BUILDER_INTEGRATION_TEST_RESULTS.md",
+      "name": "FORM_BUILDER_INTEGRATION_TEST_RESULTS.md",
+      "size": 2649,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "8e3ae6d3cbb65ca6dcb9067e95616355fe0c2f5f",
+      "commit_date": "2026-02-12 20:43:52 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FORM_BUILDER_TEST_COVERAGE_REPORT.md",
+      "name": "FORM_BUILDER_TEST_COVERAGE_REPORT.md",
+      "size": 2095,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "3a0362233d18633215a563c1851a6c130d773085",
+      "commit_date": "2026-02-12 20:39:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FRAUD_PREVENTION_BUG_FIXES.md",
+      "name": "FRAUD_PREVENTION_BUG_FIXES.md",
+      "size": 15228,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "39e77c9ec966a70863191c7c6f033c9fdf57c0d6",
+      "commit_date": "2026-02-10 12:30:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FRAUD_PREVENTION_INTEGRATION_TEST_RESULTS.md",
+      "name": "FRAUD_PREVENTION_INTEGRATION_TEST_RESULTS.md",
+      "size": 15474,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "5472003b649e70e8a9cc98b9f4a40f714ead9313",
+      "commit_date": "2026-02-10 12:24:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FRAUD_PREVENTION_TEST_COVERAGE.md",
+      "name": "FRAUD_PREVENTION_TEST_COVERAGE.md",
+      "size": 15221,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "0ec86807e7f62729a980dd083a1ef8293cf8b1a5",
+      "commit_date": "2026-02-10 12:17:47 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FRAUD_PREVENTION_TEST_VERIFICATION.md",
+      "name": "FRAUD_PREVENTION_TEST_VERIFICATION.md",
+      "size": 10798,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "39e77c9ec966a70863191c7c6f033c9fdf57c0d6",
+      "commit_date": "2026-02-10 12:30:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FUNDRAISING_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "FUNDRAISING_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 1334,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a250f7f3d4fca166144814ed08cecc7dbf5cbe19",
+      "commit_date": "2026-02-12 21:10:36 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "FUNDRAISING_DOCUMENTATION.md",
+      "name": "FUNDRAISING_DOCUMENTATION.md",
+      "size": 2888,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a250f7f3d4fca166144814ed08cecc7dbf5cbe19",
+      "commit_date": "2026-02-12 21:10:36 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "INVENTORY_MANAGEMENT_BUG_FIXES.md",
+      "name": "INVENTORY_MANAGEMENT_BUG_FIXES.md",
+      "size": 6834,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "23aa64ca1d471b082902f1b4ee3e8dca1287cdce",
+      "commit_date": "2026-02-13 12:43:15 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "INVENTORY_MANAGEMENT_UNIT_TEST_COVERAGE.md",
+      "name": "INVENTORY_MANAGEMENT_UNIT_TEST_COVERAGE.md",
+      "size": 7375,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "5443bbd79de52dc633d70f49985ba1bbbbc809f2",
+      "commit_date": "2026-02-13 12:41:21 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "LANDING_PAGE_CREATOR_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "LANDING_PAGE_CREATOR_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 4883,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "bed28063a09fd619c712bf261d9308a03683f746",
+      "commit_date": "2026-02-12 20:34:10 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "LANDING_PAGE_CREATOR_DOCUMENTATION.md",
+      "name": "LANDING_PAGE_CREATOR_DOCUMENTATION.md",
+      "size": 10571,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "abb574b4c91ff93699d22fefe1002cc8626079f0",
+      "commit_date": "2026-02-12 20:35:48 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "LANDING_PAGE_CREATOR_INTEGRATION_TEST_RESULTS.md",
+      "name": "LANDING_PAGE_CREATOR_INTEGRATION_TEST_RESULTS.md",
+      "size": 2544,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "b3c43890b8f1f8e72e6e87e00fd6ac232cec287a",
+      "commit_date": "2026-02-12 20:31:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "LANDING_PAGE_CREATOR_TEST_COVERAGE_REPORT.md",
+      "name": "LANDING_PAGE_CREATOR_TEST_COVERAGE_REPORT.md",
+      "size": 2133,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "624b3010e766415802a678f341f092d0566c278d",
+      "commit_date": "2026-02-12 20:26:51 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "ORDER_MANAGEMENT_BUG_FIXES.md",
+      "name": "ORDER_MANAGEMENT_BUG_FIXES.md",
+      "size": 4260,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "fd7cbc0243d03fe889cd1524341ad6bd93445884",
+      "commit_date": "2026-02-13 13:07:40 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "POLLING_AND_RESULTS_BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "POLLING_AND_RESULTS_BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 3602,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a0237e66960dac519af134e8aaf6857b69382f24",
+      "commit_date": "2026-02-13 00:37:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "POLLING_AND_RESULTS_DOCUMENTATION.md",
+      "name": "POLLING_AND_RESULTS_DOCUMENTATION.md",
+      "size": 9169,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a0237e66960dac519af134e8aaf6857b69382f24",
+      "commit_date": "2026-02-13 00:37:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "size": 1460,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "d6cc60b35a7a106f2b13a2fb9346a509c6e6482f",
+      "commit_date": "2026-02-09 10:44:42 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "SHIPPING_BUG_FIXES.md",
+      "name": "SHIPPING_BUG_FIXES.md",
+      "size": 583,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "47449ccf858950a270322f57c98e98d916760169",
+      "commit_date": "2026-02-13 13:47:44 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "TRACKING_BUG_FIXES.md",
+      "name": "TRACKING_BUG_FIXES.md",
+      "size": 257,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "e12e50a62fcf93374fa75db0f573adaffcff2829",
+      "commit_date": "2026-02-13 13:49:41 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "WAREHOUSE_MANAGEMENT_BUG_FIXES.md",
+      "name": "WAREHOUSE_MANAGEMENT_BUG_FIXES.md",
+      "size": 1564,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "511431558423aee06fb85c34acedd70bb22207a6",
+      "commit_date": "2026-02-13 13:45:20 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "coverage-report-week9.txt",
+      "name": "coverage-report-week9.txt",
+      "size": 2910,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "f293b5e013426f03c436fb106bd10508c518b695",
+      "commit_date": "2026-02-09 14:01:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "coverage-report.txt",
+      "name": "coverage-report.txt",
+      "size": 2920,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "1081548dccc2e714458551f1ab993b6db8109398",
+      "commit_date": "2026-02-09 13:52:53 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "docker-compose.yml",
+      "name": "docker-compose.yml",
+      "size": 1807,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "2325c20a7d6467b04cf13df9718ff8256e280d10",
+      "commit_date": "2026-02-10 14:36:29 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "documentation/AI_ABSTRACTION_LAYER_API_GUIDE.md",
+      "name": "AI_ABSTRACTION_LAYER_API_GUIDE.md",
+      "size": 10647,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "6823402cbe8a8b51a687aeebd8fdccf55e967490",
+      "commit_date": "2026-02-10 14:17:04 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "documentation/AI_ABSTRACTION_LAYER_DOCUMENTATION.md",
+      "name": "AI_ABSTRACTION_LAYER_DOCUMENTATION.md",
+      "size": 24234,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "6823402cbe8a8b51a687aeebd8fdccf55e967490",
+      "commit_date": "2026-02-10 14:17:04 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "documentation/FRAUD_PREVENTION_API_GUIDE.md",
+      "name": "FRAUD_PREVENTION_API_GUIDE.md",
+      "size": 18099,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a8529998d50db97805864672bcadb4dd763b8f8d",
+      "commit_date": "2026-02-10 12:42:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "documentation/FRAUD_PREVENTION_DOCUMENTATION.md",
+      "name": "FRAUD_PREVENTION_DOCUMENTATION.md",
+      "size": 38099,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "a8529998d50db97805864672bcadb4dd763b8f8d",
+      "commit_date": "2026-02-10 12:42:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "founder-agent-reviews/WEEK_39_VALIDATION_CHECKPOINT_DECISION.md",
+      "name": "WEEK_39_VALIDATION_CHECKPOINT_DECISION.md",
+      "size": 15205,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "5466cb12e940d268066125e354d56db2c1a40d99",
+      "commit_date": "2026-02-10 13:04:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "package-lock.json",
+      "name": "package-lock.json",
+      "size": 261811,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "9c2a0ad7bfd5d4983c4d41736d9fc554cf64ed42",
+      "commit_date": "2026-02-12 12:11:48 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "size": 1430,
+      "modified": "2026-02-21T08:50:22.035258",
+      "commit_sha": "9c2a0ad7bfd5d4983c4d41736d9fc554cf64ed42",
+      "commit_date": "2026-02-12 12:11:48 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "reviews/AI_ABSTRACTION_LAYER_SPECIFICATION_REVIEW.md",
+      "name": "AI_ABSTRACTION_LAYER_SPECIFICATION_REVIEW.md",
+      "size": 22477,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "60b87208fcf450895020ff0b2f55d1a003543fda",
+      "commit_date": "2026-02-10 13:29:43 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "specifications/AI_ABSTRACTION_LAYER_INVARIANTS_VERIFICATION.md",
+      "name": "AI_ABSTRACTION_LAYER_INVARIANTS_VERIFICATION.md",
+      "size": 15295,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "1a5f9a108b4e4a9ed94b68a1fd003caba82d143b",
+      "commit_date": "2026-02-10 13:07:54 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "specifications/AI_ABSTRACTION_LAYER_SPECIFICATION.md",
+      "name": "AI_ABSTRACTION_LAYER_SPECIFICATION.md",
+      "size": 25035,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "1a5f9a108b4e4a9ed94b68a1fd003caba82d143b",
+      "commit_date": "2026-02-10 13:07:54 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "specifications/CONTRACT_MANAGEMENT_INVARIANTS_VERIFICATION.md",
+      "name": "CONTRACT_MANAGEMENT_INVARIANTS_VERIFICATION.md",
+      "size": 11295,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "df6501635e53225a875fc77ad52dad31c7a57679",
+      "commit_date": "2026-02-10 12:49:47 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "specifications/CONTRACT_MANAGEMENT_SPECIFICATION.md",
+      "name": "CONTRACT_MANAGEMENT_SPECIFICATION.md",
+      "size": 21788,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "df6501635e53225a875fc77ad52dad31c7a57679",
+      "commit_date": "2026-02-10 12:49:47 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "specifications/DEPLOYMENT_INFRASTRUCTURE_SPECIFICATION.md",
+      "name": "DEPLOYMENT_INFRASTRUCTURE_SPECIFICATION.md",
+      "size": 18523,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "e91dcf77a3564828cd55b66efcc9772b8e326394",
+      "commit_date": "2026-02-10 15:34:16 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/analytics-reporting/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 1651,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "38b9cfa8b8ea2f8cfad393cee47f4d94503a4ff1",
+      "commit_date": "2026-02-12 12:21:06 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/analytics-reporting/README.md",
+      "name": "README.md",
+      "size": 2814,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "6102c6b81163020b0241bb850e65f80b4453754b",
+      "commit_date": "2026-02-12 12:19:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/analytics-reporting/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 1256,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "c012c680f375be4da4e671c669d0a802f28835aa",
+      "commit_date": "2026-02-12 12:20:39 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/analytics-reporting/documentation/API.md",
+      "name": "API.md",
+      "size": 3114,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "6b7d4184e7a0159119ed82f19e37bf18feecea38",
+      "commit_date": "2026-02-12 12:21:53 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/analytics-reporting/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 3527,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "6b7d4184e7a0159119ed82f19e37bf18feecea38",
+      "commit_date": "2026-02-12 12:21:53 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/audit-system/README.md",
+      "name": "README.md",
+      "size": 8152,
+      "modified": "2026-02-21T08:50:22.039258",
+      "commit_sha": "9742aa1bf991194698569f6be5f1f3964d9e02fe",
+      "commit_date": "2026-02-10 09:03:54 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/booking-scheduling/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 61,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "c4df6eb7456ed61b8b8317e96f7a85d1d354ab7f",
+      "commit_date": "2026-02-12 12:26:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/booking-scheduling/README.md",
+      "name": "README.md",
+      "size": 91,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "c4df6eb7456ed61b8b8317e96f7a85d1d354ab7f",
+      "commit_date": "2026-02-12 12:26:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/booking-scheduling/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 99,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "c4df6eb7456ed61b8b8317e96f7a85d1d354ab7f",
+      "commit_date": "2026-02-12 12:26:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/booking-scheduling/documentation/API.md",
+      "name": "API.md",
+      "size": 107,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "c4df6eb7456ed61b8b8317e96f7a85d1d354ab7f",
+      "commit_date": "2026-02-12 12:26:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/booking-scheduling/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 99,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "c4df6eb7456ed61b8b8317e96f7a85d1d354ab7f",
+      "commit_date": "2026-02-12 12:26:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/campaign-management/API.md",
+      "name": "API.md",
+      "size": 11134,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "d46df0768dc253a26dc5f84fd9440b5b0afc3ed1",
+      "commit_date": "2026-02-12 18:06:43 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/campaign-management/README.md",
+      "name": "README.md",
+      "size": 15233,
+      "modified": "2026-02-21T08:50:22.043258",
+      "commit_sha": "d46df0768dc253a26dc5f84fd9440b5b0afc3ed1",
+      "commit_date": "2026-02-12 18:06:43 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/communication-tools/README.md",
+      "name": "README.md",
+      "size": 5428,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "2dcf3f85cace72b4046db52c8d4b57ab76714714",
+      "commit_date": "2026-02-13 21:06:14 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/community-platform/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 65,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "dde2ae7fce770c5f689e047b44704f17ac955648",
+      "commit_date": "2026-02-12 12:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/community-platform/README.md",
+      "name": "README.md",
+      "size": 318,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "dde2ae7fce770c5f689e047b44704f17ac955648",
+      "commit_date": "2026-02-12 12:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/community-platform/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 103,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "dde2ae7fce770c5f689e047b44704f17ac955648",
+      "commit_date": "2026-02-12 12:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/community-platform/documentation/API.md",
+      "name": "API.md",
+      "size": 144,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "dde2ae7fce770c5f689e047b44704f17ac955648",
+      "commit_date": "2026-02-12 12:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/community-platform/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 254,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "dde2ae7fce770c5f689e047b44704f17ac955648",
+      "commit_date": "2026-02-12 12:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/donations/BUGFIXES.md",
+      "name": "BUGFIXES.md",
+      "size": 4781,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "7a816a5ed7a7229b61672b64cfd1ef2e3757e7ee",
+      "commit_date": "2026-02-13 17:59:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/donations/README.md",
+      "name": "README.md",
+      "size": 4939,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "1779a9283ef7e984dc0e9b3f79169cdf6aee96f2",
+      "commit_date": "2026-02-13 17:51:22 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/donations/__tests__/integration/README.md",
+      "name": "README.md",
+      "size": 2218,
+      "modified": "2026-02-21T08:50:22.047258",
+      "commit_sha": "7a0f9639e470d98666533f3a627576b41bc1a14a",
+      "commit_date": "2026-02-13 17:57:34 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/event-system/README.md",
+      "name": "README.md",
+      "size": 11585,
+      "modified": "2026-02-21T08:50:22.051258",
+      "commit_sha": "9cca5ba5e257e03e4590654e811e1458df1a896b",
+      "commit_date": "2026-02-09 15:23:06 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/event-system/USAGE_EXAMPLES.md",
+      "name": "USAGE_EXAMPLES.md",
+      "size": 11764,
+      "modified": "2026-02-21T08:50:22.051258",
+      "commit_sha": "9cca5ba5e257e03e4590654e811e1458df1a896b",
+      "commit_date": "2026-02-09 15:23:06 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/events/BUGFIXES.md",
+      "name": "BUGFIXES.md",
+      "size": 2880,
+      "modified": "2026-02-21T08:50:22.051258",
+      "commit_sha": "4c57bc4b9c7ed52eb9a24b439a842d35f3a5f45b",
+      "commit_date": "2026-02-13 21:01:32 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/events/README.md",
+      "name": "README.md",
+      "size": 6122,
+      "modified": "2026-02-21T08:50:22.051258",
+      "commit_sha": "5171985debd1c838011ee1b4545cadbb20501964",
+      "commit_date": "2026-02-13 20:57:38 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/headless-cms/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 4782,
+      "modified": "2026-02-21T08:50:22.055258",
+      "commit_sha": "841af160fdda23bf5c0377c5defc776c2742a063",
+      "commit_date": "2026-02-12 10:49:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/headless-cms/README.md",
+      "name": "README.md",
+      "size": 5501,
+      "modified": "2026-02-21T08:50:22.055258",
+      "commit_sha": "f9fd4cc4e28fee8558a4158a9f04775d1c15b0dc",
+      "commit_date": "2026-02-12 10:45:28 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/headless-cms/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 4378,
+      "modified": "2026-02-21T08:50:22.055258",
+      "commit_sha": "409f50e43ea2f5d5c8937edf82ae017893123b3d",
+      "commit_date": "2026-02-12 10:48:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/headless-cms/documentation/API.md",
+      "name": "API.md",
+      "size": 3989,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "d0d241c408286f0d2382a6d3af13f7b940055d26",
+      "commit_date": "2026-02-12 10:50:36 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/headless-cms/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 4501,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "d0d241c408286f0d2382a6d3af13f7b940055d26",
+      "commit_date": "2026-02-12 10:50:36 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 17547,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "24487f35950e0b5629ceaabbfcf8d807eb9a3b4f",
+      "commit_date": "2026-02-13 13:13:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/BUG_FIX_REPORT.md",
+      "name": "BUG_FIX_REPORT.md",
+      "size": 13313,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "69f7bb69e97d6de1d3985e8f2c0458bbf08c3ab0",
+      "commit_date": "2026-02-13 13:40:30 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/E2E_TEST_REPORT.md",
+      "name": "E2E_TEST_REPORT.md",
+      "size": 10114,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "002b3b326b27bea23c4c9cf8993208cb93c8d215",
+      "commit_date": "2026-02-13 13:33:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/INTEGRATION_TEST_REPORT.md",
+      "name": "INTEGRATION_TEST_REPORT.md",
+      "size": 9932,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "9ffefe81f750ffef36a809abb8d7af34df992a12",
+      "commit_date": "2026-02-13 13:27:14 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/README.md",
+      "name": "README.md",
+      "size": 7187,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "24487f35950e0b5629ceaabbfcf8d807eb9a3b4f",
+      "commit_date": "2026-02-13 13:13:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/TEST_COVERAGE_REPORT.md",
+      "name": "TEST_COVERAGE_REPORT.md",
+      "size": 8904,
+      "modified": "2026-02-21T08:50:22.059258",
+      "commit_sha": "be6a0057ed7127ece07b9a0e4678934846975675",
+      "commit_date": "2026-02-13 13:21:13 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/database/migrations/README.md",
+      "name": "README.md",
+      "size": 2116,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "69f7bb69e97d6de1d3985e8f2c0458bbf08c3ab0",
+      "commit_date": "2026-02-13 13:40:30 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/events/EVENT_VERSIONING_STRATEGY.md",
+      "name": "EVENT_VERSIONING_STRATEGY.md",
+      "size": 5300,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "69f7bb69e97d6de1d3985e8f2c0458bbf08c3ab0",
+      "commit_date": "2026-02-13 13:40:30 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-booking-engine/package.json",
+      "name": "package.json",
+      "size": 683,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "24487f35950e0b5629ceaabbfcf8d807eb9a3b4f",
+      "commit_date": "2026-02-13 13:13:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-channel-management/README.md",
+      "name": "README.md",
+      "size": 5557,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "38accfcd10461076d276d54d645f37d474dfe86b",
+      "commit_date": "2026-02-13 14:33:21 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-channel-management/STEP_441_BUG_FIXES.md",
+      "name": "STEP_441_BUG_FIXES.md",
+      "size": 1045,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "63cd30712185f95654fbefcd61ee27880eef026c",
+      "commit_date": "2026-02-13 14:35:49 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-guest-management/README.md",
+      "name": "README.md",
+      "size": 2989,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "bfa0a3001efd246ae1c48c95f804f923507bfb3c",
+      "commit_date": "2026-02-13 14:38:40 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-guest-management/STEP_450_BUG_FIXES.md",
+      "name": "STEP_450_BUG_FIXES.md",
+      "size": 1371,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "f3d32cb972e29c35d1a6fdff2e9e81e1af088214",
+      "commit_date": "2026-02-13 14:40:10 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/BUG_FIX_REPORT.md",
+      "name": "BUG_FIX_REPORT.md",
+      "size": 1176,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "173607ecc69883909c2bcfa469757fe603798465",
+      "commit_date": "2026-02-13 14:00:45 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/E2E_TEST_PLAN.md",
+      "name": "E2E_TEST_PLAN.md",
+      "size": 1020,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "173607ecc69883909c2bcfa469757fe603798465",
+      "commit_date": "2026-02-13 14:00:45 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/INTEGRATION_TEST_PLAN.md",
+      "name": "INTEGRATION_TEST_PLAN.md",
+      "size": 1652,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "173607ecc69883909c2bcfa469757fe603798465",
+      "commit_date": "2026-02-13 14:00:45 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/INTEGRATION_TEST_RESULTS.md",
+      "name": "INTEGRATION_TEST_RESULTS.md",
+      "size": 8698,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "0067143cd58c2610966cc7681e4f240291d43f69",
+      "commit_date": "2026-02-13 14:23:43 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/README.md",
+      "name": "README.md",
+      "size": 6723,
+      "modified": "2026-02-21T08:50:22.063258",
+      "commit_sha": "d833e35f21b2b4e980535874b758c7fd2357050b",
+      "commit_date": "2026-02-13 13:52:40 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/STEP_432_BUG_FIXES_IMPLEMENTED.md",
+      "name": "STEP_432_BUG_FIXES_IMPLEMENTED.md",
+      "size": 8560,
+      "modified": "2026-02-21T08:50:22.067258",
+      "commit_sha": "7bc0f1f706c307f63a5ebc61897d0392f348bf9b",
+      "commit_date": "2026-02-13 14:25:00 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/hospitality-property-management/TEST_SUMMARY.md",
+      "name": "TEST_SUMMARY.md",
+      "size": 3575,
+      "modified": "2026-02-21T08:50:22.067258",
+      "commit_sha": "f4df979e3dcf493240dc497b5977cc0991268150",
+      "commit_date": "2026-02-13 13:59:58 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/logistics/inventory-management/README.md",
+      "name": "README.md",
+      "size": 8177,
+      "modified": "2026-02-21T08:50:22.067258",
+      "commit_sha": "7d19dd36f9603aa800d32caf532a2f0c64295aa0",
+      "commit_date": "2026-02-13 12:39:11 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/logistics/order-management/README.md",
+      "name": "README.md",
+      "size": 6922,
+      "modified": "2026-02-21T08:50:22.067258",
+      "commit_sha": "e074793b92368605cd82dcb2c4f1f80bb91b87b3",
+      "commit_date": "2026-02-13 13:04:01 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/member-management/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 12743,
+      "modified": "2026-02-21T08:50:22.071258",
+      "commit_sha": "a8d5bbf9027dd3e9bce32f2aad5ca98a3fea5db1",
+      "commit_date": "2026-02-13 14:24:22 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/member-management/README.md",
+      "name": "README.md",
+      "size": 9386,
+      "modified": "2026-02-21T08:50:22.071258",
+      "commit_sha": "ab14e98dc4b1c564050020e8f616977b179056b0",
+      "commit_date": "2026-02-13 14:17:51 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/module-system/README.md",
+      "name": "README.md",
+      "size": 6365,
+      "modified": "2026-02-21T08:50:22.075258",
+      "commit_sha": "e647423f24077304194f74a70fba8e0a8e97dacc",
+      "commit_date": "2026-02-09 15:53:15 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/module-system/USAGE_EXAMPLES.md",
+      "name": "USAGE_EXAMPLES.md",
+      "size": 10113,
+      "modified": "2026-02-21T08:50:22.075258",
+      "commit_sha": "e647423f24077304194f74a70fba8e0a8e97dacc",
+      "commit_date": "2026-02-09 15:53:15 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/modules/api-layer/README.md",
+      "name": "README.md",
+      "size": 6745,
+      "modified": "2026-02-21T08:50:22.079258",
+      "commit_sha": "2dbd1a14728f236c4cf72e690ce5d06b1b753fa8",
+      "commit_date": "2026-02-10 07:05:08 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/modules/sync-engine/README.md",
+      "name": "README.md",
+      "size": 4381,
+      "modified": "2026-02-21T08:50:22.087258",
+      "commit_sha": "b7d16d794d52c11fb191fa07fb8723a1d6352acc",
+      "commit_date": "2026-02-10 07:59:35 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/no-code-builder/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 4615,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "feff0f01d3f83cf0f3f76cf1b1a294de2df2e6a4",
+      "commit_date": "2026-02-12 11:06:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/no-code-builder/README.md",
+      "name": "README.md",
+      "size": 4204,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "c82c9d8cd1e34690ee14c82f0d15330c9dde2655",
+      "commit_date": "2026-02-12 11:02:10 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/no-code-builder/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 4303,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "2dd39b2aca0b9bbb02b8f2f81684d09eb6b48c00",
+      "commit_date": "2026-02-12 11:05:50 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/no-code-builder/documentation/API.md",
+      "name": "API.md",
+      "size": 4741,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "7e9fce0e2e2472b022cd78c5842f302d3f06c9ea",
+      "commit_date": "2026-02-12 11:11:20 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/no-code-builder/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 6251,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "7e9fce0e2e2472b022cd78c5842f302d3f06c9ea",
+      "commit_date": "2026-02-12 11:11:20 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/payment-billing/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 6521,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "e07f3fd30e4ce7dd2e1f6583d74887018c533b39",
+      "commit_date": "2026-02-12 11:26:09 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/payment-billing/README.md",
+      "name": "README.md",
+      "size": 3517,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "ce85fc3f2342ef3a7e099ebd85ee475e898accf0",
+      "commit_date": "2026-02-12 11:20:55 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/payment-billing/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 3947,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "e36c14df923bc2ef6eb72039b95a05d046c63745",
+      "commit_date": "2026-02-12 11:25:23 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/payment-billing/documentation/API.md",
+      "name": "API.md",
+      "size": 2430,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "7ae48ab6d02394e63b869781ef77b8eb07a71cc1",
+      "commit_date": "2026-02-12 11:26:42 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/payment-billing/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 3666,
+      "modified": "2026-02-21T08:50:22.091258",
+      "commit_sha": "7ae48ab6d02394e63b869781ef77b8eb07a71cc1",
+      "commit_date": "2026-02-12 11:26:42 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/search-discovery/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 5316,
+      "modified": "2026-02-21T08:50:22.095258",
+      "commit_sha": "1376271a9f283e1a646ca34d40672b119e0f3cf4",
+      "commit_date": "2026-02-12 12:12:32 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/search-discovery/README.md",
+      "name": "README.md",
+      "size": 2950,
+      "modified": "2026-02-21T08:50:22.095258",
+      "commit_sha": "2b7737e0e1aa7b17e05891c30ad2447a694ed9b9",
+      "commit_date": "2026-02-12 12:09:44 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/search-discovery/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 3243,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "9c2a0ad7bfd5d4983c4d41736d9fc554cf64ed42",
+      "commit_date": "2026-02-12 12:11:48 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/search-discovery/documentation/API.md",
+      "name": "API.md",
+      "size": 4456,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "827e0c1289b8d5550712f2585bdb1ebf2d53ac71",
+      "commit_date": "2026-02-12 12:14:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/search-discovery/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 4667,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "827e0c1289b8d5550712f2585bdb1ebf2d53ac71",
+      "commit_date": "2026-02-12 12:14:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/sites-funnels-email-campaign-builder/README.md",
+      "name": "README.md",
+      "size": 98,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "de76cd9f45cbcf8f8ed6a8afca4fd8a83477da34",
+      "commit_date": "2026-02-12 12:37:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/sites-funnels-form-builder/README.md",
+      "name": "README.md",
+      "size": 92,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "de76cd9f45cbcf8f8ed6a8afca4fd8a83477da34",
+      "commit_date": "2026-02-12 12:37:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/sites-funnels-landing-page-builder/README.md",
+      "name": "README.md",
+      "size": 87,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "de76cd9f45cbcf8f8ed6a8afca4fd8a83477da34",
+      "commit_date": "2026-02-12 12:37:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/sites-funnels-sales-funnel-builder/README.md",
+      "name": "README.md",
+      "size": 90,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "de76cd9f45cbcf8f8ed6a8afca4fd8a83477da34",
+      "commit_date": "2026-02-12 12:37:37 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/sites-funnels-website-builder/README.md",
+      "name": "README.md",
+      "size": 2050,
+      "modified": "2026-02-21T08:50:22.099257",
+      "commit_sha": "a74a88c1681c149975f0ddd7301367d20ea52c8d",
+      "commit_date": "2026-02-12 14:29:06 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/user-identity/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 6223,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "076d8205e2a6ea95bebb32de491f7ac90b61b712",
+      "commit_date": "2026-02-12 11:42:00 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/user-identity/README.md",
+      "name": "README.md",
+      "size": 4388,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "6c94beac30fa594273a77f34edcf6fedc60b6276",
+      "commit_date": "2026-02-12 11:38:10 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/user-identity/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 3597,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "ec9849d26514b933e6d7250d869ed8d4956b0b69",
+      "commit_date": "2026-02-12 11:41:17 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/user-identity/documentation/API.md",
+      "name": "API.md",
+      "size": 3404,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "8acc6977c1b50472b5f56b911d1027bc9f4754b0",
+      "commit_date": "2026-02-12 11:48:07 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/user-identity/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 5436,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "8acc6977c1b50472b5f56b911d1027bc9f4754b0",
+      "commit_date": "2026-02-12 11:48:07 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/website-builder/BUG_FIXES_AND_CODE_REVIEW.md",
+      "name": "BUG_FIXES_AND_CODE_REVIEW.md",
+      "size": 62,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "3fd4d8a81860ad53d3d2fe2055c60b5283485d62",
+      "commit_date": "2026-02-12 12:27:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/website-builder/README.md",
+      "name": "README.md",
+      "size": 91,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "3fd4d8a81860ad53d3d2fe2055c60b5283485d62",
+      "commit_date": "2026-02-12 12:27:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/website-builder/__tests__/TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "size": 100,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "3fd4d8a81860ad53d3d2fe2055c60b5283485d62",
+      "commit_date": "2026-02-12 12:27:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/website-builder/documentation/API.md",
+      "name": "API.md",
+      "size": 126,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "3fd4d8a81860ad53d3d2fe2055c60b5283485d62",
+      "commit_date": "2026-02-12 12:27:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "src/website-builder/documentation/ARCHITECTURE.md",
+      "name": "ARCHITECTURE.md",
+      "size": 100,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "3fd4d8a81860ad53d3d2fe2055c60b5283485d62",
+      "commit_date": "2026-02-12 12:27:19 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "task-definition.json",
+      "name": "task-definition.json",
+      "size": 2746,
+      "modified": "2026-02-21T08:50:22.103257",
+      "commit_sha": "c396eda09e749f76fc1865b564f3d650b0bba422",
+      "commit_date": "2026-02-10 20:10:01 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "test-strategies/AI_ABSTRACTION_LAYER_TEST_STRATEGY.md",
+      "name": "AI_ABSTRACTION_LAYER_TEST_STRATEGY.md",
+      "size": 25401,
+      "modified": "2026-02-21T08:50:22.107257",
+      "commit_sha": "d63f052351974b3a8ba585cc163f3b4559c96aa7",
+      "commit_date": "2026-02-10 13:56:26 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "tests/integration/member-management/INTEGRATION_TEST_SUMMARY.md",
+      "name": "INTEGRATION_TEST_SUMMARY.md",
+      "size": 8961,
+      "modified": "2026-02-21T08:50:22.107257",
+      "commit_sha": "505839ca647469c5cf3aba82faab11abf5837af8",
+      "commit_date": "2026-02-13 14:21:11 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "tests/unit/member-management/UNIT_TEST_SUMMARY.md",
+      "name": "UNIT_TEST_SUMMARY.md",
+      "size": 7746,
+      "modified": "2026-02-21T08:50:22.111257",
+      "commit_sha": "2bf56195a2ece3034080fb0f125efa8a01487030",
+      "commit_date": "2026-02-13 14:20:11 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "tsconfig.json",
+      "name": "tsconfig.json",
+      "size": 524,
+      "modified": "2026-02-21T08:50:22.111257",
+      "commit_sha": "d6cc60b35a7a106f2b13a2fb9346a509c6e6482f",
+      "commit_date": "2026-02-09 10:44:42 -0500",
+      "branch": "master"
+    },
+    {
+      "path": "validation-checkpoints/WEEK_39_VALIDATION_TEST_RESULTS.md",
+      "name": "WEEK_39_VALIDATION_TEST_RESULTS.md",
+      "size": 17799,
+      "modified": "2026-02-21T08:50:22.111257",
+      "commit_sha": "0270c04fb3118910a13d5a0063cc6d97ddc309d5",
+      "commit_date": "2026-02-10 13:01:33 -0500",
+      "branch": "master"
+    }
+  ]
+}

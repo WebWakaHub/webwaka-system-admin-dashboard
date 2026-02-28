@@ -1,0 +1,1249 @@
+{
+  "webwaka-organelle-audit-emitter": {
+    "layer": "organelle",
+    "repo": "webwaka-organelle-audit-emitter",
+    "package_json": {
+      "name": "@webwaka/organelle-audit-emitter",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "@types/jest": "^29.0.0"
+      },
+      "engines": {},
+      "main": "dist/index.js",
+      "types": "dist/index.d.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "lib": [
+          "ES2020"
+        ],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/integration/registry-entry.json",
+      "docs/integration/verification-report.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "jest.config.js",
+      "package.json",
+      "src/audit-emitter-entity.ts",
+      "src/audit-emitter-orchestrator.ts",
+      "src/event-interface.ts",
+      "src/index.ts",
+      "src/observability-interface.ts",
+      "src/state-machine.ts",
+      "src/storage-interface.ts",
+      "src/types.ts",
+      "tests/audit-emitter-entity.test.ts",
+      "tests/audit-emitter-orchestrator.test.ts",
+      "tests/audit-emitter-state-machine.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# AuditEmitter Organelle\n\n**Organelle ID:** ORGN-AI-AUDIT_EMITTER-v0.1.0\n**Version:** 0.1.0\n**Layer:** Organelle (AI Cognitive Fabric)\n\n## Overview\n\nThe AuditEmitter organelle provides a self-contained functional unit within the WebWaka AI Cognitive Fabric.\n\n## Quick Start\n\n```typescript\nimport { AuditEmitterOrchestrator } from \"@webwaka/organelle-audit-emitter\";\n\nconst orch = new AuditEmitterOrchestrator({ id: \"my-audit-emitter\", name: \"My AuditEmitter\", maxConcurrency: 5, timeoutMs: 30000, retryPolicy: { maxRetries: 3, backoffMs: 100, backoffMultiplier: 2 } });\nconst result = await orch.execute({ type: \"CREATE\", payload: { name: \"example\" }, correlationId: \"corr-001\", timestamp: Date.now() });\n```\n\n## API\n\n| Method | Returns | Description |\n|:-------|:--------|:------------|\n| `execute(c",
+    "entity_excerpt": "import { AuditEmitterConfig, AuditEmitterState, AuditEmitterCommand, AuditEmitterResult, AuditEmitterError, AuditEntry, OperationMetrics } from \"./types\";\n\nexport class AuditEmitterEntity {\n  private readonly id: string;\n  private readonly config: AuditEmitterConfig;\n  private state: AuditEmitterState;\n  private readonly createdAt: number;\n  private updatedAt: number;\n  private operationCount: number;\n  private successCount: number;\n  private errorCount: number;\n  private totalDuration: number;\n  private readonly auditLog: AuditEntry[];\n\n  constructor(config: AuditEmitterConfig) {\n    this.id = config.id;\n    this.config = Object.freeze({ ...config });\n    this.state = AuditEmitterState.IDLE;\n    this.createdAt = Date.now();\n    this.updatedAt = this.createdAt;\n    this.operationCount = 0;\n    this.successCount = 0;\n    this.errorCount = 0;\n    this.totalDuration = 0;\n    this.auditLog = [];\n  }\n\n  getId(): string { return this.id; }\n  getState(): AuditEmitterState { return this.state;",
+    "types_excerpt": "\n/**\n * \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n * WEBWAKA CONSTITUTIONAL DOCTRINE COMPLIANCE\n * \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n * This organelle adheres to the WebWaka Constitutional Doctrines:\n *\n * 1. OFFLINE-FIRST: All operations support offline queue and sync.\n *    When connectivity is unavailable, commands are queued locally\n *    and synchronized upon reconnection.\n *\n * 2. NIGERIA-FIRST: Default locale is en-NG, default currency is NGN,\n *    default timezone is Africa/Lagos. All Nigeria-specific regulatory\n *    and compliance requirements are satisfied by default.\n *\n * 3. TIMEOUT POLICY: All network operations enforce a 30000ms (30s)\n *    maximum timeout. Operations exceeding 30_000 milliseconds are\n *    automatically t",
+    "test_files": [
+      "tests/audit-emitter-entity.test.ts",
+      "tests/audit-emitter-orchestrator.test.ts",
+      "tests/audit-emitter-state-machine.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/integration/registry-entry.json",
+      "docs/integration/verification-report.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md"
+    ],
+    "config_files": [
+      "docs/integration/registry-entry.json",
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-organelle-workflow-orchestrator": {
+    "layer": "organelle",
+    "repo": "webwaka-organelle-workflow-orchestrator",
+    "package_json": {
+      "name": "@webwaka/organelle-workflow-orchestrator",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "@types/jest": "^29.0.0"
+      },
+      "engines": {},
+      "main": "dist/index.js",
+      "types": "dist/index.d.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "lib": [
+          "ES2020"
+        ],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "jest.config.js",
+      "package.json",
+      "src/event-interface.ts",
+      "src/index.ts",
+      "src/observability-interface.ts",
+      "src/state-machine.ts",
+      "src/storage-interface.ts",
+      "src/types.ts",
+      "src/workflow-orchestrator-entity.ts",
+      "src/workflow-orchestrator-orchestrator.ts",
+      "tests/workflow-orchestrator-entity.test.ts",
+      "tests/workflow-orchestrator-orchestrator.test.ts",
+      "tests/workflow-orchestrator-state-machine.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# WorkflowOrchestrator Organelle\n\n**Organelle ID:** ORG-WO-WORKFLOW_ORCHESTRATOR-v0.1.0\n**Version:** 0.1.0\n**Layer:** Organelle (smallest functional unit in WebWaka biological hierarchy)\n\n## Overview\n\nThe WorkflowOrchestrator organelle provides a self-contained, deterministic functional unit\nwithin the WebWaka system. It encapsulates domain-specific logic behind well-defined\ninterfaces and communicates through typed events.\n\n## Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         WorkflowOrchestratorOrchestrator                 \u2502\n\u2502                                         \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u2502\n\u2502  \u2502  State    \u2502  \u2502  WorkflowOrchestratorEntity          \u2502 \u2502\n\u2502  \u2502  Machine  \u2502  \u2502  (Domain Logic)      \u2502 \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518 \u2502\n\u2502      ",
+    "entity_excerpt": "/**\n * WorkflowOrchestrator \u2014 Entity (Domain Logic)\n * Organelle: ORG-WO-WORKFLOW_ORCHESTRATOR-v0.1.0\n */\n\nimport {\n  WorkflowOrchestratorConfig,\n  WorkflowOrchestratorState,\n  WorkflowOrchestratorCommand,\n  WorkflowOrchestratorResult,\n  WorkflowOrchestratorError,\n  AuditEntry,\n  OperationMetrics,\n} from \"./types\";\n\nexport class WorkflowOrchestratorEntity {\n  private readonly id: string;\n  private readonly config: WorkflowOrchestratorConfig;\n  private state: WorkflowOrchestratorState;\n  private readonly createdAt: number;\n  private updatedAt: number;\n  private operationCount: number;\n  private successCount: number;\n  private errorCount: number;\n  private totalDuration: number;\n  private readonly auditLog: AuditEntry[];\n\n  constructor(config: WorkflowOrchestratorConfig) {\n    this.id = config.id;\n    this.config = Object.freeze({ ...config });\n    this.state = WorkflowOrchestratorState.IDLE;\n    this.createdAt = Date.now();\n    this.updatedAt = this.createdAt;\n    this.operationCount = ",
+    "types_excerpt": "/**\n * WorkflowOrchestrator \u2014 Core Type Definitions\n * Organelle: ORG-WO-WORKFLOW_ORCHESTRATOR-v0.1.0\n */\n\nexport enum WorkflowOrchestratorState {\n  IDLE = \"IDLE\",\n  PROCESSING = \"PROCESSING\",\n  COMPLETED = \"COMPLETED\",\n  ERROR = \"ERROR\",\n  TERMINATED = \"TERMINATED\",\n}\n\nexport interface WorkflowOrchestratorConfig {\n  readonly id: string;\n  readonly name: string;\n  readonly maxConcurrency: number;\n  readonly timeoutMs: number;\n  readonly retryPolicy: RetryPolicy;\n}\n\nexport interface RetryPolicy {\n  readonly maxRetries: number;\n  readonly backoffMs: number;\n  readonly backoffMultiplier: number;\n}\n\nexport interface WorkflowOrchestratorCommand {\n  readonly type: string;\n  readonly payload: Record<string, unknown>;\n  readonly correlationId: string;\n  readonly timestamp: number;\n}\n\nexport interf",
+    "test_files": [
+      "tests/workflow-orchestrator-entity.test.ts",
+      "tests/workflow-orchestrator-orchestrator.test.ts",
+      "tests/workflow-orchestrator-state-machine.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-organelle-record-store": {
+    "layer": "organelle",
+    "repo": "webwaka-organelle-record-store",
+    "package_json": {
+      "name": "@webwaka/organelle-record-store",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "@types/jest": "^29.0.0"
+      },
+      "engines": {},
+      "main": "dist/index.js",
+      "types": "dist/index.d.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "lib": [
+          "ES2020"
+        ],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "jest.config.js",
+      "package.json",
+      "src/event-interface.ts",
+      "src/index.ts",
+      "src/observability-interface.ts",
+      "src/record-store-entity.ts",
+      "src/record-store-orchestrator.ts",
+      "src/state-machine.ts",
+      "src/storage-interface.ts",
+      "src/types.ts",
+      "tests/record-store-entity.test.ts",
+      "tests/record-store-orchestrator.test.ts",
+      "tests/record-store-state-machine.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# RecordStore Organelle\n\n**Organelle ID:** ORG-DP-RECORD_STORE-v0.1.0\n**Version:** 0.1.0\n**Layer:** Organelle (smallest functional unit in WebWaka biological hierarchy)\n\n## Overview\n\nThe RecordStore organelle provides a self-contained, deterministic functional unit\nwithin the WebWaka system. It encapsulates domain-specific logic behind well-defined\ninterfaces and communicates through typed events.\n\n## Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         RecordStoreOrchestrator                 \u2502\n\u2502                                         \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u2502\n\u2502  \u2502  State    \u2502  \u2502  RecordStoreEntity          \u2502 \u2502\n\u2502  \u2502  Machine  \u2502  \u2502  (Domain Logic)      \u2502 \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518 \u2502\n\u2502                                         \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500",
+    "entity_excerpt": "/**\n * RecordStore \u2014 Entity (Domain Logic)\n * Organelle: ORG-DP-RECORD_STORE-v0.1.0\n */\n\nimport {\n  RecordStoreConfig,\n  RecordStoreState,\n  RecordStoreCommand,\n  RecordStoreResult,\n  RecordStoreError,\n  AuditEntry,\n  OperationMetrics,\n} from \"./types\";\n\nexport class RecordStoreEntity {\n  private readonly id: string;\n  private readonly config: RecordStoreConfig;\n  private state: RecordStoreState;\n  private readonly createdAt: number;\n  private updatedAt: number;\n  private operationCount: number;\n  private successCount: number;\n  private errorCount: number;\n  private totalDuration: number;\n  private readonly auditLog: AuditEntry[];\n\n  constructor(config: RecordStoreConfig) {\n    this.id = config.id;\n    this.config = Object.freeze({ ...config });\n    this.state = RecordStoreState.IDLE;\n    this.createdAt = Date.now();\n    this.updatedAt = this.createdAt;\n    this.operationCount = 0;\n    this.successCount = 0;\n    this.errorCount = 0;\n    this.totalDuration = 0;\n    this.auditLog = [];\n ",
+    "types_excerpt": "/**\n * RecordStore \u2014 Core Type Definitions\n * Organelle: ORG-DP-RECORD_STORE-v0.1.0\n */\n\nexport enum RecordStoreState {\n  IDLE = \"IDLE\",\n  PROCESSING = \"PROCESSING\",\n  COMPLETED = \"COMPLETED\",\n  ERROR = \"ERROR\",\n  TERMINATED = \"TERMINATED\",\n}\n\nexport interface RecordStoreConfig {\n  readonly id: string;\n  readonly name: string;\n  readonly maxConcurrency: number;\n  readonly timeoutMs: number;\n  readonly retryPolicy: RetryPolicy;\n}\n\nexport interface RetryPolicy {\n  readonly maxRetries: number;\n  readonly backoffMs: number;\n  readonly backoffMultiplier: number;\n}\n\nexport interface RecordStoreCommand {\n  readonly type: string;\n  readonly payload: Record<string, unknown>;\n  readonly correlationId: string;\n  readonly timestamp: number;\n}\n\nexport interface RecordStoreResult {\n  readonly success: b",
+    "test_files": [
+      "tests/record-store-entity.test.ts",
+      "tests/record-store-orchestrator.test.ts",
+      "tests/record-store-state-machine.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-cell-access-ctrl": {
+    "layer": "cell",
+    "repo": "webwaka-cell-access-ctrl",
+    "package_json": {
+      "name": "@webwaka/cell-access-ctrl",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/ tests/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "@types/jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "eslint": "^8.0.0"
+      },
+      "engines": {},
+      "main": "src/index.ts",
+      "types": "src/index.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "lib": [
+          "ES2022"
+        ],
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "jest.config.js",
+      "package.json",
+      "src/access-ctrl-cell.ts",
+      "src/access-ctrl-orchestrator.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/access-ctrl-cell.test.ts",
+      "tests/access-ctrl-orchestrator.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# Access Control Cell\n\n**Cell:** CEL-ACCESSCTRL-v0.1.0  \n**Category:** Security & Trust  \n**Layer:** Cell  \n**Status:** IMPLEMENTED\n\n## Overview\n\nComposes organelles to define, evaluate, enforce, and audit access control policies within a single category. Supports RBAC, ABAC, and offline permission caching.\n\n## Composed Organelles\n\n| Organelle | Role |\n|:----------|:-----|\n| PermissionDefiner | Primary intake and initialization |\n| AccessEvaluator | Validation and constraint enforcement |\n| PolicyEnforcer | Routing and orchestration logic |\n| AuditLogger | Execution and output delivery |\n\n## Quick Start\n\n```typescript\nimport { AccessController, AccessControllerOrchestrator } from '@webwaka/cell-access-ctrl';\n\n// Initialize via orchestrator\nconst orchestrator = new AccessControllerOrchestra",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * AccessController \u2014 Type Definitions\n * Cell: CEL-ACCESSCTRL-v0.1.0\n * Category: Security & Trust\n * \n * Doctrine Compliance:\n * - Build Once Use Infinitely: Generic, reusable types\n * - Offline First: OfflineQueueEntry, SyncResult types\n * - Nigeria First: NetworkConfig with high-latency defaults\n * - Vendor Neutral AI: No vendor-specific type imports\n */\n\nexport type CellState = 'IDLE' | 'VALIDATING' | 'PROCESSING' | 'COMPLETING' | 'ERROR' | 'OFFLINE' | 'SYNCING' | 'DEAD_LETTER';\n\nexport interface AccessControllerCommand {\n  id: string;\n  type: string;\n  payload: Record<string, unknown>;\n  idempotencyKey: string;\n  timestamp: number;\n  locale: string;\n}\n\nexport interface AccessControllerResult {\n  id: string;\n  commandId: string;\n  status: 'success' | 'partial' | 'failed';\n  data: ",
+    "test_files": [
+      "tests/access-ctrl-cell.test.ts",
+      "tests/access-ctrl-orchestrator.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-cell-ai-cognitive-cell": {
+    "layer": "cell",
+    "repo": "webwaka-cell-ai-cognitive-cell",
+    "package_json": {
+      "name": "@webwaka/cell-ai-cognitive-cell",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/ tests/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "@types/jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "eslint": "^8.0.0"
+      },
+      "engines": {},
+      "main": "src/index.ts",
+      "types": "src/index.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "lib": [
+          "ES2022"
+        ],
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "jest.config.js",
+      "package.json",
+      "src/ai-cognitive-cell-cell.ts",
+      "src/ai-cognitive-cell-orchestrator.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/ai-cognitive-cell-cell.test.ts",
+      "tests/ai-cognitive-cell-orchestrator.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# AI Cognitive Cell\n\n**Cell:** CEL-AI-COGNITIVE_CELL-v0.1.0  \n**Category:** Intelligence & Automation  \n**Layer:** Cell  \n**Status:** IMPLEMENTED\n\n## Overview\n\nComposes organelles to perceive, reason, decide, and act using vendor-neutral AI capabilities. Supports multi-model orchestration, prompt management, and offline cognitive caching.\n\n## Composed Organelles\n\n| Organelle | Role |\n|:----------|:-----|\n| PerceptionEngine | Primary intake and initialization |\n| ReasoningEngine | Validation and constraint enforcement |\n| DecisionEngine | Routing and orchestration logic |\n| ActionPlanner | Execution and output delivery |\n\n## Quick Start\n\n```typescript\nimport { CognitiveCell, CognitiveCellOrchestrator } from '@webwaka/cell-ai-cognitive-cell';\n\n// Initialize via orchestrator\nconst orchestrato",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * CognitiveCell \u2014 Type Definitions\n * Cell: CEL-AI-COGNITIVE_CELL-v0.1.0\n * Category: Intelligence & Automation\n * \n * Doctrine Compliance:\n * - Build Once Use Infinitely: Generic, reusable types\n * - Offline First: OfflineQueueEntry, SyncResult types\n * - Nigeria First: NetworkConfig with high-latency defaults\n * - Vendor Neutral AI: No vendor-specific type imports\n */\n\nexport type CellState = 'IDLE' | 'VALIDATING' | 'PROCESSING' | 'COMPLETING' | 'ERROR' | 'OFFLINE' | 'SYNCING' | 'DEAD_LETTER';\n\nexport interface CognitiveCellCommand {\n  id: string;\n  type: string;\n  payload: Record<string, unknown>;\n  idempotencyKey: string;\n  timestamp: number;\n  locale: string;\n}\n\nexport interface CognitiveCellResult {\n  id: string;\n  commandId: string;\n  status: 'success' | 'partial' | 'failed';\n ",
+    "test_files": [
+      "tests/ai-cognitive-cell-cell.test.ts",
+      "tests/ai-cognitive-cell-orchestrator.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-cell-event-dispatch": {
+    "layer": "cell",
+    "repo": "webwaka-cell-event-dispatch",
+    "package_json": {
+      "name": "@webwaka/cell-event-dispatch",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/ tests/"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "jest": "^29.0.0",
+        "@types/jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "eslint": "^8.0.0"
+      },
+      "engines": {},
+      "main": "src/index.ts",
+      "types": "src/index.ts",
+      "type": null
+    },
+    "tsconfig": {
+      "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "lib": [
+          "ES2022"
+        ],
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "dist",
+        "tests"
+      ]
+    },
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "jest.config.js",
+      "package.json",
+      "src/event-dispatch-cell.ts",
+      "src/event-dispatch-orchestrator.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/event-dispatch-cell.test.ts",
+      "tests/event-dispatch-orchestrator.test.ts",
+      "tsconfig.json"
+    ],
+    "readme_excerpt": "# Event Dispatching Cell\n\n**Cell:** CEL-EVENTDISPATCH-v0.1.0  \n**Category:** Eventing & State  \n**Layer:** Cell  \n**Status:** IMPLEMENTED\n\n## Overview\n\nComposes organelles to capture, validate, route, and dispatch domain events within a single category. Supports ordered delivery, retry semantics, and offline event queuing.\n\n## Composed Organelles\n\n| Organelle | Role |\n|:----------|:-----|\n| EventCapture | Primary intake and initialization |\n| EventValidator | Validation and constraint enforcement |\n| EventRouter | Routing and orchestration logic |\n| EventDelivery | Execution and output delivery |\n\n## Quick Start\n\n```typescript\nimport { EventDispatcher, EventDispatcherOrchestrator } from '@webwaka/cell-event-dispatch';\n\n// Initialize via orchestrator\nconst orchestrator = new EventDispatcher",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * EventDispatcher \u2014 Type Definitions\n * Cell: CEL-EVENTDISPATCH-v0.1.0\n * Category: Eventing & State\n * \n * Doctrine Compliance:\n * - Build Once Use Infinitely: Generic, reusable types\n * - Offline First: OfflineQueueEntry, SyncResult types\n * - Nigeria First: NetworkConfig with high-latency defaults\n * - Vendor Neutral AI: No vendor-specific type imports\n */\n\nexport type CellState = 'IDLE' | 'VALIDATING' | 'PROCESSING' | 'COMPLETING' | 'ERROR' | 'OFFLINE' | 'SYNCING' | 'DEAD_LETTER';\n\nexport interface EventDispatcherCommand {\n  id: string;\n  type: string;\n  payload: Record<string, unknown>;\n  idempotencyKey: string;\n  timestamp: number;\n  locale: string;\n}\n\nexport interface EventDispatcherResult {\n  id: string;\n  commandId: string;\n  status: 'success' | 'partial' | 'failed';\n  data: ",
+    "test_files": [
+      "tests/event-dispatch-cell.test.ts",
+      "tests/event-dispatch-orchestrator.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/deployment-guide.md",
+      "docs/design/architecture.md",
+      "docs/design/interfaces.md",
+      "docs/design/state-machine.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/checklist.md",
+      "docs/ratification/compliance.md",
+      "docs/spec/inputs-outputs.md",
+      "docs/spec/invariants.md",
+      "docs/spec/purpose.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "jest.config.js",
+      "package.json",
+      "tsconfig.json"
+    ]
+  },
+  "webwaka-tissue-ai-cognitive": {
+    "layer": "tissue",
+    "repo": "webwaka-tissue-ai-cognitive",
+    "package_json": {
+      "name": "@webwaka/tissue-ai-cognitive",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/entity.ts",
+      "types": "src/types.ts",
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/dependency-graph.md",
+      "docs/design/design-review.md",
+      "docs/operations-guide.md",
+      "docs/spec/interface-contract.md",
+      "docs/spec/spec-validation.md",
+      "docs/spec/specification.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "ratification/approval.md",
+      "ratification/compliance.md",
+      "ratification/review.md",
+      "src/entity.ts",
+      "src/types.ts",
+      "tests/coverage.test.ts",
+      "tests/integration.test.ts",
+      "tests/unit.test.ts"
+    ],
+    "readme_excerpt": "# CognitiveTissue\n\n> **Tissue ID:** `TIS-AI-COGNITIVE_TISSUE-v0.1.0`  \n> **Classification:** Cross-Functional  \n> **Package:** `@webwaka/tissue-ai-cognitive`\n\n## Overview\n\nAI Cognitive tissue that coordinates vendor-neutral AI inference, model routing, and cognitive pipeline orchestration across cells with offline-first model caching.\n\n## Composed Cells\n\n- `CEL-AI-COGNITIVE_CELL`\n- `CEL-AI-INFERENCE_CELL`\n- `CEL-AI-STREAMING_CELL`\n\n## Doctrine Compliance\n\n| Doctrine | Status |\n|----------|--------|\n| Build Once Use Infinitely | Enforced |\n| Mobile First | Enforced |\n| PWA First | Enforced |\n| Offline First (NON-NEGOTIABLE) | Enforced |\n| Nigeria First | Enforced \u2014 30s timeout, en-NG locale, 2G-aware |\n| Africa First | Enforced \u2014 Lagos-primary datacenter |\n| Vendor Neutral AI | Enforced \u2014 N",
+    "entity_excerpt": "/**\n * CognitiveTissue \u2014 Core Tissue Entity\n * Tissue ID: TIS-AI-COGNITIVE_TISSUE-v0.1.0\n * Classification: Cross-Functional\n * Composed Cells: CEL-AI-COGNITIVE_CELL, CEL-AI-INFERENCE_CELL, CEL-AI-STREAMING_CELL\n *\n * This tissue coordinates 3 cells to provide\n * AI Cognitive tissue that coordinates vendor-neutral AI inference, model routing,\n *\n * DOCTRINE ENFORCEMENT:\n * - Offline First: All operations queue-first, execute when possible\n * - Nigeria First: 30s timeouts, en-NG locale, 2G-aware payloads\n * - Build Once Use Infinitely: Single implementation, all targets\n * - Vendor Neutral AI: No vendor-specific AI dependencies\n */\n\nimport {\n  NIGERIA_FIRST_CONFIG,\n  TISSUE_ID,\n  TISSUE_HASH,\n  COMPOSED_CELLS,\n  CoordinationRequest,\n  CoordinationResult,\n  CellResult,\n  OfflineQueueEntry,\n  TissueHealthStatus,\n  SyncContext,\n  SyncResult,\n  NetworkConfig,\n} from './types';\n\nexport class CognitiveTissue {\n  private readonly tissueId = TISSUE_ID;\n  private readonly tissueHash = TISSUE_HAS",
+    "types_excerpt": "/**\n * CognitiveTissue \u2014 Type Definitions\n * Tissue ID: TIS-AI-COGNITIVE_TISSUE-v0.1.0\n * Classification: Cross-Functional\n * \n * Doctrines Enforced:\n * - Build Once Use Infinitely\n * - Mobile First\n * - PWA First  \n * - Offline First (NON-NEGOTIABLE)\n * - Nigeria First\n * - Africa First\n * - Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  DEFAULT_TIMEOUT_MS: 30_000,\n  DEFAULT_LOCALE: 'en-NG',\n  DEFAULT_REGION: 'af-west-1',\n  PRIMARY_DATACENTER: 'lagos',\n  BANDWIDTH_THRESHOLD_KBPS: 50,\n  PAYLOAD_COMPRESSION_THRESHOLD_BYTES: 1024,\n  RETRY_BASE_MS: 5_000,\n  RETRY_MAX_MS: 60_000,\n  OFFLINE_QUEUE_CAPACITY: 10_000,\n} as const;\n\n// Tissue Identity\nexport const TISSUE_ID = 'TIS-AI-COGNITIVE_TISSUE-v0.1.0' as const;\nexport const TISSUE_HASH = '27de29f3",
+    "test_files": [
+      "tests/coverage.test.ts",
+      "tests/integration.test.ts",
+      "tests/unit.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/dependency-graph.md",
+      "docs/design/design-review.md",
+      "docs/operations-guide.md",
+      "docs/spec/interface-contract.md",
+      "docs/spec/spec-validation.md",
+      "docs/spec/specification.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-tissue-workflow": {
+    "layer": "tissue",
+    "repo": "webwaka-tissue-workflow",
+    "package_json": {
+      "name": "@webwaka/tissue-workflow",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/entity.ts",
+      "types": "src/types.ts",
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/dependency-graph.md",
+      "docs/design/design-review.md",
+      "docs/operations-guide.md",
+      "docs/spec/interface-contract.md",
+      "docs/spec/spec-validation.md",
+      "docs/spec/specification.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "ratification/approval.md",
+      "ratification/compliance.md",
+      "ratification/review.md",
+      "src/entity.ts",
+      "src/types.ts",
+      "tests/coverage.test.ts",
+      "tests/integration.test.ts",
+      "tests/unit.test.ts"
+    ],
+    "readme_excerpt": "# WorkflowTissue\n\n> **Tissue ID:** `TIS-WORKFLOW-v0.1.0`  \n> **Classification:** Lifecycle  \n> **Package:** `@webwaka/tissue-workflow`\n\n## Overview\n\nWorkflow orchestration tissue that manages multi-step process execution across cells, with offline-first step queuing and resumption for Nigeria-first reliability.\n\n## Composed Cells\n\n- `CEL-WORKFLOW`\n- `CEL-STATESTORE`\n- `CEL-EVENTBUS`\n\n## Doctrine Compliance\n\n| Doctrine | Status |\n|----------|--------|\n| Build Once Use Infinitely | Enforced |\n| Mobile First | Enforced |\n| PWA First | Enforced |\n| Offline First (NON-NEGOTIABLE) | Enforced |\n| Nigeria First | Enforced \u2014 30s timeout, en-NG locale, 2G-aware |\n| Africa First | Enforced \u2014 Lagos-primary datacenter |\n| Vendor Neutral AI | Enforced \u2014 No vendor lock-in |\n\n## Architecture\n\nThe Workflow",
+    "entity_excerpt": "/**\n * WorkflowTissue \u2014 Core Tissue Entity\n * Tissue ID: TIS-WORKFLOW-v0.1.0\n * Classification: Lifecycle\n * Composed Cells: CEL-WORKFLOW, CEL-STATESTORE, CEL-EVENTBUS\n *\n * This tissue coordinates 3 cells to provide\n * Workflow orchestration tissue that manages multi-step process execution across c\n *\n * DOCTRINE ENFORCEMENT:\n * - Offline First: All operations queue-first, execute when possible\n * - Nigeria First: 30s timeouts, en-NG locale, 2G-aware payloads\n * - Build Once Use Infinitely: Single implementation, all targets\n * - Vendor Neutral AI: No vendor-specific AI dependencies\n */\n\nimport {\n  NIGERIA_FIRST_CONFIG,\n  TISSUE_ID,\n  TISSUE_HASH,\n  COMPOSED_CELLS,\n  CoordinationRequest,\n  CoordinationResult,\n  CellResult,\n  OfflineQueueEntry,\n  TissueHealthStatus,\n  SyncContext,\n  SyncResult,\n  NetworkConfig,\n} from './types';\n\nexport class WorkflowTissue {\n  private readonly tissueId = TISSUE_ID;\n  private readonly tissueHash = TISSUE_HASH;\n  private readonly composedCells = COMPOSE",
+    "types_excerpt": "/**\n * WorkflowTissue \u2014 Type Definitions\n * Tissue ID: TIS-WORKFLOW-v0.1.0\n * Classification: Lifecycle\n * \n * Doctrines Enforced:\n * - Build Once Use Infinitely\n * - Mobile First\n * - PWA First  \n * - Offline First (NON-NEGOTIABLE)\n * - Nigeria First\n * - Africa First\n * - Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  DEFAULT_TIMEOUT_MS: 30_000,\n  DEFAULT_LOCALE: 'en-NG',\n  DEFAULT_REGION: 'af-west-1',\n  PRIMARY_DATACENTER: 'lagos',\n  BANDWIDTH_THRESHOLD_KBPS: 50,\n  PAYLOAD_COMPRESSION_THRESHOLD_BYTES: 1024,\n  RETRY_BASE_MS: 5_000,\n  RETRY_MAX_MS: 60_000,\n  OFFLINE_QUEUE_CAPACITY: 10_000,\n} as const;\n\n// Tissue Identity\nexport const TISSUE_ID = 'TIS-WORKFLOW-v0.1.0' as const;\nexport const TISSUE_HASH = '25773e3c' as const;\nexport const CLASS",
+    "test_files": [
+      "tests/coverage.test.ts",
+      "tests/integration.test.ts",
+      "tests/unit.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/dependency-graph.md",
+      "docs/design/design-review.md",
+      "docs/operations-guide.md",
+      "docs/spec/interface-contract.md",
+      "docs/spec/spec-validation.md",
+      "docs/spec/specification.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-organ-ai-model-serving": {
+    "layer": "organ",
+    "repo": "webwaka-organ-ai-model-serving",
+    "package_json": {
+      "name": "@webwaka/organ-ai-model-serving",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/index.ts",
+      "types": null,
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "src/ModelServingOrgan.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/ModelServingOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "readme_excerpt": "# ModelServing Organ\n\n**Organ ID:** `ORGX-AI-MODEL_SERVING`  \n**Version:** 0.1.0  \n**Domain:** Artificial Intelligence and Machine Learning  \n**Layer:** Organ (Business Capability Domain)\n\n## Overview\n\nThe ModelServing Organ encapsulates the business capability domain for artificial intelligence and machine learning operations within the WebWaka platform. It coordinates constituent tissues to deliver cohesive model serving functionality with full offline-first support.\n\n## Doctrine Compliance\n\n| Doctrine | Status | Implementation |\n|----------|--------|---------------|\n| Build Once Use Infinitely | \u2705 | Platform-agnostic organ coordination logic |\n| Mobile First | \u2705 | Optimized for mobile constraints and bandwidth |\n| PWA First | \u2705 | Service worker integration points defined |\n| Offline Fir",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * ModelServing Organ \u2014 Domain Types\n * Organ ID: ORGX-AI-MODEL_SERVING\n * Domain: Artificial Intelligence and Machine Learning\n * \n * Doctrines: Build Once Use Infinitely, Mobile First, PWA First,\n *            Offline First, Nigeria First, Africa First, Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  timeout: 30_000,\n  locale: 'en-NG',\n  currency: 'NGN',\n  region: 'NG',\n  maxRetries: 5,\n  retryBackoff: 5_000,\n  maxBackoff: 300_000,\n  offlineQueueCapacity: 1_000,\n} as const;\n\n// Offline Queue Entry\nexport interface OfflineQueueEntry<T = unknown> {\n  id: string;\n  timestamp: number;\n  operation: 'ModelServingCommand';\n  payload: T;\n  retryCount: number;\n  lastAttempt: number | null;\n  status: 'pending' | 'processing' | 'failed' | 'synced';\n",
+    "test_files": [
+      "tests/ModelServingOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-organ-fin-payment-processing": {
+    "layer": "organ",
+    "repo": "webwaka-organ-fin-payment-processing",
+    "package_json": {
+      "name": "@webwaka/organ-fin-payment-processing",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/index.ts",
+      "types": null,
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "src/PaymentProcessingOrgan.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/PaymentProcessingOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "readme_excerpt": "# PaymentProcessing Organ\n\n**Organ ID:** `ORGX-FIN-PAYMENT_PROCESSING`  \n**Version:** 0.1.0  \n**Domain:** Financial Services and Ledger  \n**Layer:** Organ (Business Capability Domain)\n\n## Overview\n\nThe PaymentProcessing Organ encapsulates the business capability domain for financial services and ledger operations within the WebWaka platform. It coordinates constituent tissues to deliver cohesive payment processing functionality with full offline-first support.\n\n## Doctrine Compliance\n\n| Doctrine | Status | Implementation |\n|----------|--------|---------------|\n| Build Once Use Infinitely | \u2705 | Platform-agnostic organ coordination logic |\n| Mobile First | \u2705 | Optimized for mobile constraints and bandwidth |\n| PWA First | \u2705 | Service worker integration points defined |\n| Offline First | \u2705 | ",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * PaymentProcessing Organ \u2014 Domain Types\n * Organ ID: ORGX-FIN-PAYMENT_PROCESSING\n * Domain: Financial Services and Ledger\n * \n * Doctrines: Build Once Use Infinitely, Mobile First, PWA First,\n *            Offline First, Nigeria First, Africa First, Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  timeout: 30_000,\n  locale: 'en-NG',\n  currency: 'NGN',\n  region: 'NG',\n  maxRetries: 5,\n  retryBackoff: 5_000,\n  maxBackoff: 300_000,\n  offlineQueueCapacity: 1_000,\n} as const;\n\n// Offline Queue Entry\nexport interface OfflineQueueEntry<T = unknown> {\n  id: string;\n  timestamp: number;\n  operation: 'PaymentProcessingCommand';\n  payload: T;\n  retryCount: number;\n  lastAttempt: number | null;\n  status: 'pending' | 'processing' | 'failed' | 'synced';",
+    "test_files": [
+      "tests/PaymentProcessingOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-organ-com-order-management": {
+    "layer": "organ",
+    "repo": "webwaka-organ-com-order-management",
+    "package_json": {
+      "name": "@webwaka/organ-com-order-management",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/index.ts",
+      "types": null,
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "src/OrderManagementOrgan.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/OrderManagementOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "readme_excerpt": "# OrderManagement Organ\n\n**Organ ID:** `ORGX-COM-ORDER_MANAGEMENT`  \n**Version:** 0.1.0  \n**Domain:** Commerce and E-Commerce  \n**Layer:** Organ (Business Capability Domain)\n\n## Overview\n\nThe OrderManagement Organ encapsulates the business capability domain for commerce and e-commerce operations within the WebWaka platform. It coordinates constituent tissues to deliver cohesive order management functionality with full offline-first support.\n\n## Doctrine Compliance\n\n| Doctrine | Status | Implementation |\n|----------|--------|---------------|\n| Build Once Use Infinitely | \u2705 | Platform-agnostic organ coordination logic |\n| Mobile First | \u2705 | Optimized for mobile constraints and bandwidth |\n| PWA First | \u2705 | Service worker integration points defined |\n| Offline First | \u2705 | Full offline queue w",
+    "entity_excerpt": "",
+    "types_excerpt": "/**\n * OrderManagement Organ \u2014 Domain Types\n * Organ ID: ORGX-COM-ORDER_MANAGEMENT\n * Domain: Commerce and E-Commerce\n * \n * Doctrines: Build Once Use Infinitely, Mobile First, PWA First,\n *            Offline First, Nigeria First, Africa First, Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  timeout: 30_000,\n  locale: 'en-NG',\n  currency: 'NGN',\n  region: 'NG',\n  maxRetries: 5,\n  retryBackoff: 5_000,\n  maxBackoff: 300_000,\n  offlineQueueCapacity: 1_000,\n} as const;\n\n// Offline Queue Entry\nexport interface OfflineQueueEntry<T = unknown> {\n  id: string;\n  timestamp: number;\n  operation: 'OrderManagementCommand';\n  payload: T;\n  retryCount: number;\n  lastAttempt: number | null;\n  status: 'pending' | 'processing' | 'failed' | 'synced';\n}\n\n// Netwo",
+    "test_files": [
+      "tests/OrderManagementOrgan.test.ts",
+      "tests/boundary.test.ts",
+      "tests/offline.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/structure-blueprint.md",
+      "docs/design/tissue-integration.md",
+      "docs/ratification/approval.md",
+      "docs/spec/boundary-constraints.md",
+      "docs/spec/purpose.md",
+      "docs/spec/tissue-composition.md",
+      "docs/tissue-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-system-ai-cognitive-fabric": {
+    "layer": "system",
+    "repo": "webwaka-system-ai-cognitive-fabric",
+    "package_json": {
+      "name": "@webwaka/system-ai-cognitive-fabric",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/cognitivefabricsystem.ts",
+      "types": null,
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "ratification/approval.md",
+      "src/cognitivefabricsystem.ts",
+      "src/entity.ts",
+      "src/types.ts",
+      "tests/cognitivefabricsystem.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "readme_excerpt": "# CognitivefabricSystem\n\n**System ID:** `SYSX-AI-COGNITIVE_FABRIC`\n\n## Overview\nCognitivefabricSystem is a system-layer component of the WebWaka platform, providing coordinated system-level capabilities with full offline-first support.\n\n## Doctrine Compliance\n\n| Doctrine | Status |\n|:---------|:-------|\n| Build Once Use Infinitely | \u2705 Enforced |\n| Mobile First | \u2705 Enforced |\n| PWA First | \u2705 Enforced |\n| Offline First | \u2705 **NON-NEGOTIABLE** |\n| Nigeria First | \u2705 Enforced (en-NG, Africa/Lagos, NGN) |\n| Africa First | \u2705 Enforced |\n| Vendor Neutral AI | \u2705 Enforced |\n\n## Architecture\n- Event-driven microkernel pattern\n- IndexedDB-backed offline queue\n- Background sync with exponential backoff\n- 30s network timeout (Nigeria network tolerance)\n\n## API\n```typescript\nclass CognitivefabricSystem {\n ",
+    "entity_excerpt": "/**\n * Entity re-export for convention compliance.\n * The primary system entity is defined in ./cognitivefabricsystem.ts\n * This file ensures the standard entity.ts interface contract is satisfied.\n */\nexport { CognitiveFabricSystem as default } from './cognitivefabricsystem';\nexport * from './cognitivefabricsystem';\n",
+    "types_excerpt": "/**\n * CognitivefabricSystem Type Definitions\n * System ID: SYSX-AI-COGNITIVE_FABRIC\n * Hash: 92672c08\n */\n\nexport const SYSTEM_ID = 'SYSX-AI-COGNITIVE_FABRIC';\n\nexport const NIGERIA_FIRST_CONFIG = {\n  locale: 'en-NG' as const,\n  timezone: 'Africa/Lagos' as const,\n  currency: 'NGN' as const,\n  currencySymbol: '\u20a6',\n  networkTimeout: 30000,\n  offlineQueueDepth: 1000,\n  syncBatchSize: 50,\n};\n\nexport interface NetworkConfig {\n  timeout: number;\n  retries: number;\n  backoffMs: number;\n}\n\nexport interface OfflineQueueEntry {\n  id: string;\n  command: SystemCommand;\n  timestamp: number;\n  retryCount: number;\n  maxRetries: number;\n  status: 'pending' | 'processing' | 'failed' | 'synced';\n}\n\nexport interface SystemCommand {\n  id: string;\n  type: string;\n  payload: Record<string, unknown>;\n  locale: ",
+    "test_files": [
+      "tests/cognitivefabricsystem.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-system-fin-banking": {
+    "layer": "system",
+    "repo": "webwaka-system-fin-banking",
+    "package_json": {
+      "name": "@webwaka/system-banking",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/entity.ts",
+      "types": "src/types.ts",
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "ratification/approval.md",
+      "src/entity.ts",
+      "src/types.ts",
+      "tests/entity.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "readme_excerpt": "# BankingSystem\n\n**System ID:** `SYS-FIN-BANKING`  \n**Version:** v0.1.0  \n**Package:** `@webwaka/system-banking`\n\n## Overview\nA coherent system assembling account, transaction, and compliance management organs into a unified banking platform for financial services operations.\n\n## Organ Composition\n- **Account Manager**\n- **Transaction Engine**\n- **Compliance Monitor**\n- **Statement Generator**\n- **Interest Calculator**\n\n## Capabilities\n- Account lifecycle management\n- Real-time transaction processing\n- Regulatory compliance monitoring\n- Statement generation with Naira formatting\n- Interest calculation engine\n\n## Doctrine Compliance\n\n| Doctrine | Status |\n|----------|--------|\n| Build Once Use Infinitely | Enforced |\n| Mobile First | Enforced |\n| PWA First | Enforced |\n| Offline First | Enf",
+    "entity_excerpt": "// BankingSystem \u2014 System Coordinator\n// System ID: SYS-FIN-BANKING\n// Unique Hash: 1042afb4-entity\n\nimport {\n  SYSTEM_ID, SYSTEM_VERSION, NIGERIA_FIRST_CONFIG,\n  OfflineQueueEntry, NetworkConfig, OrganHealth, SystemCapability,\n  AccountManagerOrgan, TransactionEngineOrgan, ComplianceMonitorOrgan, StatementGeneratorOrgan, InterestCalculatorOrgan\n} from './types';\n\nexport class BankingSystem {\n  private readonly systemId = SYSTEM_ID;\n  private readonly version = SYSTEM_VERSION;\n  private readonly config = NIGERIA_FIRST_CONFIG;\n  private offlineQueue: OfflineQueueEntry[] = [];\n  private isOnline: boolean = true;\n  private lastSyncTimestamp: number = 0;\n\n  // Organ references\n  private accountmanagerOrgan: AccountManagerOrgan | null = null;\n  private transactionengineOrgan: TransactionEngineOrgan | null = null;\n  private compliancemonitorOrgan: ComplianceMonitorOrgan | null = null;\n  private statementgeneratorOrgan: StatementGeneratorOrgan | null = null;\n  private interestcalculatorOrgan:",
+    "types_excerpt": "// BankingSystem \u2014 Type Definitions\n// System ID: SYS-FIN-BANKING\n// Content Hash: 1042afb4\n\nexport const SYSTEM_ID = 'SYS-FIN-BANKING';\nexport const SYSTEM_VERSION = 'v0.1.0';\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  defaultLocale: 'en-NG',\n  defaultCurrency: 'NGN',\n  defaultTimezone: 'Africa/Lagos',\n  networkTimeout: 30000,\n  offlineEnabled: true,\n  syncRetryInterval: 5000,\n};\n\n// Offline Support Types\nexport interface OfflineQueueEntry {\n  id: string;\n  operation: string;\n  payload: unknown;\n  timestamp: number;\n  retryCount: number;\n  maxRetries: number;\n}\n\nexport interface NetworkConfig {\n  timeout: number;\n  retryAttempts: number;\n  offlineFallback: boolean;\n  syncOnReconnect: boolean;\n}\n\n// Organ Interfaces\nexport interface AccountManagerOrgan {\n  init",
+    "test_files": [
+      "tests/entity.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-system-com-ecommerce": {
+    "layer": "system",
+    "repo": "webwaka-system-com-ecommerce",
+    "package_json": {
+      "name": "@webwaka/system-ecommerce",
+      "version": "0.1.0",
+      "private": null,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "src/entity.ts",
+      "types": "src/types.ts",
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "ratification/approval.md",
+      "src/entity.ts",
+      "src/types.ts",
+      "tests/entity.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "readme_excerpt": "# EcommerceSystem\n\n**System ID:** `SYS-COM-ECOMMERCE`  \n**Version:** v0.1.0  \n**Package:** `@webwaka/system-ecommerce`\n\n## Overview\nA coherent system assembling catalog, cart, checkout, and order management organs into a unified e-commerce platform for digital marketplace operations.\n\n## Organ Composition\n- **Product Catalog**\n- **Shopping Cart**\n- **Checkout Engine**\n- **Order Manager**\n- **Payment Gateway**\n\n## Capabilities\n- Product listing and search\n- Cart management with offline sync\n- Multi-currency checkout\n- Order lifecycle tracking\n- Payment processing with Naira support\n\n## Doctrine Compliance\n\n| Doctrine | Status |\n|----------|--------|\n| Build Once Use Infinitely | Enforced |\n| Mobile First | Enforced |\n| PWA First | Enforced |\n| Offline First | Enforced (NON-NEGOTIABLE) |\n| N",
+    "entity_excerpt": "// EcommerceSystem \u2014 System Coordinator\n// System ID: SYS-COM-ECOMMERCE\n// Unique Hash: c21a3396-entity\n\nimport {\n  SYSTEM_ID, SYSTEM_VERSION, NIGERIA_FIRST_CONFIG,\n  OfflineQueueEntry, NetworkConfig, OrganHealth, SystemCapability,\n  ProductCatalogOrgan, ShoppingCartOrgan, CheckoutEngineOrgan, OrderManagerOrgan, PaymentGatewayOrgan\n} from './types';\n\nexport class EcommerceSystem {\n  private readonly systemId = SYSTEM_ID;\n  private readonly version = SYSTEM_VERSION;\n  private readonly config = NIGERIA_FIRST_CONFIG;\n  private offlineQueue: OfflineQueueEntry[] = [];\n  private isOnline: boolean = true;\n  private lastSyncTimestamp: number = 0;\n\n  // Organ references\n  private productcatalogOrgan: ProductCatalogOrgan | null = null;\n  private shoppingcartOrgan: ShoppingCartOrgan | null = null;\n  private checkoutengineOrgan: CheckoutEngineOrgan | null = null;\n  private ordermanagerOrgan: OrderManagerOrgan | null = null;\n  private paymentgatewayOrgan: PaymentGatewayOrgan | null = null;\n\n  const",
+    "types_excerpt": "// EcommerceSystem \u2014 Type Definitions\n// System ID: SYS-COM-ECOMMERCE\n// Content Hash: c21a3396\n\nexport const SYSTEM_ID = 'SYS-COM-ECOMMERCE';\nexport const SYSTEM_VERSION = 'v0.1.0';\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  defaultLocale: 'en-NG',\n  defaultCurrency: 'NGN',\n  defaultTimezone: 'Africa/Lagos',\n  networkTimeout: 30000,\n  offlineEnabled: true,\n  syncRetryInterval: 5000,\n};\n\n// Offline Support Types\nexport interface OfflineQueueEntry {\n  id: string;\n  operation: string;\n  payload: unknown;\n  timestamp: number;\n  retryCount: number;\n  maxRetries: number;\n}\n\nexport interface NetworkConfig {\n  timeout: number;\n  retryAttempts: number;\n  offlineFallback: boolean;\n  syncOnReconnect: boolean;\n}\n\n// Organ Interfaces\nexport interface ProductCatalogOrgan {\n",
+    "test_files": [
+      "tests/entity.test.ts",
+      "tests/integration.test.ts"
+    ],
+    "doc_files": [
+      "docs/api-reference.md",
+      "docs/design/architecture.md",
+      "docs/design/data-model.md",
+      "docs/design/interfaces.md",
+      "docs/organ-composition.md",
+      "docs/spec/boundaries.md",
+      "docs/spec/purpose.md",
+      "docs/spec/requirements.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  },
+  "webwaka-organism-platform": {
+    "layer": "organism",
+    "repo": "webwaka-organism-platform",
+    "package_json": {
+      "name": "@webwaka/organism-platform",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage",
+        "lint": "eslint src/",
+        "audit:constitutional": "node scripts/audit-constitutional.js"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "engines": {},
+      "main": "dist/index.js",
+      "types": "dist/index.d.ts",
+      "type": null
+    },
+    "tsconfig": null,
+    "file_tree": [
+      "README.md",
+      "docs/api/README.md",
+      "docs/design/architecture-overview.md",
+      "docs/design/offline-sync-design.md",
+      "docs/design/system-composition.md",
+      "docs/integration/system-integration-guide.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/audit-trail.md",
+      "docs/spec/interface-contracts.md",
+      "docs/spec/purpose-and-scope.md",
+      "docs/spec/structural-invariants.md",
+      "docs/system-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md",
+      "package.json",
+      "src/entity.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "tests/entity.test.ts"
+    ],
+    "readme_excerpt": "# webwaka-organism-platform\nORG-WEBWAKA-PLATFORM-v0.1.0 \u2014 The constitutionally self-regulating WebWaka Platform Organism. Composed of 19 Systems. Final biological abstraction layer.\n",
+    "entity_excerpt": "/**\n * ORG-WEBWAKA-PLATFORM \u2014 WebWaka Platform Organism Entity\n * Layer: Organism (Final Biological Abstraction)\n * \n * The constitutionally self-regulating, evolving, multi-system platform entity.\n * Composed of 19 Systems. Governs cross-system policy, evolution, and AI boundaries.\n */\n\nimport {\n  NIGERIA_FIRST_CONFIG,\n  SystemRegistryEntry,\n  ConstitutionalCompliance,\n  OrganismEvent,\n  OfflineQueueEntry,\n  NetworkConfig,\n  SystemHealth,\n  OrganismState,\n  AIGovernancePolicy,\n} from './types';\n\nexport class WebwakaPlatformOrganism {\n  private readonly organismId = 'ORG-WEBWAKA-PLATFORM';\n  private readonly version = 'v0.1.0';\n  private readonly config = NIGERIA_FIRST_CONFIG;\n  private systems: Map<string, SystemRegistryEntry> = new Map();\n  private healthRegistry: Map<string, SystemHealth> = new Map();\n  private offlineQueue: OfflineQueueEntry[] = [];\n  private constitutionVersion = '1.0.0';\n  private aiPolicies: Map<string, AIGovernancePolicy> = new Map();\n\n  // ====================",
+    "types_excerpt": "/**\n * ORG-WEBWAKA-PLATFORM \u2014 Type Definitions\n * Layer: Organism (Final Biological Abstraction)\n * \n * Doctrines: Build Once Use Infinitely | Mobile First | PWA First\n * Offline First (NON-NEGOTIABLE) | Nigeria First | Africa First | Vendor Neutral AI\n */\n\n// Nigeria-First Configuration\nexport const NIGERIA_FIRST_CONFIG = {\n  locale: 'en-NG' as const,\n  timezone: 'Africa/Lagos' as const,\n  currency: 'NGN' as const,\n  networkTimeout: 30000,\n  offlineQueueMaxSize: 10000,\n  syncRetryInterval: 5000,\n  syncRetryMaxBackoff: 60000,\n};\n\n// System Registry Types\nexport interface SystemRegistryEntry {\n  systemId: string;\n  systemName: string;\n  version: string;\n  domain: string;\n  status: 'active' | 'deprecated' | 'pending-admission';\n  healthEndpoint: string;\n  capabilities: string[];\n  constituti",
+    "test_files": [
+      "tests/entity.test.ts"
+    ],
+    "doc_files": [
+      "docs/api/README.md",
+      "docs/design/architecture-overview.md",
+      "docs/design/offline-sync-design.md",
+      "docs/design/system-composition.md",
+      "docs/integration/system-integration-guide.md",
+      "docs/ratification/approval.md",
+      "docs/ratification/audit-trail.md",
+      "docs/spec/interface-contracts.md",
+      "docs/spec/purpose-and-scope.md",
+      "docs/spec/structural-invariants.md",
+      "docs/system-composition.md",
+      "docs/validation/design-consistency.md",
+      "docs/validation/invariant-check.md",
+      "docs/validation/spec-completeness.md"
+    ],
+    "config_files": [
+      "package.json"
+    ]
+  }
+}

@@ -1,0 +1,3593 @@
+{
+  "total_issues": 706,
+  "executable_cells": {
+    "CEL-CMDPROCESS": {
+      "cell_id": "CEL-CMDPROCESS",
+      "version": "0.1.0",
+      "master": 1,
+      "phases": {
+        "0": {
+          "issue": 2,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 3,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 4,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 5,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 6,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 7,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 8,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 9,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 10,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 11,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 12,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 14,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 15,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 17,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 19,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 21,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 23,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 25,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 27,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 29,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 31,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 33,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 35,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 37,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 39,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 41,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 43,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 45,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-STATESTORE": {
+      "cell_id": "CEL-STATESTORE",
+      "version": "0.1.0",
+      "master": 47,
+      "phases": {
+        "0": {
+          "issue": 49,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 51,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 53,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 55,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 57,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 59,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 61,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 63,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 65,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 67,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 69,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 71,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 73,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 75,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 77,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 79,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 81,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 83,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 85,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 87,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 89,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 91,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 93,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 95,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 97,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 99,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 101,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 103,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-EVENTDISPATCH": {
+      "cell_id": "CEL-EVENTDISPATCH",
+      "version": "0.1.0",
+      "master": 105,
+      "phases": {
+        "0": {
+          "issue": 107,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 109,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 111,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 113,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 115,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 117,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 119,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 121,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 123,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 125,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 127,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 129,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 131,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 133,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 135,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 137,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 139,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 141,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 143,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 145,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 147,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 149,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 151,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 153,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 155,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 157,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 159,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 161,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-POLICYEVAL": {
+      "cell_id": "CEL-POLICYEVAL",
+      "version": "0.1.0",
+      "master": 163,
+      "phases": {
+        "0": {
+          "issue": 165,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 167,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 169,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 171,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 173,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 175,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 177,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 179,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 181,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 184,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 186,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 187,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 189,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 191,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 193,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 195,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 197,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 199,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 201,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 203,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 205,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 207,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 209,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 211,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 213,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 215,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 217,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 219,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-VALIDATEEXEC": {
+      "cell_id": "CEL-VALIDATEEXEC",
+      "version": "0.1.0",
+      "master": 221,
+      "phases": {
+        "0": {
+          "issue": 223,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 225,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 227,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 229,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 231,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 233,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 235,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 237,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 239,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 241,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 243,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 245,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 247,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 249,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 251,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 253,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 254,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 256,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 258,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 260,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 262,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 264,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 266,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 268,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 270,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 272,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 274,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 276,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-RESOURCEREG": {
+      "cell_id": "CEL-RESOURCEREG",
+      "version": "0.1.0",
+      "master": 278,
+      "phases": {
+        "0": {
+          "issue": 280,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 282,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 284,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 286,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 288,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 290,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 292,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 294,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 296,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 298,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 300,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 302,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 304,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 306,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 308,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 310,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 312,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 314,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 316,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 318,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 320,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 322,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 324,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 326,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 328,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 330,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 332,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 334,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-AGGREGATE": {
+      "cell_id": "CEL-AGGREGATE",
+      "version": "0.1.0",
+      "master": 336,
+      "phases": {
+        "0": {
+          "issue": 338,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 340,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 342,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 344,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 346,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 348,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 350,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 352,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 354,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 356,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 358,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 360,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 361,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 363,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 364,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 366,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 368,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 370,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 372,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 374,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 376,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 378,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 380,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 382,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 384,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 386,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 389,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 390,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-MONITOR": {
+      "cell_id": "CEL-MONITOR",
+      "version": "0.1.0",
+      "master": 392,
+      "phases": {
+        "0": {
+          "issue": 394,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 396,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 398,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 400,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 402,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 404,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 406,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 408,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 410,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 413,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 414,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 417,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 418,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 420,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 423,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 424,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 427,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 428,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 431,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 432,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 434,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 436,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 439,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 440,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 442,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 444,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 447,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 448,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-IDRESOLVE": {
+      "cell_id": "CEL-IDRESOLVE",
+      "version": "0.1.0",
+      "master": 450,
+      "phases": {
+        "0": {
+          "issue": 452,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 454,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 456,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 458,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 460,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 462,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 464,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 467,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 468,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 471,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 473,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 474,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 476,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 478,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 480,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 482,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 484,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 486,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 488,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 490,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 492,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 494,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 496,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 498,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 500,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 573,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 574,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 575,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-ACCESSCTRL": {
+      "cell_id": "CEL-ACCESSCTRL",
+      "version": "0.1.0",
+      "master": 576,
+      "phases": {
+        "0": {
+          "issue": 577,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 578,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 579,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 580,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 581,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 582,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 583,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 584,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 585,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 586,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 587,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 588,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 589,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 590,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 591,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 592,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 593,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 594,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 595,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 596,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 597,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 598,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 599,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 600,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 601,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 602,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 603,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 604,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-CIGATEWAY": {
+      "cell_id": "CEL-CIGATEWAY",
+      "version": "0.1.0",
+      "master": 605,
+      "phases": {
+        "0": {
+          "issue": 606,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 607,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 608,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 609,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 610,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 611,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 612,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 613,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 614,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 615,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 616,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 617,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 618,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 619,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 501,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 502,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 503,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 504,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 505,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 506,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 507,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 508,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 509,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 510,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 511,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 512,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 513,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 514,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-EXTADAPTER": {
+      "cell_id": "CEL-EXTADAPTER",
+      "version": "0.1.0",
+      "master": 515,
+      "phases": {
+        "0": {
+          "issue": 516,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 517,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 518,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 519,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 520,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 521,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 522,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 523,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 524,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 525,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 526,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 527,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 528,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 529,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 530,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 531,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 532,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 533,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 534,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 535,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 536,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 537,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 538,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 539,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 540,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 541,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 542,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 543,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-TELEMETRY": {
+      "cell_id": "CEL-TELEMETRY",
+      "version": "0.1.0",
+      "master": 544,
+      "phases": {
+        "0": {
+          "issue": 545,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 546,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 547,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 548,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 549,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 550,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 551,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 552,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 553,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 554,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 555,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 556,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 557,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 558,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 559,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 560,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 561,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 562,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 563,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 564,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 565,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 566,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 567,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 568,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 569,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 570,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 571,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 572,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": false,
+      "master_agent": "webwakaagent4",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-AI-COGNITIVE_CELL": {
+      "cell_id": "CEL-AI-COGNITIVE_CELL",
+      "version": "0.1.0",
+      "master": 620,
+      "phases": {
+        "0": {
+          "issue": 621,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 622,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 623,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 624,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 625,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 626,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 627,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 628,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 629,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 630,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 631,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 632,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 633,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 634,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 635,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 636,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 637,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 638,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 639,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 640,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 641,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 642,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 643,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 644,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 645,
+          "agent": "webwaka007",
+          "tasks": [
+            {
+              "num": 646,
+              "task": "T01",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 647,
+              "task": "T02",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 648,
+              "task": "T03",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": true,
+      "master_agent": "webwakaagent3",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-AI-INFERENCE_CELL": {
+      "cell_id": "CEL-AI-INFERENCE_CELL",
+      "version": "0.1.0",
+      "master": 649,
+      "phases": {
+        "0": {
+          "issue": 650,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 651,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": true
+            },
+            {
+              "num": 652,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 653,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 654,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 655,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 656,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 657,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 658,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 659,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 660,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 661,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 662,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 663,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 664,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 665,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 666,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 667,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 668,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 669,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 670,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 671,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 672,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 673,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 674,
+          "agent": "webwaka007",
+          "tasks": [
+            {
+              "num": 675,
+              "task": "T01",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 676,
+              "task": "T02",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 677,
+              "task": "T03",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": true,
+      "master_agent": "webwakaagent3",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    },
+    "CEL-AI-STREAMING_CELL": {
+      "cell_id": "CEL-AI-STREAMING_CELL",
+      "version": "0.1.0",
+      "master": 678,
+      "phases": {
+        "0": {
+          "issue": 679,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 680,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 681,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 682,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "1": {
+          "issue": 683,
+          "agent": "webwakaagent3",
+          "tasks": [
+            {
+              "num": 684,
+              "task": "T01",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 685,
+              "task": "T02",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 686,
+              "task": "T03",
+              "agent": "webwakaagent3",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "2": {
+          "issue": 687,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 688,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 689,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 690,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "3": {
+          "issue": 691,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 692,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 693,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 694,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "4": {
+          "issue": 695,
+          "agent": "webwakaagent5",
+          "tasks": [
+            {
+              "num": 696,
+              "task": "T01",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 697,
+              "task": "T02",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 698,
+              "task": "T03",
+              "agent": "webwakaagent5",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "5": {
+          "issue": 699,
+          "agent": "webwakaagent4",
+          "tasks": [
+            {
+              "num": 700,
+              "task": "T01",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 701,
+              "task": "T02",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 702,
+              "task": "T03",
+              "agent": "webwakaagent4",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        },
+        "6": {
+          "issue": 703,
+          "agent": "webwaka007",
+          "tasks": [
+            {
+              "num": 704,
+              "task": "T01",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 705,
+              "task": "T02",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            },
+            {
+              "num": 706,
+              "task": "T03",
+              "agent": "webwaka007",
+              "deps": [],
+              "unblocks": [],
+              "is_root": false
+            }
+          ]
+        }
+      },
+      "is_ai": true,
+      "master_agent": "webwakaagent3",
+      "master_deps": [],
+      "master_unblocks": [],
+      "seq_phase": "**"
+    }
+  },
+  "root_issues": [
+    3,
+    51,
+    109,
+    167,
+    225,
+    282,
+    340,
+    396,
+    454,
+    578,
+    607,
+    517,
+    622,
+    651
+  ],
+  "sequence_phases": {
+    "**": [
+      "CEL-CMDPROCESS",
+      "CEL-STATESTORE",
+      "CEL-EVENTDISPATCH",
+      "CEL-POLICYEVAL",
+      "CEL-VALIDATEEXEC",
+      "CEL-RESOURCEREG",
+      "CEL-AGGREGATE",
+      "CEL-MONITOR",
+      "CEL-IDRESOLVE",
+      "CEL-ACCESSCTRL",
+      "CEL-CIGATEWAY",
+      "CEL-EXTADAPTER",
+      "CEL-TELEMETRY",
+      "CEL-AI-COGNITIVE_CELL",
+      "CEL-AI-INFERENCE_CELL",
+      "CEL-AI-STREAMING_CELL"
+    ]
+  }
+}

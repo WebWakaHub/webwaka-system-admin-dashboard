@@ -1,0 +1,105 @@
+{
+  "total_checks": 1478,
+  "passed": 1478,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "by_dimension": {
+    "D1-Structure": {
+      "total": 1364,
+      "passed": 1364,
+      "failed": 0
+    },
+    "D2-Issues": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    "D3-Doctrine": {
+      "total": 48,
+      "passed": 48,
+      "failed": 0
+    },
+    "D4-Composition": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "D5-Contracts": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    "D6-Deploy": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0
+    }
+  },
+  "by_layer": {
+    "organelle": {
+      "total": 261,
+      "passed": 261,
+      "failed": 0
+    },
+    "cell": {
+      "total": 196,
+      "passed": 196,
+      "failed": 0
+    },
+    "tissue": {
+      "total": 130,
+      "passed": 130,
+      "failed": 0
+    },
+    "organ": {
+      "total": 636,
+      "passed": 636,
+      "failed": 0
+    },
+    "system": {
+      "total": 229,
+      "passed": 229,
+      "failed": 0
+    },
+    "organism": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "issue_totals": {
+    "organelle": {
+      "total": 638,
+      "closed": 638,
+      "open": 0
+    },
+    "cell": {
+      "total": 706,
+      "closed": 706,
+      "open": 0
+    },
+    "tissue": {
+      "total": 674,
+      "closed": 674,
+      "open": 0
+    },
+    "organ": {
+      "total": 1900,
+      "closed": 1900,
+      "open": 0
+    },
+    "system": {
+      "total": 757,
+      "closed": 757,
+      "open": 0
+    },
+    "organism": {
+      "total": 34,
+      "closed": 34,
+      "open": 0
+    }
+  },
+  "grand_total_issues": 4709,
+  "grand_total_closed": 4709
+}

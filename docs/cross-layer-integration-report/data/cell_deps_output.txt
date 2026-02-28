@@ -1,0 +1,153 @@
+Total issues fetched: 706
+
+Root issues (dependency roots): 14
+  #3: [CEL-CMDPROCESS-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #51: [CEL-STATESTORE-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #109: [CEL-EVENTDISPATCH-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #167: [CEL-POLICYEVAL-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #225: [CEL-VALIDATEEXEC-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #282: [CEL-RESOURCEREG-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #340: [CEL-AGGREGATE-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #396: [CEL-MONITOR-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #454: [CEL-IDRESOLVE-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #517: [CEL-EXTADAPTER-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #578: [CEL-ACCESSCTRL-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #607: [CEL-CIGATEWAY-v0.1.0-P0-T01] Specification Task 1 (agent: webwakaagent4)
+  #622: [CEL-AI-COGNITIVE_CELL-v0.1.0-P0-T01] Define Cognitive Cell  (agent: webwakaagent3)
+  #651: [CEL-AI-INFERENCE_CELL-v0.1.0-P0-T01] Define Inference Cell  (agent: webwakaagent3)
+
+========================================================================================================================
+CELL EXECUTION ORDER (by sequence phase)
+========================================================================================================================
+
+  Sequence Phase: **
+    CEL-CMDPROCESS                 Master=#   1 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #2 agent=webwakaagent4        tasks=[3, 4, 5] task_agents={'webwakaagent4'}
+      P1: #6 agent=webwakaagent3        tasks=[7, 8, 9] task_agents={'webwakaagent3'}
+      P2: #10 agent=webwakaagent4        tasks=[11, 12, 14] task_agents={'webwakaagent4'}
+      P3: #15 agent=webwakaagent4        tasks=[17, 19, 21] task_agents={'webwakaagent4'}
+      P4: #23 agent=webwakaagent4        tasks=[25, 27, 29] task_agents={'webwakaagent4'}
+      P5: #31 agent=webwakaagent4        tasks=[33, 35, 37] task_agents={'webwakaagent4'}
+      P6: #39 agent=webwakaagent4        tasks=[41, 43, 45] task_agents={'webwakaagent4'}
+    CEL-STATESTORE                 Master=#  47 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #49 agent=webwakaagent4        tasks=[51, 53, 55] task_agents={'webwakaagent4'}
+      P1: #57 agent=webwakaagent3        tasks=[59, 61, 63] task_agents={'webwakaagent3'}
+      P2: #65 agent=webwakaagent4        tasks=[67, 69, 71] task_agents={'webwakaagent4'}
+      P3: #73 agent=webwakaagent4        tasks=[75, 77, 79] task_agents={'webwakaagent4'}
+      P4: #81 agent=webwakaagent4        tasks=[83, 85, 87] task_agents={'webwakaagent4'}
+      P5: #89 agent=webwakaagent4        tasks=[91, 93, 95] task_agents={'webwakaagent4'}
+      P6: #97 agent=webwakaagent4        tasks=[99, 101, 103] task_agents={'webwakaagent4'}
+    CEL-EVENTDISPATCH              Master=# 105 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #107 agent=webwakaagent4        tasks=[109, 111, 113] task_agents={'webwakaagent4'}
+      P1: #115 agent=webwakaagent3        tasks=[117, 119, 121] task_agents={'webwakaagent3'}
+      P2: #123 agent=webwakaagent4        tasks=[125, 127, 129] task_agents={'webwakaagent4'}
+      P3: #131 agent=webwakaagent4        tasks=[133, 135, 137] task_agents={'webwakaagent4'}
+      P4: #139 agent=webwakaagent4        tasks=[141, 143, 145] task_agents={'webwakaagent4'}
+      P5: #147 agent=webwakaagent4        tasks=[149, 151, 153] task_agents={'webwakaagent4'}
+      P6: #155 agent=webwakaagent4        tasks=[157, 159, 161] task_agents={'webwakaagent4'}
+    CEL-POLICYEVAL                 Master=# 163 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #165 agent=webwakaagent4        tasks=[167, 169, 171] task_agents={'webwakaagent4'}
+      P1: #173 agent=webwakaagent3        tasks=[175, 177, 179] task_agents={'webwakaagent3'}
+      P2: #181 agent=webwakaagent4        tasks=[184, 186, 187] task_agents={'webwakaagent4'}
+      P3: #189 agent=webwakaagent4        tasks=[191, 193, 195] task_agents={'webwakaagent4'}
+      P4: #197 agent=webwakaagent4        tasks=[199, 201, 203] task_agents={'webwakaagent4'}
+      P5: #205 agent=webwakaagent4        tasks=[207, 209, 211] task_agents={'webwakaagent4'}
+      P6: #213 agent=webwakaagent4        tasks=[215, 217, 219] task_agents={'webwakaagent4'}
+    CEL-VALIDATEEXEC               Master=# 221 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #223 agent=webwakaagent4        tasks=[225, 227, 229] task_agents={'webwakaagent4'}
+      P1: #231 agent=webwakaagent3        tasks=[233, 235, 237] task_agents={'webwakaagent3'}
+      P2: #239 agent=webwakaagent4        tasks=[241, 243, 245] task_agents={'webwakaagent4'}
+      P3: #247 agent=webwakaagent4        tasks=[249, 251, 253] task_agents={'webwakaagent4'}
+      P4: #254 agent=webwakaagent4        tasks=[256, 258, 260] task_agents={'webwakaagent4'}
+      P5: #262 agent=webwakaagent4        tasks=[264, 266, 268] task_agents={'webwakaagent4'}
+      P6: #270 agent=webwakaagent4        tasks=[272, 274, 276] task_agents={'webwakaagent4'}
+    CEL-RESOURCEREG                Master=# 278 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #280 agent=webwakaagent4        tasks=[282, 284, 286] task_agents={'webwakaagent4'}
+      P1: #288 agent=webwakaagent3        tasks=[290, 292, 294] task_agents={'webwakaagent3'}
+      P2: #296 agent=webwakaagent4        tasks=[298, 300, 302] task_agents={'webwakaagent4'}
+      P3: #304 agent=webwakaagent4        tasks=[306, 308, 310] task_agents={'webwakaagent4'}
+      P4: #312 agent=webwakaagent4        tasks=[314, 316, 318] task_agents={'webwakaagent4'}
+      P5: #320 agent=webwakaagent4        tasks=[322, 324, 326] task_agents={'webwakaagent4'}
+      P6: #328 agent=webwakaagent4        tasks=[330, 332, 334] task_agents={'webwakaagent4'}
+    CEL-AGGREGATE                  Master=# 336 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #338 agent=webwakaagent4        tasks=[340, 342, 344] task_agents={'webwakaagent4'}
+      P1: #346 agent=webwakaagent3        tasks=[348, 350, 352] task_agents={'webwakaagent3'}
+      P2: #354 agent=webwakaagent4        tasks=[356, 358, 360] task_agents={'webwakaagent4'}
+      P3: #361 agent=webwakaagent4        tasks=[363, 364, 366] task_agents={'webwakaagent4'}
+      P4: #368 agent=webwakaagent4        tasks=[370, 372, 374] task_agents={'webwakaagent4'}
+      P5: #376 agent=webwakaagent4        tasks=[378, 380, 382] task_agents={'webwakaagent4'}
+      P6: #384 agent=webwakaagent4        tasks=[386, 389, 390] task_agents={'webwakaagent4'}
+    CEL-MONITOR                    Master=# 392 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #394 agent=webwakaagent4        tasks=[396, 398, 400] task_agents={'webwakaagent4'}
+      P1: #402 agent=webwakaagent3        tasks=[404, 406, 408] task_agents={'webwakaagent3'}
+      P2: #410 agent=webwakaagent4        tasks=[413, 414, 417] task_agents={'webwakaagent4'}
+      P3: #418 agent=webwakaagent4        tasks=[420, 423, 424] task_agents={'webwakaagent4'}
+      P4: #427 agent=webwakaagent4        tasks=[428, 431, 432] task_agents={'webwakaagent4'}
+      P5: #434 agent=webwakaagent4        tasks=[436, 439, 440] task_agents={'webwakaagent4'}
+      P6: #442 agent=webwakaagent4        tasks=[444, 447, 448] task_agents={'webwakaagent4'}
+    CEL-IDRESOLVE                  Master=# 450 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #452 agent=webwakaagent4        tasks=[454, 456, 458] task_agents={'webwakaagent4'}
+      P1: #460 agent=webwakaagent3        tasks=[462, 464, 467] task_agents={'webwakaagent3'}
+      P2: #468 agent=webwakaagent4        tasks=[471, 473, 474] task_agents={'webwakaagent4'}
+      P3: #476 agent=webwakaagent4        tasks=[478, 480, 482] task_agents={'webwakaagent4'}
+      P4: #484 agent=webwakaagent4        tasks=[486, 488, 490] task_agents={'webwakaagent4'}
+      P5: #492 agent=webwakaagent4        tasks=[494, 496, 498] task_agents={'webwakaagent4'}
+      P6: #500 agent=webwakaagent4        tasks=[573, 574, 575] task_agents={'webwakaagent4'}
+    CEL-EXTADAPTER                 Master=# 515 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #516 agent=webwakaagent4        tasks=[517, 518, 519] task_agents={'webwakaagent4'}
+      P1: #520 agent=webwakaagent3        tasks=[521, 522, 523] task_agents={'webwakaagent3'}
+      P2: #524 agent=webwakaagent4        tasks=[525, 526, 527] task_agents={'webwakaagent4'}
+      P3: #528 agent=webwakaagent4        tasks=[529, 530, 531] task_agents={'webwakaagent4'}
+      P4: #532 agent=webwakaagent4        tasks=[533, 534, 535] task_agents={'webwakaagent4'}
+      P5: #536 agent=webwakaagent4        tasks=[537, 538, 539] task_agents={'webwakaagent4'}
+      P6: #540 agent=webwakaagent4        tasks=[541, 542, 543] task_agents={'webwakaagent4'}
+    CEL-TELEMETRY                  Master=# 544 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #545 agent=webwakaagent4        tasks=[546, 547, 548] task_agents={'webwakaagent4'}
+      P1: #549 agent=webwakaagent3        tasks=[550, 551, 552] task_agents={'webwakaagent3'}
+      P2: #553 agent=webwakaagent4        tasks=[554, 555, 556] task_agents={'webwakaagent4'}
+      P3: #557 agent=webwakaagent4        tasks=[558, 559, 560] task_agents={'webwakaagent4'}
+      P4: #561 agent=webwakaagent4        tasks=[562, 563, 564] task_agents={'webwakaagent4'}
+      P5: #565 agent=webwakaagent4        tasks=[566, 567, 568] task_agents={'webwakaagent4'}
+      P6: #569 agent=webwakaagent4        tasks=[570, 571, 572] task_agents={'webwakaagent4'}
+    CEL-ACCESSCTRL                 Master=# 576 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #577 agent=webwakaagent4        tasks=[578, 579, 580] task_agents={'webwakaagent4'}
+      P1: #581 agent=webwakaagent3        tasks=[582, 583, 584] task_agents={'webwakaagent3'}
+      P2: #585 agent=webwakaagent4        tasks=[586, 587, 588] task_agents={'webwakaagent4'}
+      P3: #589 agent=webwakaagent4        tasks=[590, 591, 592] task_agents={'webwakaagent4'}
+      P4: #593 agent=webwakaagent4        tasks=[594, 595, 596] task_agents={'webwakaagent4'}
+      P5: #597 agent=webwakaagent4        tasks=[598, 599, 600] task_agents={'webwakaagent4'}
+      P6: #601 agent=webwakaagent4        tasks=[602, 603, 604] task_agents={'webwakaagent4'}
+    CEL-CIGATEWAY                  Master=# 605 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #606 agent=webwakaagent4        tasks=[607, 608, 609] task_agents={'webwakaagent4'}
+      P1: #610 agent=webwakaagent3        tasks=[611, 612, 613] task_agents={'webwakaagent3'}
+      P2: #614 agent=webwakaagent4        tasks=[615, 616, 617] task_agents={'webwakaagent4'}
+      P3: #618 agent=webwakaagent4        tasks=[619, 501, 502] task_agents={'webwakaagent4'}
+      P4: #503 agent=webwakaagent4        tasks=[504, 505, 506] task_agents={'webwakaagent4'}
+      P5: #507 agent=webwakaagent4        tasks=[508, 509, 510] task_agents={'webwakaagent4'}
+      P6: #511 agent=webwakaagent4        tasks=[512, 513, 514] task_agents={'webwakaagent4'}
+    CEL-AI-COGNITIVE_CELL          Master=# 620 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #621 agent=webwakaagent3        tasks=[622, 623, 624] task_agents={'webwakaagent3'}
+      P1: #625 agent=webwakaagent3        tasks=[626, 627, 628] task_agents={'webwakaagent3'}
+      P2: #629 agent=webwakaagent5        tasks=[630, 631, 632] task_agents={'webwakaagent5'}
+      P3: #633 agent=webwakaagent4        tasks=[634, 635, 636] task_agents={'webwakaagent4'}
+      P4: #637 agent=webwakaagent5        tasks=[638, 639, 640] task_agents={'webwakaagent5'}
+      P5: #641 agent=webwakaagent4        tasks=[642, 643, 644] task_agents={'webwakaagent4'}
+      P6: #645 agent=webwaka007           tasks=[646, 647, 648] task_agents={'webwaka007'}
+    CEL-AI-INFERENCE_CELL          Master=# 649 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #650 agent=webwakaagent3        tasks=[651, 652, 653] task_agents={'webwakaagent3'}
+      P1: #654 agent=webwakaagent3        tasks=[655, 656, 657] task_agents={'webwakaagent3'}
+      P2: #658 agent=webwakaagent5        tasks=[659, 660, 661] task_agents={'webwakaagent5'}
+      P3: #662 agent=webwakaagent4        tasks=[663, 664, 665] task_agents={'webwakaagent4'}
+      P4: #666 agent=webwakaagent5        tasks=[667, 668, 669] task_agents={'webwakaagent5'}
+      P5: #670 agent=webwakaagent4        tasks=[671, 672, 673] task_agents={'webwakaagent4'}
+      P6: #674 agent=webwaka007           tasks=[675, 676, 677] task_agents={'webwaka007'}
+    CEL-AI-STREAMING_CELL          Master=# 678 deps=[] phases=[0, 1, 2, 3, 4, 5, 6]
+      P0: #679 agent=webwakaagent3        tasks=[680, 681, 682] task_agents={'webwakaagent3'}
+      P1: #683 agent=webwakaagent3        tasks=[684, 685, 686] task_agents={'webwakaagent3'}
+      P2: #687 agent=webwakaagent5        tasks=[688, 689, 690] task_agents={'webwakaagent5'}
+      P3: #691 agent=webwakaagent4        tasks=[692, 693, 694] task_agents={'webwakaagent4'}
+      P4: #695 agent=webwakaagent5        tasks=[696, 697, 698] task_agents={'webwakaagent5'}
+      P5: #699 agent=webwakaagent4        tasks=[700, 701, 702] task_agents={'webwakaagent4'}
+      P6: #703 agent=webwaka007           tasks=[704, 705, 706] task_agents={'webwaka007'}
+
+Full data saved to /home/ubuntu/cell_universe_deps.json

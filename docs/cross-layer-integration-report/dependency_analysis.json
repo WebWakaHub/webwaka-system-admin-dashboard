@@ -1,0 +1,181 @@
+{
+  "layers": [
+    {
+      "name": "Organelle",
+      "level": 0,
+      "count": 22,
+      "depends_on": [],
+      "pattern": "Standalone executors",
+      "deploy_unit": "npm package",
+      "parallelism": "Full \u2014 all 22 organelles are independent"
+    },
+    {
+      "name": "Cell",
+      "level": 1,
+      "count": 16,
+      "depends_on": [
+        "Organelle"
+      ],
+      "pattern": "Compose 1-3 organelles each",
+      "deploy_unit": "npm package",
+      "parallelism": "Full \u2014 all 16 cells are independent after organelles built"
+    },
+    {
+      "name": "Tissue",
+      "level": 2,
+      "count": 10,
+      "depends_on": [
+        "Cell"
+      ],
+      "pattern": "Coordinate 2-4 cells each",
+      "deploy_unit": "npm package",
+      "parallelism": "Full \u2014 all 10 tissues are independent after cells built"
+    },
+    {
+      "name": "Organ",
+      "level": 3,
+      "count": 56,
+      "depends_on": [
+        "Tissue"
+      ],
+      "pattern": "Coordinate 2-5 tissues each",
+      "deploy_unit": "Deployable service",
+      "parallelism": "Full \u2014 all 56 organs are independent after tissues built"
+    },
+    {
+      "name": "System",
+      "level": 4,
+      "count": 19,
+      "depends_on": [
+        "Organ"
+      ],
+      "pattern": "Coordinate 3-8 organs each",
+      "deploy_unit": "Service group / namespace",
+      "parallelism": "Full \u2014 all 19 systems are independent after organs built"
+    },
+    {
+      "name": "Organism",
+      "level": 5,
+      "count": 1,
+      "depends_on": [
+        "System"
+      ],
+      "pattern": "Orchestrate all 19 systems",
+      "deploy_unit": "Platform orchestrator",
+      "parallelism": "Sequential \u2014 single organism depends on all systems"
+    }
+  ],
+  "systems": {
+    "AI Cognitive Fabric": {
+      "organs": 3,
+      "domain": "ai"
+    },
+    "Analytics Platform": {
+      "organs": 3,
+      "domain": "ana"
+    },
+    "Config Platform": {
+      "organs": 3,
+      "domain": "cfg"
+    },
+    "E-Commerce": {
+      "organs": 4,
+      "domain": "com"
+    },
+    "Learning Platform": {
+      "organs": 3,
+      "domain": "edu"
+    },
+    "Enterprise Platform": {
+      "organs": 3,
+      "domain": "ent"
+    },
+    "Marketplace Platform": {
+      "organs": 3,
+      "domain": "ext"
+    },
+    "Banking": {
+      "organs": 3,
+      "domain": "fin-banking"
+    },
+    "Investment": {
+      "organs": 3,
+      "domain": "fin-investment"
+    },
+    "Location Platform": {
+      "organs": 3,
+      "domain": "geo"
+    },
+    "Civic Platform": {
+      "organs": 3,
+      "domain": "gov"
+    },
+    "Health Platform": {
+      "organs": 3,
+      "domain": "hlt"
+    },
+    "Identity Platform": {
+      "organs": 3,
+      "domain": "ida"
+    },
+    "Cloud Platform": {
+      "organs": 3,
+      "domain": "inf"
+    },
+    "Logistics Platform": {
+      "organs": 3,
+      "domain": "log"
+    },
+    "Content Platform": {
+      "organs": 3,
+      "domain": "med"
+    },
+    "Asset Platform": {
+      "organs": 3,
+      "domain": "res"
+    },
+    "Security Platform": {
+      "organs": 3,
+      "domain": "sec"
+    },
+    "Social Platform": {
+      "organs": 2,
+      "domain": "soc"
+    }
+  },
+  "build_waves": 6,
+  "total_components": 124,
+  "critical_path_minutes": 17,
+  "deployment_groups": {
+    "A_foundation": {
+      "layers": [
+        "Organelle",
+        "Cell",
+        "Tissue"
+      ],
+      "count": 48,
+      "type": "npm packages"
+    },
+    "B_services": {
+      "layers": [
+        "Organ"
+      ],
+      "count": 56,
+      "type": "microservices"
+    },
+    "C_mesh": {
+      "layers": [
+        "System"
+      ],
+      "count": 19,
+      "type": "service groups"
+    },
+    "D_orchestrator": {
+      "layers": [
+        "Organism"
+      ],
+      "count": 1,
+      "type": "platform orchestrator"
+    }
+  }
+}

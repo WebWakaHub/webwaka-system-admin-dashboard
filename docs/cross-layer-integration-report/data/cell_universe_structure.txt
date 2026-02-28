@@ -1,0 +1,230 @@
+========================================================================================================================
+CELL-UNIVERSE STRUCTURE ANALYSIS
+========================================================================================================================
+Total issues in file: 706
+Executable issues: 464
+Archived/ghost issues: 242
+Total cells identified: 25
+  Standard cells: 13
+  AI cells: 3
+
+========================================================================================================================
+STANDARD CELLS (execution order)
+========================================================================================================================
+
+  CELL: CEL-CMDPROCESS (v0.1.0)
+    Master Issue: #1 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #2 | Agent: webwakaagent4 | Tasks: [3, 4, 5] | Task agents: {'webwakaagent4'}
+    P1: Issue #6 | Agent: webwakaagent3 | Tasks: [7, 8, 9] | Task agents: {'webwakaagent3'}
+    P2: Issue #10 | Agent: webwakaagent4 | Tasks: [11, 12, 14] | Task agents: {'webwakaagent4'}
+    P3: Issue #15 | Agent: webwakaagent4 | Tasks: [17, 19, 21] | Task agents: {'webwakaagent4'}
+    P4: Issue #23 | Agent: webwakaagent4 | Tasks: [25, 27, 29] | Task agents: {'webwakaagent4'}
+    P5: Issue #31 | Agent: webwakaagent4 | Tasks: [33, 35, 37] | Task agents: {'webwakaagent4'}
+    P6: Issue #39 | Agent: webwakaagent4 | Tasks: [41, 43, 45] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-STATESTORE (v0.1.0)
+    Master Issue: #47 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #49 | Agent: webwakaagent4 | Tasks: [51, 53, 55] | Task agents: {'webwakaagent4'}
+    P1: Issue #57 | Agent: webwakaagent3 | Tasks: [59, 61, 63] | Task agents: {'webwakaagent3'}
+    P2: Issue #65 | Agent: webwakaagent4 | Tasks: [67, 69, 71] | Task agents: {'webwakaagent4'}
+    P3: Issue #73 | Agent: webwakaagent4 | Tasks: [75, 77, 79] | Task agents: {'webwakaagent4'}
+    P4: Issue #81 | Agent: webwakaagent4 | Tasks: [83, 85, 87] | Task agents: {'webwakaagent4'}
+    P5: Issue #89 | Agent: webwakaagent4 | Tasks: [91, 93, 95] | Task agents: {'webwakaagent4'}
+    P6: Issue #97 | Agent: webwakaagent4 | Tasks: [99, 101, 103] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-EVENTDISPATCH (v0.1.0)
+    Master Issue: #105 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #107 | Agent: webwakaagent4 | Tasks: [109, 111, 113] | Task agents: {'webwakaagent4'}
+    P1: Issue #115 | Agent: webwakaagent3 | Tasks: [117, 119, 121] | Task agents: {'webwakaagent3'}
+    P2: Issue #123 | Agent: webwakaagent4 | Tasks: [125, 127, 129] | Task agents: {'webwakaagent4'}
+    P3: Issue #131 | Agent: webwakaagent4 | Tasks: [133, 135, 137] | Task agents: {'webwakaagent4'}
+    P4: Issue #139 | Agent: webwakaagent4 | Tasks: [141, 143, 145] | Task agents: {'webwakaagent4'}
+    P5: Issue #147 | Agent: webwakaagent4 | Tasks: [149, 151, 153] | Task agents: {'webwakaagent4'}
+    P6: Issue #155 | Agent: webwakaagent4 | Tasks: [157, 159, 161] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-POLICYEVAL (v0.1.0)
+    Master Issue: #163 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #165 | Agent: webwakaagent4 | Tasks: [167, 169, 171] | Task agents: {'webwakaagent4'}
+    P1: Issue #173 | Agent: webwakaagent3 | Tasks: [175, 177, 179] | Task agents: {'webwakaagent3'}
+    P2: Issue #181 | Agent: webwakaagent4 | Tasks: [184, 186, 187] | Task agents: {'webwakaagent4'}
+    P3: Issue #189 | Agent: webwakaagent4 | Tasks: [191, 193, 195] | Task agents: {'webwakaagent4'}
+    P4: Issue #197 | Agent: webwakaagent4 | Tasks: [199, 201, 203] | Task agents: {'webwakaagent4'}
+    P5: Issue #205 | Agent: webwakaagent4 | Tasks: [207, 209, 211] | Task agents: {'webwakaagent4'}
+    P6: Issue #213 | Agent: webwakaagent4 | Tasks: [215, 217, 219] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-VALIDATEEXEC (v0.1.0)
+    Master Issue: #221 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #223 | Agent: webwakaagent4 | Tasks: [225, 227, 229] | Task agents: {'webwakaagent4'}
+    P1: Issue #231 | Agent: webwakaagent3 | Tasks: [233, 235, 237] | Task agents: {'webwakaagent3'}
+    P2: Issue #239 | Agent: webwakaagent4 | Tasks: [241, 243, 245] | Task agents: {'webwakaagent4'}
+    P3: Issue #247 | Agent: webwakaagent4 | Tasks: [249, 251, 253] | Task agents: {'webwakaagent4'}
+    P4: Issue #254 | Agent: webwakaagent4 | Tasks: [256, 258, 260] | Task agents: {'webwakaagent4'}
+    P5: Issue #262 | Agent: webwakaagent4 | Tasks: [264, 266, 268] | Task agents: {'webwakaagent4'}
+    P6: Issue #270 | Agent: webwakaagent4 | Tasks: [272, 274, 276] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-RESOURCEREG (v0.1.0)
+    Master Issue: #278 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #280 | Agent: webwakaagent4 | Tasks: [282, 284, 286] | Task agents: {'webwakaagent4'}
+    P1: Issue #288 | Agent: webwakaagent3 | Tasks: [290, 292, 294] | Task agents: {'webwakaagent3'}
+    P2: Issue #296 | Agent: webwakaagent4 | Tasks: [298, 300, 302] | Task agents: {'webwakaagent4'}
+    P3: Issue #304 | Agent: webwakaagent4 | Tasks: [306, 308, 310] | Task agents: {'webwakaagent4'}
+    P4: Issue #312 | Agent: webwakaagent4 | Tasks: [314, 316, 318] | Task agents: {'webwakaagent4'}
+    P5: Issue #320 | Agent: webwakaagent4 | Tasks: [322, 324, 326] | Task agents: {'webwakaagent4'}
+    P6: Issue #328 | Agent: webwakaagent4 | Tasks: [330, 332, 334] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-AGGREGATE (v0.1.0)
+    Master Issue: #336 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #338 | Agent: webwakaagent4 | Tasks: [340, 342, 344] | Task agents: {'webwakaagent4'}
+    P1: Issue #346 | Agent: webwakaagent3 | Tasks: [348, 350, 352] | Task agents: {'webwakaagent3'}
+    P2: Issue #354 | Agent: webwakaagent4 | Tasks: [356, 358, 360] | Task agents: {'webwakaagent4'}
+    P3: Issue #361 | Agent: webwakaagent4 | Tasks: [363, 364, 366] | Task agents: {'webwakaagent4'}
+    P4: Issue #368 | Agent: webwakaagent4 | Tasks: [370, 372, 374] | Task agents: {'webwakaagent4'}
+    P5: Issue #376 | Agent: webwakaagent4 | Tasks: [378, 380, 382] | Task agents: {'webwakaagent4'}
+    P6: Issue #384 | Agent: webwakaagent4 | Tasks: [386, 389, 390] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-MONITOR (v0.1.0)
+    Master Issue: #392 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #394 | Agent: webwakaagent4 | Tasks: [396, 398, 400] | Task agents: {'webwakaagent4'}
+    P1: Issue #402 | Agent: webwakaagent3 | Tasks: [404, 406, 408] | Task agents: {'webwakaagent3'}
+    P2: Issue #410 | Agent: webwakaagent4 | Tasks: [413, 414, 417] | Task agents: {'webwakaagent4'}
+    P3: Issue #418 | Agent: webwakaagent4 | Tasks: [420, 423, 424] | Task agents: {'webwakaagent4'}
+    P4: Issue #427 | Agent: webwakaagent4 | Tasks: [428, 431, 432] | Task agents: {'webwakaagent4'}
+    P5: Issue #434 | Agent: webwakaagent4 | Tasks: [436, 439, 440] | Task agents: {'webwakaagent4'}
+    P6: Issue #442 | Agent: webwakaagent4 | Tasks: [444, 447, 448] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-IDRESOLVE (v0.1.0)
+    Master Issue: #450 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #452 | Agent: webwakaagent4 | Tasks: [454, 456, 458] | Task agents: {'webwakaagent4'}
+    P1: Issue #460 | Agent: webwakaagent3 | Tasks: [462, 464, 467] | Task agents: {'webwakaagent3'}
+    P2: Issue #468 | Agent: webwakaagent4 | Tasks: [471, 473, 474] | Task agents: {'webwakaagent4'}
+    P3: Issue #476 | Agent: webwakaagent4 | Tasks: [478, 480, 482] | Task agents: {'webwakaagent4'}
+    P4: Issue #484 | Agent: webwakaagent4 | Tasks: [486, 488, 490] | Task agents: {'webwakaagent4'}
+    P5: Issue #492 | Agent: webwakaagent4 | Tasks: [494, 496, 498] | Task agents: {'webwakaagent4'}
+    P6: Issue #500 | Agent: webwakaagent4 | Tasks: [573, 574, 575] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-EXTADAPTER (v0.1.0)
+    Master Issue: #515 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #516 | Agent: webwakaagent4 | Tasks: [517, 518, 519] | Task agents: {'webwakaagent4'}
+    P1: Issue #520 | Agent: webwakaagent3 | Tasks: [521, 522, 523] | Task agents: {'webwakaagent3'}
+    P2: Issue #524 | Agent: webwakaagent4 | Tasks: [525, 526, 527] | Task agents: {'webwakaagent4'}
+    P3: Issue #528 | Agent: webwakaagent4 | Tasks: [529, 530, 531] | Task agents: {'webwakaagent4'}
+    P4: Issue #532 | Agent: webwakaagent4 | Tasks: [533, 534, 535] | Task agents: {'webwakaagent4'}
+    P5: Issue #536 | Agent: webwakaagent4 | Tasks: [537, 538, 539] | Task agents: {'webwakaagent4'}
+    P6: Issue #540 | Agent: webwakaagent4 | Tasks: [541, 542, 543] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-TELEMETRY (v0.1.0)
+    Master Issue: #544 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #545 | Agent: webwakaagent4 | Tasks: [546, 547, 548] | Task agents: {'webwakaagent4'}
+    P1: Issue #549 | Agent: webwakaagent3 | Tasks: [550, 551, 552] | Task agents: {'webwakaagent3'}
+    P2: Issue #553 | Agent: webwakaagent4 | Tasks: [554, 555, 556] | Task agents: {'webwakaagent4'}
+    P3: Issue #557 | Agent: webwakaagent4 | Tasks: [558, 559, 560] | Task agents: {'webwakaagent4'}
+    P4: Issue #561 | Agent: webwakaagent4 | Tasks: [562, 563, 564] | Task agents: {'webwakaagent4'}
+    P5: Issue #565 | Agent: webwakaagent4 | Tasks: [566, 567, 568] | Task agents: {'webwakaagent4'}
+    P6: Issue #569 | Agent: webwakaagent4 | Tasks: [570, 571, 572] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-ACCESSCTRL (v0.1.0)
+    Master Issue: #576 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #577 | Agent: webwakaagent4 | Tasks: [578, 579, 580] | Task agents: {'webwakaagent4'}
+    P1: Issue #581 | Agent: webwakaagent3 | Tasks: [582, 583, 584] | Task agents: {'webwakaagent3'}
+    P2: Issue #585 | Agent: webwakaagent4 | Tasks: [586, 587, 588] | Task agents: {'webwakaagent4'}
+    P3: Issue #589 | Agent: webwakaagent4 | Tasks: [590, 591, 592] | Task agents: {'webwakaagent4'}
+    P4: Issue #593 | Agent: webwakaagent4 | Tasks: [594, 595, 596] | Task agents: {'webwakaagent4'}
+    P5: Issue #597 | Agent: webwakaagent4 | Tasks: [598, 599, 600] | Task agents: {'webwakaagent4'}
+    P6: Issue #601 | Agent: webwakaagent4 | Tasks: [602, 603, 604] | Task agents: {'webwakaagent4'}
+
+  CELL: CEL-CIGATEWAY (v0.1.0)
+    Master Issue: #605 (agent: webwakaagent4)
+    Archived issues: 0
+    P0: Issue #606 | Agent: webwakaagent4 | Tasks: [607, 608, 609] | Task agents: {'webwakaagent4'}
+    P1: Issue #610 | Agent: webwakaagent3 | Tasks: [611, 612, 613] | Task agents: {'webwakaagent3'}
+    P2: Issue #614 | Agent: webwakaagent4 | Tasks: [615, 616, 617] | Task agents: {'webwakaagent4'}
+    P3: Issue #618 | Agent: webwakaagent4 | Tasks: [619, 501, 502] | Task agents: {'webwakaagent4'}
+    P4: Issue #503 | Agent: webwakaagent4 | Tasks: [504, 505, 506] | Task agents: {'webwakaagent4'}
+    P5: Issue #507 | Agent: webwakaagent4 | Tasks: [508, 509, 510] | Task agents: {'webwakaagent4'}
+    P6: Issue #511 | Agent: webwakaagent4 | Tasks: [512, 513, 514] | Task agents: {'webwakaagent4'}
+
+========================================================================================================================
+AI CELLS (execution order)
+========================================================================================================================
+
+  CELL: CEL-AI-COGNITIVE_CELL (v0.1.0)
+    Master Issue: #620 (agent: webwakaagent3)
+    Archived issues: 0
+    P0: Issue #621 | Agent: webwakaagent3 | Tasks: [622, 623, 624] | Task agents: {'webwakaagent3'}
+    P1: Issue #625 | Agent: webwakaagent3 | Tasks: [626, 627, 628] | Task agents: {'webwakaagent3'}
+    P2: Issue #629 | Agent: webwakaagent5 | Tasks: [630, 631, 632] | Task agents: {'webwakaagent5'}
+    P3: Issue #633 | Agent: webwakaagent4 | Tasks: [634, 635, 636] | Task agents: {'webwakaagent4'}
+    P4: Issue #637 | Agent: webwakaagent5 | Tasks: [638, 639, 640] | Task agents: {'webwakaagent5'}
+    P5: Issue #641 | Agent: webwakaagent4 | Tasks: [642, 643, 644] | Task agents: {'webwakaagent4'}
+    P6: Issue #645 | Agent: webwaka007 | Tasks: [646, 647, 648] | Task agents: {'webwaka007'}
+
+  CELL: CEL-AI-INFERENCE_CELL (v0.1.0)
+    Master Issue: #649 (agent: webwakaagent3)
+    Archived issues: 0
+    P0: Issue #650 | Agent: webwakaagent3 | Tasks: [651, 652, 653] | Task agents: {'webwakaagent3'}
+    P1: Issue #654 | Agent: webwakaagent3 | Tasks: [655, 656, 657] | Task agents: {'webwakaagent3'}
+    P2: Issue #658 | Agent: webwakaagent5 | Tasks: [659, 660, 661] | Task agents: {'webwakaagent5'}
+    P3: Issue #662 | Agent: webwakaagent4 | Tasks: [663, 664, 665] | Task agents: {'webwakaagent4'}
+    P4: Issue #666 | Agent: webwakaagent5 | Tasks: [667, 668, 669] | Task agents: {'webwakaagent5'}
+    P5: Issue #670 | Agent: webwakaagent4 | Tasks: [671, 672, 673] | Task agents: {'webwakaagent4'}
+    P6: Issue #674 | Agent: webwaka007 | Tasks: [675, 676, 677] | Task agents: {'webwaka007'}
+
+  CELL: CEL-AI-STREAMING_CELL (v0.1.0)
+    Master Issue: #678 (agent: webwakaagent3)
+    Archived issues: 0
+    P0: Issue #679 | Agent: webwakaagent3 | Tasks: [680, 681, 682] | Task agents: {'webwakaagent3'}
+    P1: Issue #683 | Agent: webwakaagent3 | Tasks: [684, 685, 686] | Task agents: {'webwakaagent3'}
+    P2: Issue #687 | Agent: webwakaagent5 | Tasks: [688, 689, 690] | Task agents: {'webwakaagent5'}
+    P3: Issue #691 | Agent: webwakaagent4 | Tasks: [692, 693, 694] | Task agents: {'webwakaagent4'}
+    P4: Issue #695 | Agent: webwakaagent5 | Tasks: [696, 697, 698] | Task agents: {'webwakaagent5'}
+    P5: Issue #699 | Agent: webwakaagent4 | Tasks: [700, 701, 702] | Task agents: {'webwakaagent4'}
+    P6: Issue #703 | Agent: webwaka007 | Tasks: [704, 705, 706] | Task agents: {'webwaka007'}
+
+========================================================================================================================
+AGENT ASSIGNMENT DISTRIBUTION
+========================================================================================================================
+  webwakaagent4            : 349 issues
+  webwakaagent3            : 79 issues
+  webwakaagent5            : 24 issues
+  webwaka007               : 12 issues
+
+========================================================================================================================
+PHASE NAMING PATTERNS
+========================================================================================================================
+  CEL-CMDPROCESS: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-STATESTORE: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-EVENTDISPATCH: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-POLICYEVAL: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-VALIDATEEXEC: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-RESOURCEREG: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-AGGREGATE: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-MONITOR: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-IDRESOLVE: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-EXTADAPTER: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-TELEMETRY: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-ACCESSCTRL: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-CIGATEWAY: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-AI-COGNITIVE_CELL: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-AI-INFERENCE_CELL: phases [0, 1, 2, 3, 4, 5, 6]
+  CEL-AI-STREAMING_CELL: phases [0, 1, 2, 3, 4, 5, 6]
+  CMDPROCESS: phases []
+  STATESTORE: phases []
+  EVENTDISPATCH: phases []
+  POLICYEVAL: phases []
+  VALIDATEEXEC: phases []
+  RESOURCEREG: phases []
+  AGGREGATE: phases []
+  MONITOR: phases []
+  IDRESOLVE: phases []

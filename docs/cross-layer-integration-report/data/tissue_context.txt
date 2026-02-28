@@ -1,0 +1,34 @@
+TISSUE-UNIVERSE CONTEXT
+========================
+
+CONSTITUTION:
+- Tissue = cross-category capability assembly (composition of Cells)
+- Tissue MAY span multiple categories
+- Tissue MUST NOT contain raw organelles, business-domain logic, UI, or bypass Cell abstraction
+- 4 Classification Axes: Cross-Functional, Lifecycle, Structural Boundary, Scale & Deployment
+
+TISSUES IDENTIFIED (10 total = 8 standard + 2 AI):
+1. TIS-CMDCOORD - Command Coordination
+2. TIS-EVENT - Event Tissue
+3. TIS-MONITOR - Monitor Tissue
+4. TIS-POLICY - Policy Tissue
+5. TIS-RESOURCE - Resource Tissue
+6. TIS-STATEAGG - State Aggregation
+7. TIS-VALIDATE - Validation Tissue
+8. TIS-WORKFLOW - Workflow Tissue
+9. TIS-AI-COGNITIVE_TISSUE - AI Cognitive Tissue
+10. TIS-AI-ENTITLEMENT_TISSUE - AI Entitlement Tissue
+
+PHASE STRUCTURE (from file names):
+P0: Specification (T01, T02, T03)
+P1: Design (T01, T02, T03)
+P2: Implementation (T01, T02, T03)
+P3: Testing (T01, T02, T03)
+P4: Integration (T01, T02, T03)
+P5: Documentation (T01, T02, T03)
+P6: Ratification (T01, T02, T03)
+
+NOTE: Tissue phases differ from Cell/Organelle!
+P2 = Implementation (not Internal Validation)
+P3 = Testing (not Implementation)
+P4 = Integration (not Verification)

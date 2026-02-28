@@ -1,0 +1,123 @@
+{
+  "total_checks": 1478,
+  "passed": 1461,
+  "failed": 17,
+  "pass_rate": 98.84979702300406,
+  "by_dimension": {
+    "D1-Structure": {
+      "total": 1364,
+      "passed": 1361,
+      "failed": 3
+    },
+    "D2-Issues": {
+      "total": 18,
+      "passed": 14,
+      "failed": 4
+    },
+    "D3-Doctrine": {
+      "total": 48,
+      "passed": 39,
+      "failed": 9
+    },
+    "D4-Composition": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "D5-Contracts": {
+      "total": 18,
+      "passed": 17,
+      "failed": 1
+    },
+    "D6-Deploy": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0
+    }
+  },
+  "by_layer": {
+    "organelle": {
+      "total": 261,
+      "passed": 252,
+      "failed": 9
+    },
+    "cell": {
+      "total": 196,
+      "passed": 195,
+      "failed": 1
+    },
+    "tissue": {
+      "total": 130,
+      "passed": 129,
+      "failed": 1
+    },
+    "organ": {
+      "total": 636,
+      "passed": 635,
+      "failed": 1
+    },
+    "system": {
+      "total": 229,
+      "passed": 224,
+      "failed": 5
+    },
+    "organism": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0
+    }
+  },
+  "failures": [
+    "D1-Structure|system|webwaka-system-ai-cognitive-fabric|has_entity_file|Missing entity file",
+    "D1-Structure|system|webwaka-system-sec-securityplatform|has_entity_file|Missing entity file",
+    "D1-Structure|system|webwaka-system-soc-socialplatform|has_entity_file|Missing entity file",
+    "D2-Issues|cell|webwaka-cell-universe|all_issues_closed|242 open",
+    "D2-Issues|tissue|webwaka-tissue-universe|all_issues_closed|384 open",
+    "D2-Issues|organ|webwaka-organ-universe|all_issues_closed|2 open",
+    "D2-Issues|system|webwaka-system-universe|all_issues_closed|91 open",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-emitter|offline_first|No offline keywords",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-emitter|nigeria_first|No Nigeria-first markers",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-emitter|timeout_30s|No 30s timeout",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-logger|offline_first|No offline keywords",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-logger|nigeria_first|No Nigeria-first markers",
+    "D3-Doctrine|organelle|webwaka-organelle-audit-logger|timeout_30s|No 30s timeout",
+    "D3-Doctrine|organelle|webwaka-organelle-boundary-context|offline_first|No offline keywords",
+    "D3-Doctrine|organelle|webwaka-organelle-boundary-context|nigeria_first|No Nigeria-first markers",
+    "D3-Doctrine|organelle|webwaka-organelle-boundary-context|timeout_30s|No 30s timeout",
+    "D5-Contracts|system|all|entity_file_coverage|16/19 have entity file"
+  ],
+  "issue_totals": {
+    "organelle": {
+      "total": 638,
+      "closed": 638,
+      "open": 0
+    },
+    "cell": {
+      "total": 706,
+      "closed": 464,
+      "open": 242
+    },
+    "tissue": {
+      "total": 674,
+      "closed": 290,
+      "open": 384
+    },
+    "organ": {
+      "total": 1900,
+      "closed": 1898,
+      "open": 2
+    },
+    "system": {
+      "total": 757,
+      "closed": 666,
+      "open": 91
+    },
+    "organism": {
+      "total": 34,
+      "closed": 34,
+      "open": 0
+    }
+  },
+  "grand_total_issues": 4709,
+  "grand_total_closed": 3990
+}
