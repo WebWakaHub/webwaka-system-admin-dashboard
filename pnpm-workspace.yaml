@@ -1,0 +1,10 @@
+packages:
+  - 'apps/*'
+  - 'packages/organelles/*'
+  - 'packages/cells/*'
+  - 'packages/tissues/*'
+  - 'packages/organs/*'
+  - 'packages/systems/*'
+  - 'packages/organism'
+  - 'packages/shared/*'
+  - 'infra/*'

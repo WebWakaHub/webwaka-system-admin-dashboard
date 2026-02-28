@@ -1,0 +1,28 @@
+{
+  "name": "@webwaka/monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WebWaka Platform — Biological Architecture Monorepo",
+  "scripts": {
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "graph": "nx graph",
+    "affected:build": "nx affected -t build",
+    "affected:test": "nx affected -t test",
+    "affected:lint": "nx affected -t lint"
+  },
+  "keywords": ["webwaka", "platform", "biological-architecture", "nx", "monorepo"],
+  "author": "WebWakaHub",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.29.2",
+  "devDependencies": {
+    "@nx/eslint": "^22.5.3",
+    "@nx/js": "^22.5.3",
+    "@nx/node": "^22.5.3",
+    "@nx/react": "^22.5.3",
+    "@nx/vite": "^22.5.3",
+    "nx": "^22.5.3",
+    "typescript": "^5.9.3"
+  }
+}
