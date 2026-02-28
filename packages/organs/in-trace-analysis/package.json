@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/in-trace-analysis",
+  "version": "0.1.0",
+  "description": "TraceAnalysis Organ \u2014 Instrumentation and Observability Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-IN-TRACE_ANALYSIS",
+    "instrumentation and observability",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-IN-TRACE_ANALYSIS",
+  "domain": "IN",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

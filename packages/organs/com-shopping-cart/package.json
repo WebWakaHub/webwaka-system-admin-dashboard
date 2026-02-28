@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/com-shopping-cart",
+  "version": "0.1.0",
+  "description": "ShoppingCart Organ \u2014 Commerce and E-Commerce Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-COM-SHOPPING_CART",
+    "commerce and e-commerce",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-COM-SHOPPING_CART",
+  "domain": "COM",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

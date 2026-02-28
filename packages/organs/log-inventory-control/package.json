@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/log-inventory-control",
+  "version": "0.1.0",
+  "description": "InventoryControl Organ \u2014 Logistics and Supply Chain Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-LOG-INVENTORY_CONTROL",
+    "logistics and supply chain",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-LOG-INVENTORY_CONTROL",
+  "domain": "LOG",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

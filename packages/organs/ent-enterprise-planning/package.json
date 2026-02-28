@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/ent-enterprise-planning",
+  "version": "0.1.0",
+  "description": "EnterprisePlanning Organ \u2014 Enterprise Management Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-ENT-ENTERPRISE_PLANNING",
+    "enterprise management",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-ENT-ENTERPRISE_PLANNING",
+  "domain": "ENT",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

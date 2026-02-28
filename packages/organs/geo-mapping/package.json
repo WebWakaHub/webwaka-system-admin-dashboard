@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/geo-mapping",
+  "version": "0.1.0",
+  "description": "Mapping Organ \u2014 Geospatial and Location Services Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-GEO-MAPPING",
+    "geospatial and location services",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-GEO-MAPPING",
+  "domain": "GEO",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

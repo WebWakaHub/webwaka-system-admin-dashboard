@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/fin-payment-processing",
+  "version": "0.1.0",
+  "description": "PaymentProcessing Organ \u2014 Financial Services and Ledger Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-FIN-PAYMENT_PROCESSING",
+    "financial services and ledger",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-FIN-PAYMENT_PROCESSING",
+  "domain": "FIN",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

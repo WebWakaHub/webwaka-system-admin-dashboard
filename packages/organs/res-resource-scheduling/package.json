@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/res-resource-scheduling",
+  "version": "0.1.0",
+  "description": "ResourceScheduling Organ \u2014 Resource and Asset Management Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-RES-RESOURCE_SCHEDULING",
+    "resource and asset management",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-RES-RESOURCE_SCHEDULING",
+  "domain": "RES",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

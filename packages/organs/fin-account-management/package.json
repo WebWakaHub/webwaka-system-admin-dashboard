@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/fin-account-management",
+  "version": "0.1.0",
+  "description": "AccountManagement Organ \u2014 Financial Services and Ledger Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-FIN-ACCOUNT_MANAGEMENT",
+    "financial services and ledger",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-FIN-ACCOUNT_MANAGEMENT",
+  "domain": "FIN",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

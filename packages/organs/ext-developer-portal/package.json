@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/ext-developer-portal",
+  "version": "0.1.0",
+  "description": "DeveloperPortal Organ \u2014 External Integration and API Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-EXT-DEVELOPER_PORTAL",
+    "external integration and api",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-EXT-DEVELOPER_PORTAL",
+  "domain": "EXT",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

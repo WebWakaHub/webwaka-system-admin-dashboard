@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/med-content-management",
+  "version": "0.1.0",
+  "description": "ContentManagement Organ \u2014 Media and Content Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-MED-CONTENT_MANAGEMENT",
+    "media and content",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-MED-CONTENT_MANAGEMENT",
+  "domain": "MED",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

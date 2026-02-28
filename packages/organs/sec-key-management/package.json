@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/sec-key-management",
+  "version": "0.1.0",
+  "description": "KeyManagement Organ \u2014 Security and Compliance Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-SEC-KEY_MANAGEMENT",
+    "security and compliance",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-SEC-KEY_MANAGEMENT",
+  "domain": "SEC",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/hlt-clinical-workflow",
+  "version": "0.1.0",
+  "description": "ClinicalWorkflow Organ \u2014 Healthcare and Clinical Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-HLT-CLINICAL_WORKFLOW",
+    "healthcare and clinical",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-HLT-CLINICAL_WORKFLOW",
+  "domain": "HLT",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

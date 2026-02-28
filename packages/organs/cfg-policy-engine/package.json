@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/cfg-policy-engine",
+  "version": "0.1.0",
+  "description": "PolicyEngine Organ \u2014 Configuration and Policy Management Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-CFG-POLICY_ENGINE",
+    "configuration and policy management",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-CFG-POLICY_ENGINE",
+  "domain": "CFG",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

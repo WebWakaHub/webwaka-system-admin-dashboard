@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/cfg-configuration-store",
+  "version": "0.1.0",
+  "description": "ConfigurationStore Organ \u2014 Configuration and Policy Management Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-CFG-CONFIGURATION_STORE",
+    "configuration and policy management",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-CFG-CONFIGURATION_STORE",
+  "domain": "CFG",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/fin-risk-assessment",
+  "version": "0.1.0",
+  "description": "RiskAssessment Organ \u2014 Financial Services and Ledger Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-FIN-RISK_ASSESSMENT",
+    "financial services and ledger",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-FIN-RISK_ASSESSMENT",
+  "domain": "FIN",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

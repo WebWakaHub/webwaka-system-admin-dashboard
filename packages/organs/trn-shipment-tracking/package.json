@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/trn-shipment-tracking",
+  "version": "0.1.0",
+  "description": "ShipmentTracking Organ \u2014 Transportation and Shipping Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-TRN-SHIPMENT_TRACKING",
+    "transportation and shipping",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-TRN-SHIPMENT_TRACKING",
+  "domain": "TRN",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

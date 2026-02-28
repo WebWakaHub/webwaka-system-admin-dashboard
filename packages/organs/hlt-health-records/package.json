@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/hlt-health-records",
+  "version": "0.1.0",
+  "description": "HealthRecords Organ \u2014 Healthcare and Clinical Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-HLT-HEALTH_RECORDS",
+    "healthcare and clinical",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-HLT-HEALTH_RECORDS",
+  "domain": "HLT",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

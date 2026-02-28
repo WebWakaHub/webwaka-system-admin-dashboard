@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/ext-api-gateway",
+  "version": "0.1.0",
+  "description": "ApiGateway Organ \u2014 External Integration and API Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-EXT-API_GATEWAY",
+    "external integration and api",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-EXT-API_GATEWAY",
+  "domain": "EXT",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}

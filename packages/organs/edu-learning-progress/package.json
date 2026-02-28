@@ -1,0 +1,29 @@
+{
+  "name": "@webwaka/organs/edu-learning-progress",
+  "version": "0.1.0",
+  "description": "LearningProgress Organ \u2014 Education and Learning Business Capability Domain",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "ORGX-EDU-LEARNING_PROGRESS",
+    "education and learning",
+    "organ",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "organId": "ORGX-EDU-LEARNING_PROGRESS",
+  "domain": "EDU",
+  "doctrines": [
+    "build-once-use-infinitely",
+    "mobile-first",
+    "pwa-first",
+    "offline-first",
+    "nigeria-first",
+    "africa-first",
+    "vendor-neutral-ai"
+  ]
+}
