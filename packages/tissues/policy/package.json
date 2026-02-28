@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/policy",
+  "name": "@webwaka/tissue-policy",
   "version": "0.1.0",
   "description": "Policy enforcement tissue that coordinates policy evaluation across cells, ensuring constitutional compliance with offline-first policy caching for Nigeria-first operation.",
   "main": "src/entity.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/validate-exec",
+  "name": "@webwaka/cell-validate-exec",
   "version": "0.1.0",
   "description": "Validation Execution Cell \u2014 CEL-VALIDATEEXEC-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

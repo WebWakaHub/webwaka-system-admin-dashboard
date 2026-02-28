@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/fin-payment-processing",
+  "name": "@webwaka/organ-fin-payment-processing",
   "version": "0.1.0",
   "description": "PaymentProcessing Organ \u2014 Financial Services and Ledger Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/fin-portfolio-analysis",
+  "name": "@webwaka/organ-fin-portfolio-analysis",
   "version": "0.1.0",
   "description": "PortfolioAnalysis Organ \u2014 Financial Services and Ledger Business Capability Domain",
   "main": "src/index.ts",

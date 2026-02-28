@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/ai-entitlement",
+  "name": "@webwaka/tissue-ai-entitlement",
   "version": "0.1.0",
   "description": "AI Entitlement tissue that manages AI feature access, quota enforcement, and usage metering across cells with offline-first entitlement caching for Nigeria-first access.",
   "main": "src/entity.ts",

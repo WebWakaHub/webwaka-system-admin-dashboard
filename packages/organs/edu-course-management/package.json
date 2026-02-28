@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/edu-course-management",
+  "name": "@webwaka/organ-edu-course-management",
   "version": "0.1.0",
   "description": "CourseManagement Organ \u2014 Education and Learning Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/result-validator",
+  "name": "@webwaka/organelle-result-validator",
   "version": "0.1.0",
   "description": "ResultValidator organelle for WebWaka",
   "main": "dist/index.js",

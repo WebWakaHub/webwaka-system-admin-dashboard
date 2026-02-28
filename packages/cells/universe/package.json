@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/universe",
+  "name": "@webwaka/cell-universe",
   "version": "0.1.0",
   "private": true,
   "main": "src/entity.ts",

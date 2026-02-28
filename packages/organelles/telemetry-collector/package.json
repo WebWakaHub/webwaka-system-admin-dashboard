@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/telemetry-collector",
+  "name": "@webwaka/organelle-telemetry-collector",
   "version": "0.1.0",
   "description": "TelemetryCollector organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

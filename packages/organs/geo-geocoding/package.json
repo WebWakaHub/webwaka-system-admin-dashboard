@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/geo-geocoding",
+  "name": "@webwaka/organ-geo-geocoding",
   "version": "0.1.0",
   "description": "Geocoding Organ \u2014 Geospatial and Location Services Business Capability Domain",
   "main": "src/index.ts",

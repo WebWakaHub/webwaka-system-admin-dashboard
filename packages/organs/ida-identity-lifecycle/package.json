@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ida-identity-lifecycle",
+  "name": "@webwaka/organ-ida-identity-lifecycle",
   "version": "0.1.0",
   "description": "IdentityLifecycle Organ \u2014 Identity and Access Management Business Capability Domain",
   "main": "src/index.ts",

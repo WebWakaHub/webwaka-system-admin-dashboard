@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ida-authentication",
+  "name": "@webwaka/organ-ida-authentication",
   "version": "0.1.0",
   "description": "Authentication Organ \u2014 Identity and Access Management Business Capability Domain",
   "main": "src/index.ts",

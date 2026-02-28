@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/hlt-healthplatform",
+  "name": "@webwaka/system-hlt-healthplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling patient, clinical, and health data management organs into a unified health platform for healthcare service delivery.",
   "main": "src/entity.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/com-shopping-cart",
+  "name": "@webwaka/organ-com-shopping-cart",
   "version": "0.1.0",
   "description": "ShoppingCart Organ \u2014 Commerce and E-Commerce Business Capability Domain",
   "main": "src/index.ts",

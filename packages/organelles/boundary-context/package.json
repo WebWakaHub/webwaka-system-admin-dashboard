@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/boundary-context",
+  "name": "@webwaka/organelle-boundary-context",
   "version": "0.1.0",
   "description": "BoundaryContext organelle for WebWaka",
   "main": "dist/index.js",

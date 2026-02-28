@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/med-content-management",
+  "name": "@webwaka/organ-med-content-management",
   "version": "0.1.0",
   "description": "ContentManagement Organ \u2014 Media and Content Business Capability Domain",
   "main": "src/index.ts",

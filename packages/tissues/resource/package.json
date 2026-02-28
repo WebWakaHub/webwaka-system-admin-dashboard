@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/resource",
+  "name": "@webwaka/tissue-resource",
   "version": "0.1.0",
   "description": "Resource management tissue that coordinates resource allocation, pooling, and lifecycle across cells with offline-first resource caching for Nigeria-first bandwidth optimization.",
   "main": "src/entity.ts",

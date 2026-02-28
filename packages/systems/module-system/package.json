@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/module-system",
+  "name": "@webwaka/system-module-system",
   "version": "0.1.0",
   "description": "WebWaka Module System - Module 4 (Tier 2 Core Infrastructure)",
   "main": "dist/index.js",

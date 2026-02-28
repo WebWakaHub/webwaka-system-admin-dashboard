@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/governance-registry",
+  "name": "@webwaka/organelle-governance-registry",
   "version": "0.1.0",
   "description": "GovernanceRegistry organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

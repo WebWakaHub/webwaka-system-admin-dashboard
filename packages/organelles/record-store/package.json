@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/record-store",
+  "name": "@webwaka/organelle-record-store",
   "version": "0.1.0",
   "description": "RecordStore organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

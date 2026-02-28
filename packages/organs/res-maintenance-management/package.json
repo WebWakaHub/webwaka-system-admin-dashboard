@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/res-maintenance-management",
+  "name": "@webwaka/organ-res-maintenance-management",
   "version": "0.1.0",
   "description": "MaintenanceManagement Organ \u2014 Resource and Asset Management Business Capability Domain",
   "main": "src/index.ts",

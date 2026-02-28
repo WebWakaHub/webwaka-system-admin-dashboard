@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/med-media-processing",
+  "name": "@webwaka/organ-med-media-processing",
   "version": "0.1.0",
   "description": "MediaProcessing Organ \u2014 Media and Content Business Capability Domain",
   "main": "src/index.ts",

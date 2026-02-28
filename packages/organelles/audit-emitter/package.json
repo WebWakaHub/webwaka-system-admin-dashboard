@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/audit-emitter",
+  "name": "@webwaka/organelle-audit-emitter",
   "version": "0.1.0",
   "description": "AuditEmitter organelle for WebWaka",
   "main": "dist/index.js",

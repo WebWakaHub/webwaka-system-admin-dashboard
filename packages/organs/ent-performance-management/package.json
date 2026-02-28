@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ent-performance-management",
+  "name": "@webwaka/organ-ent-performance-management",
   "version": "0.1.0",
   "description": "PerformanceManagement Organ \u2014 Enterprise Management Business Capability Domain",
   "main": "src/index.ts",

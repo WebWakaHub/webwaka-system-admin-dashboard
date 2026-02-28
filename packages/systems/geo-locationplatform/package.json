@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/geo-locationplatform",
+  "name": "@webwaka/system-geo-locationplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling mapping, geocoding, and spatial analysis organs into a unified location platform for geospatial services.",
   "main": "src/entity.ts",

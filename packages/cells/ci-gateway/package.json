@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/ci-gateway",
+  "name": "@webwaka/cell-ci-gateway",
   "version": "0.1.0",
   "description": "CI Gateway Cell \u2014 CEL-CIGATEWAY-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

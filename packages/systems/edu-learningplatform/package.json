@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/edu-learningplatform",
+  "name": "@webwaka/system-edu-learningplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling course, assessment, and learner management organs into a unified learning platform for educational content delivery.",
   "main": "src/entity.ts",

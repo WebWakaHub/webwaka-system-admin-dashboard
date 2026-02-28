@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/policy-eval",
+  "name": "@webwaka/cell-policy-eval",
   "version": "0.1.0",
   "description": "Policy Evaluation Cell \u2014 CEL-POLICYEVAL-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

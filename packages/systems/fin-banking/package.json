@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/fin-banking",
+  "name": "@webwaka/system-fin-banking",
   "version": "0.1.0",
   "description": "A coherent system assembling account, transaction, and compliance management organs into a unified banking platform for financial services operations.",
   "main": "src/entity.ts",

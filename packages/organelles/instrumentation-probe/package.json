@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/instrumentation-probe",
+  "name": "@webwaka/organelle-instrumentation-probe",
   "version": "0.1.0",
   "description": "InstrumentationProbe organelle for WebWaka",
   "main": "dist/index.js",

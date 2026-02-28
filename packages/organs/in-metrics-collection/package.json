@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/in-metrics-collection",
+  "name": "@webwaka/organ-in-metrics-collection",
   "version": "0.1.0",
   "description": "MetricsCollection Organ \u2014 Instrumentation and Observability Business Capability Domain",
   "main": "src/index.ts",

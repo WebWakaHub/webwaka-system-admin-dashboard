@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/res-assetplatform",
+  "name": "@webwaka/system-res-assetplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling asset tracking, lifecycle, and maintenance management organs into a unified asset platform for resource operations.",
   "main": "src/entity.ts",

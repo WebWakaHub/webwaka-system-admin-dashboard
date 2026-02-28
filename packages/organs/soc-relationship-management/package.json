@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/soc-relationship-management",
+  "name": "@webwaka/organ-soc-relationship-management",
   "version": "0.1.0",
   "description": "RelationshipManagement Organ \u2014 Social and Relationship Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/sec-threat-detection",
+  "name": "@webwaka/organ-sec-threat-detection",
   "version": "0.1.0",
   "description": "ThreatDetection Organ \u2014 Security and Compliance Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/universe",
+  "name": "@webwaka/tissue-universe",
   "version": "0.1.0",
   "private": true,
   "main": "src/entity.ts",

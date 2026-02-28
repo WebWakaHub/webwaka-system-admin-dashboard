@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/state-store",
+  "name": "@webwaka/cell-state-store",
   "version": "0.1.0",
   "description": "State Storage Cell \u2014 CEL-STATESTORE-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

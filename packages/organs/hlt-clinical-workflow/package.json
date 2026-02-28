@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/hlt-clinical-workflow",
+  "name": "@webwaka/organ-hlt-clinical-workflow",
   "version": "0.1.0",
   "description": "ClinicalWorkflow Organ \u2014 Healthcare and Clinical Business Capability Domain",
   "main": "src/index.ts",

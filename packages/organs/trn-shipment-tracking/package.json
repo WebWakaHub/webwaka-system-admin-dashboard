@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/trn-shipment-tracking",
+  "name": "@webwaka/organ-trn-shipment-tracking",
   "version": "0.1.0",
   "description": "ShipmentTracking Organ \u2014 Transportation and Shipping Business Capability Domain",
   "main": "src/index.ts",

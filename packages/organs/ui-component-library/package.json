@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ui-component-library",
+  "name": "@webwaka/organ-ui-component-library",
   "version": "0.1.0",
   "description": "ComponentLibrary Organ \u2014 User Interface Components Business Capability Domain",
   "main": "src/index.ts",

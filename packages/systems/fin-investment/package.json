@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/fin-investment",
+  "name": "@webwaka/system-fin-investment",
   "version": "0.1.0",
   "description": "A coherent system assembling portfolio, trading, and risk management organs into a unified investment platform for asset management operations.",
   "main": "src/entity.ts",

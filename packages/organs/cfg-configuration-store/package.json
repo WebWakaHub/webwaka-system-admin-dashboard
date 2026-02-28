@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/cfg-configuration-store",
+  "name": "@webwaka/organ-cfg-configuration-store",
   "version": "0.1.0",
   "description": "ConfigurationStore Organ \u2014 Configuration and Policy Management Business Capability Domain",
   "main": "src/index.ts",

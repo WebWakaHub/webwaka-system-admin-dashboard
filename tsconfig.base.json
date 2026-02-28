@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "declarationMap": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,14 +16,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@webwaka/organelles/*": ["packages/organelles/*/src/index.ts"],
-      "@webwaka/cells/*": ["packages/cells/*/src/index.ts"],
-      "@webwaka/tissues/*": ["packages/tissues/*/src/index.ts"],
-      "@webwaka/organs/*": ["packages/organs/*/src/index.ts"],
-      "@webwaka/systems/*": ["packages/systems/*/src/index.ts"],
-      "@webwaka/organism": ["packages/organism/src/index.ts"],
-      "@webwaka/shared/*": ["packages/shared/*/src/index.ts"]
+      "@webwaka/organelle-*": ["packages/organelles/*/src/index.ts"],
+      "@webwaka/cell-*": ["packages/cells/*/src/index.ts"],
+      "@webwaka/tissue-*": ["packages/tissues/*/src/index.ts"],
+      "@webwaka/organ-*": ["packages/organs/*/src/index.ts"],
+      "@webwaka/system-*": ["packages/systems/*/src/index.ts"],
+      "@webwaka/organism-platform": ["packages/organism/platform/src/index.ts"],
+      "@webwaka/organism-universe": ["packages/organism/universe/src/index.ts"],
+      "@webwaka/shared-*": ["packages/shared/*/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "dist"]
 }

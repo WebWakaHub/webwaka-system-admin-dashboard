@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/ida-identityplatform",
+  "name": "@webwaka/system-ida-identityplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling authentication, authorization, and identity management organs into a unified identity platform for access control.",
   "main": "src/entity.ts",

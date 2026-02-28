@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/message-gateway",
+  "name": "@webwaka/organelle-message-gateway",
   "version": "0.1.0",
   "description": "MessageGateway organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/external-adapter",
+  "name": "@webwaka/organelle-external-adapter",
   "version": "0.1.0",
   "description": "ExternalAdapter organelle for WebWaka",
   "main": "dist/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/log-inventory-control",
+  "name": "@webwaka/organ-log-inventory-control",
   "version": "0.1.0",
   "description": "InventoryControl Organ \u2014 Logistics and Supply Chain Business Capability Domain",
   "main": "src/index.ts",

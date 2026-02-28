@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/com-customer-account",
+  "name": "@webwaka/organ-com-customer-account",
   "version": "0.1.0",
   "description": "CustomerAccount Organ \u2014 Commerce and E-Commerce Business Capability Domain",
   "main": "src/index.ts",

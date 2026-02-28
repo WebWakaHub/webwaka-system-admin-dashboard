@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/scheduler-executor",
+  "name": "@webwaka/organelle-scheduler-executor",
   "version": "0.1.0",
   "description": "SchedulerExecutor organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

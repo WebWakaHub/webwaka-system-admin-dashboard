@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/gov-civicplatform",
+  "name": "@webwaka/system-gov-civicplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling citizen engagement, policy management, and public service organs into a unified civic platform for government digital services.",
   "main": "src/entity.ts",

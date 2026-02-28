@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/com-product-catalog",
+  "name": "@webwaka/organ-com-product-catalog",
   "version": "0.1.0",
   "description": "ProductCatalog Organ \u2014 Commerce and E-Commerce Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ext-app-store",
+  "name": "@webwaka/organ-ext-app-store",
   "version": "0.1.0",
   "description": "AppStore Organ \u2014 External Integration and API Business Capability Domain",
   "main": "src/index.ts",

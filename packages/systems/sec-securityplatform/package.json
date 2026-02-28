@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/sec-securityplatform",
+  "name": "@webwaka/system-sec-securityplatform",
   "version": "0.1.0",
   "description": "SecurityplatformSystem - SYS-SEC-SECURITYPLATFORM",
   "main": "src/securityplatformsystem.ts",

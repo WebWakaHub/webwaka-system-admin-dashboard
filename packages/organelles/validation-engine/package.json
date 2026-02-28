@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/validation-engine",
+  "name": "@webwaka/organelle-validation-engine",
   "version": "0.1.0",
   "description": "ValidationEngine organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

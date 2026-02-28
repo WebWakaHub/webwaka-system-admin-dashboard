@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ai-model-serving",
+  "name": "@webwaka/organ-ai-model-serving",
   "version": "0.1.0",
   "description": "ModelServing Organ \u2014 Artificial Intelligence and Machine Learning Business Capability Domain",
   "main": "src/index.ts",

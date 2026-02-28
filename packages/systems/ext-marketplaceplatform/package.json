@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/ext-marketplaceplatform",
+  "name": "@webwaka/system-ext-marketplaceplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling vendor, listing, and transaction management organs into a unified marketplace platform for multi-sided market operations.",
   "main": "src/entity.ts",

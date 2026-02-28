@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/audit-logger",
+  "name": "@webwaka/organelle-audit-logger",
   "version": "0.1.0",
   "description": "AuditLogger organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

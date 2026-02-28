@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/validate",
+  "name": "@webwaka/tissue-validate",
   "version": "0.1.0",
   "description": "Validation tissue that coordinates cross-cell validation rules, schema enforcement, and invariant checking with offline-first validation caching.",
   "main": "src/entity.ts",

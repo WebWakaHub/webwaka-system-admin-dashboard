@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/resource-allocator",
+  "name": "@webwaka/organelle-resource-allocator",
   "version": "0.1.0",
   "description": "ResourceAllocator organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

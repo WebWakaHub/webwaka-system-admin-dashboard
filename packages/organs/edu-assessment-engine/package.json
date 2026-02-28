@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/edu-assessment-engine",
+  "name": "@webwaka/organ-edu-assessment-engine",
   "version": "0.1.0",
   "description": "AssessmentEngine Organ \u2014 Education and Learning Business Capability Domain",
   "main": "src/index.ts",

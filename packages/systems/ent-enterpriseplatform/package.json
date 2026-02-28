@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/ent-enterpriseplatform",
+  "name": "@webwaka/system-ent-enterpriseplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling workflow, resource, and operations management organs into a unified enterprise platform for business process orchestration.",
   "main": "src/entity.ts",

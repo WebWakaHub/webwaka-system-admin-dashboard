@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/trust-assertion",
+  "name": "@webwaka/organelle-trust-assertion",
   "version": "0.1.0",
   "description": "TrustAssertion organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

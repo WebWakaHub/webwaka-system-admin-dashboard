@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/monitor",
+  "name": "@webwaka/tissue-monitor",
   "version": "0.1.0",
   "description": "Monitoring tissue that aggregates health, performance, and telemetry data across cells with offline-first metric buffering and Nigeria-first alerting thresholds.",
   "main": "src/entity.ts",

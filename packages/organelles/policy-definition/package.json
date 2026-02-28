@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/policy-definition",
+  "name": "@webwaka/organelle-policy-definition",
   "version": "0.1.0",
   "description": "PolicyDefinition organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

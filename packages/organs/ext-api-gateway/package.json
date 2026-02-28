@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ext-api-gateway",
+  "name": "@webwaka/organ-ext-api-gateway",
   "version": "0.1.0",
   "description": "ApiGateway Organ \u2014 External Integration and API Business Capability Domain",
   "main": "src/index.ts",

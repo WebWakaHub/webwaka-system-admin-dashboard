@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/geo-mapping",
+  "name": "@webwaka/organ-geo-mapping",
   "version": "0.1.0",
   "description": "Mapping Organ \u2014 Geospatial and Location Services Business Capability Domain",
   "main": "src/index.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ext-developer-portal",
+  "name": "@webwaka/organ-ext-developer-portal",
   "version": "0.1.0",
   "description": "DeveloperPortal Organ \u2014 External Integration and API Business Capability Domain",
   "main": "src/index.ts",

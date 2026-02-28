@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/in-trace-analysis",
+  "name": "@webwaka/organ-in-trace-analysis",
   "version": "0.1.0",
   "description": "TraceAnalysis Organ \u2014 Instrumentation and Observability Business Capability Domain",
   "main": "src/index.ts",

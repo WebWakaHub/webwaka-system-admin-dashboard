@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ai-prediction-engine",
+  "name": "@webwaka/organ-ai-prediction-engine",
   "version": "0.1.0",
   "description": "PredictionEngine Organ \u2014 Artificial Intelligence and Machine Learning Business Capability Domain",
   "main": "src/index.ts",

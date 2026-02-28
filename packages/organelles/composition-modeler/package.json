@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/composition-modeler",
+  "name": "@webwaka/organelle-composition-modeler",
   "version": "0.1.0",
   "description": "CompositionModeler organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

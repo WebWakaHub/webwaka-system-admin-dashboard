@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/hlt-patient-management",
+  "name": "@webwaka/organ-hlt-patient-management",
   "version": "0.1.0",
   "description": "PatientManagement Organ \u2014 Healthcare and Clinical Business Capability Domain",
   "main": "src/index.ts",

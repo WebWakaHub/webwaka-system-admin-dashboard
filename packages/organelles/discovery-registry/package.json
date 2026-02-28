@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/discovery-registry",
+  "name": "@webwaka/organelle-discovery-registry",
   "version": "0.1.0",
   "description": "DiscoveryRegistry organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

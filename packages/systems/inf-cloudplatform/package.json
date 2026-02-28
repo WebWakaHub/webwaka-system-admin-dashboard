@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/inf-cloudplatform",
+  "name": "@webwaka/system-inf-cloudplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling compute, storage, and network management organs into a unified cloud platform for infrastructure orchestration.",
   "main": "src/entity.ts",

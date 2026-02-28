@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/ai-cognitive",
+  "name": "@webwaka/tissue-ai-cognitive",
   "version": "0.1.0",
   "description": "AI Cognitive tissue that coordinates vendor-neutral AI inference, model routing, and cognitive pipeline orchestration across cells with offline-first model caching.",
   "main": "src/entity.ts",

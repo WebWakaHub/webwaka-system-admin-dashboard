@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/gov-public-records",
+  "name": "@webwaka/organ-gov-public-records",
   "version": "0.1.0",
   "description": "PublicRecords Organ \u2014 Government and Civic Services Business Capability Domain",
   "main": "src/index.ts",

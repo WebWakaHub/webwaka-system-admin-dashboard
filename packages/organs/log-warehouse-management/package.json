@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/log-warehouse-management",
+  "name": "@webwaka/organ-log-warehouse-management",
   "version": "0.1.0",
   "description": "WarehouseManagement Organ \u2014 Logistics and Supply Chain Business Capability Domain",
   "main": "src/index.ts",

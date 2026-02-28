@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/gov-regulatory-compliance",
+  "name": "@webwaka/organ-gov-regulatory-compliance",
   "version": "0.1.0",
   "description": "RegulatoryCompliance Organ \u2014 Government and Civic Services Business Capability Domain",
   "main": "src/index.ts",

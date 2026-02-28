@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/cognitive-port",
+  "name": "@webwaka/organelle-cognitive-port",
   "version": "0.1.0",
   "description": "CognitivePort organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

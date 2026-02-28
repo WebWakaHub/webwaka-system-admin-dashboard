@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/state-agg",
+  "name": "@webwaka/tissue-state-agg",
   "version": "0.1.0",
   "description": "State aggregation tissue that consolidates and reconciles state from multiple cells into a unified view, supporting offline-first conflict resolution with Nigeria-first network awareness.",
   "main": "src/entity.ts",

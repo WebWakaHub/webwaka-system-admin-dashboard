@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/hlt-health-records",
+  "name": "@webwaka/organ-hlt-health-records",
   "version": "0.1.0",
   "description": "HealthRecords Organ \u2014 Healthcare and Clinical Business Capability Domain",
   "main": "src/index.ts",

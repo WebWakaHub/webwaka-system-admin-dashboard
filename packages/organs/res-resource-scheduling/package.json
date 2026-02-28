@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/res-resource-scheduling",
+  "name": "@webwaka/organ-res-resource-scheduling",
   "version": "0.1.0",
   "description": "ResourceScheduling Organ \u2014 Resource and Asset Management Business Capability Domain",
   "main": "src/index.ts",

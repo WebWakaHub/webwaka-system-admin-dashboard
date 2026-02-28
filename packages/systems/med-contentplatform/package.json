@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/med-contentplatform",
+  "name": "@webwaka/system-med-contentplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling content creation, distribution, and management organs into a unified content platform for media operations.",
   "main": "src/entity.ts",

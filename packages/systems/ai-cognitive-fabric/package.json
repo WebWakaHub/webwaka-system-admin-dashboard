@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/ai-cognitive-fabric",
+  "name": "@webwaka/system-ai-cognitive-fabric",
   "version": "0.1.0",
   "description": "CognitivefabricSystem - SYSX-AI-COGNITIVE_FABRIC",
   "main": "src/cognitivefabricsystem.ts",

@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/med-content-distribution",
+  "name": "@webwaka/organ-med-content-distribution",
   "version": "0.1.0",
   "description": "ContentDistribution Organ \u2014 Media and Content Business Capability Domain",
   "main": "src/index.ts",

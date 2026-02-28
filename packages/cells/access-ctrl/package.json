@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/access-ctrl",
+  "name": "@webwaka/cell-access-ctrl",
   "version": "0.1.0",
   "description": "Access Control Cell \u2014 CEL-ACCESSCTRL-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

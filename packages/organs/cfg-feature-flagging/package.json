@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/cfg-feature-flagging",
+  "name": "@webwaka/organ-cfg-feature-flagging",
   "version": "0.1.0",
   "description": "FeatureFlagging Organ \u2014 Configuration and Policy Management Business Capability Domain",
   "main": "src/index.ts",

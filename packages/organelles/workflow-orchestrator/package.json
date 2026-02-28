@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/workflow-orchestrator",
+  "name": "@webwaka/organelle-workflow-orchestrator",
   "version": "0.1.0",
   "description": "WorkflowOrchestrator organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

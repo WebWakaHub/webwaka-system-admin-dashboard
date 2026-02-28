@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/com-order-management",
+  "name": "@webwaka/organ-com-order-management",
   "version": "0.1.0",
   "description": "OrderManagement Organ \u2014 Commerce and E-Commerce Business Capability Domain",
   "main": "src/index.ts",

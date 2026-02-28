@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/event-dispatcher",
+  "name": "@webwaka/organelle-event-dispatcher",
   "version": "0.1.0",
   "description": "EventDispatcher organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

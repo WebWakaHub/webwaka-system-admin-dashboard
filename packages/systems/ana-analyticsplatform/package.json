@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/ana-analyticsplatform",
+  "name": "@webwaka/system-ana-analyticsplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling data, intelligence, and visualization organs into a unified analytics platform for business intelligence, reporting, and data-driven decision making.",
   "main": "src/entity.ts",

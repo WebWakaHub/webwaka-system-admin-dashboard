@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/tissues/event",
+  "name": "@webwaka/tissue-event",
   "version": "0.1.0",
   "description": "Event coordination tissue that manages cross-cell event propagation, subscription, and replay with offline-first event queuing and Nigeria-first delivery guarantees.",
   "main": "src/entity.ts",

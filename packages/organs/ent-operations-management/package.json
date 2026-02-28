@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ent-operations-management",
+  "name": "@webwaka/organ-ent-operations-management",
   "version": "0.1.0",
   "description": "OperationsManagement Organ \u2014 Enterprise Management Business Capability Domain",
   "main": "src/index.ts",

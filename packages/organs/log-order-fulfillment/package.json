@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/log-order-fulfillment",
+  "name": "@webwaka/organ-log-order-fulfillment",
   "version": "0.1.0",
   "description": "OrderFulfillment Organ \u2014 Logistics and Supply Chain Business Capability Domain",
   "main": "src/index.ts",

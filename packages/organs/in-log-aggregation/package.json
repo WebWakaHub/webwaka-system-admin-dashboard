@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/in-log-aggregation",
+  "name": "@webwaka/organ-in-log-aggregation",
   "version": "0.1.0",
   "description": "LogAggregation Organ \u2014 Instrumentation and Observability Business Capability Domain",
   "main": "src/index.ts",

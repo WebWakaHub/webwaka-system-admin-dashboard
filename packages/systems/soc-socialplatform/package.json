@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/soc-socialplatform",
+  "name": "@webwaka/system-soc-socialplatform",
   "version": "0.1.0",
   "description": "SocialplatformSystem - SYS-SOC-SOCIALPLATFORM",
   "main": "src/socialplatformsystem.ts",

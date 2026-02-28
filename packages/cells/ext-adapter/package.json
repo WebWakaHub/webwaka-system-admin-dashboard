@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/ext-adapter",
+  "name": "@webwaka/cell-ext-adapter",
   "version": "0.1.0",
   "description": "External Adapter Cell \u2014 CEL-EXTADAPTER-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

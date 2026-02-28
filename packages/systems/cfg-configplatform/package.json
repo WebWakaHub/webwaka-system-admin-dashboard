@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/systems/cfg-configplatform",
+  "name": "@webwaka/system-cfg-configplatform",
   "version": "0.1.0",
   "description": "A coherent system assembling configuration, feature flag, and environment management organs into a unified platform for application configuration orchestration.",
   "main": "src/entity.ts",

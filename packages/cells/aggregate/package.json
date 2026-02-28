@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/cells/aggregate",
+  "name": "@webwaka/cell-aggregate",
   "version": "0.1.0",
   "description": "Aggregation Cell \u2014 CEL-AGGREGATE-v0.1.0 | WebWaka Biological Architecture | Cell Layer",
   "main": "src/index.ts",

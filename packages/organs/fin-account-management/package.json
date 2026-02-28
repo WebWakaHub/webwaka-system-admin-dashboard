@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/fin-account-management",
+  "name": "@webwaka/organ-fin-account-management",
   "version": "0.1.0",
   "description": "AccountManagement Organ \u2014 Financial Services and Ledger Business Capability Domain",
   "main": "src/index.ts",

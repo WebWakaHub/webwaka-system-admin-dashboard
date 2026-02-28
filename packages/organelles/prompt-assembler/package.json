@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organelles/prompt-assembler",
+  "name": "@webwaka/organelle-prompt-assembler",
   "version": "0.1.0",
   "description": "PromptAssembler organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",

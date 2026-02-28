@@ -1,5 +1,5 @@
 {
-  "name": "@webwaka/organs/ai-training-pipeline",
+  "name": "@webwaka/organ-ai-training-pipeline",
   "version": "0.1.0",
   "description": "TrainingPipeline Organ \u2014 Artificial Intelligence and Machine Learning Business Capability Domain",
   "main": "src/index.ts",
