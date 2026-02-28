@@ -1,0 +1,19 @@
+{
+  "name": "@webwaka/systems/sec-securityplatform",
+  "version": "0.1.0",
+  "description": "SecurityplatformSystem - SYS-SEC-SECURITYPLATFORM",
+  "main": "src/securityplatformsystem.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

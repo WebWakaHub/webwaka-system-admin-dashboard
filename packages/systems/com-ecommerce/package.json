@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/com-ecommerce",
+  "version": "0.1.0",
+  "description": "A coherent system assembling catalog, cart, checkout, and order management organs into a unified e-commerce platform for digital marketplace operations.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-COM-ECOMMERCE",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "commerce",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

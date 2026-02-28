@@ -1,0 +1,19 @@
+{
+  "name": "@webwaka/systems/ai-cognitive-fabric",
+  "version": "0.1.0",
+  "description": "CognitivefabricSystem - SYSX-AI-COGNITIVE_FABRIC",
+  "main": "src/cognitivefabricsystem.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

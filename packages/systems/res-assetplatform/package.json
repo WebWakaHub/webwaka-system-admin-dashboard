@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/res-assetplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling asset tracking, lifecycle, and maintenance management organs into a unified asset platform for resource operations.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-RES-ASSETPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "resources",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

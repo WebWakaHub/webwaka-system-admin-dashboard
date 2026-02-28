@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/ana-analyticsplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling data, intelligence, and visualization organs into a unified analytics platform for business intelligence, reporting, and data-driven decision making.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-ANA-ANALYTICSPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "analytics",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/geo-locationplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling mapping, geocoding, and spatial analysis organs into a unified location platform for geospatial services.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-GEO-LOCATIONPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "geospatial",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

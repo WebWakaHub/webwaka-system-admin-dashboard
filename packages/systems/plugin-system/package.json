@@ -1,0 +1,49 @@
+{
+  "name": "@webwaka/systems/plugin-system",
+  "version": "0.1.0",
+  "description": "WebWaka Plugin System - Module 2 (Tier 2 Core Infrastructure)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist coverage"
+  },
+  "keywords": [
+    "webwaka",
+    "plugin-system",
+    "tier-2",
+    "core-infrastructure",
+    "extensibility"
+  ],
+  "author": "WebWaka Platform Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WebWakaHub/webwaka-modules-plugin-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebWakaHub/webwaka-modules-plugin-system/issues"
+  },
+  "homepage": "https://github.com/WebWakaHub/webwaka-modules-plugin-system#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.40.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

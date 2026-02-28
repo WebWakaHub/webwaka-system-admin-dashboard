@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/edu-learningplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling course, assessment, and learner management organs into a unified learning platform for educational content delivery.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-EDU-LEARNINGPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "education",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

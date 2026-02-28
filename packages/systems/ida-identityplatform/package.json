@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/ida-identityplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling authentication, authorization, and identity management organs into a unified identity platform for access control.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-IDA-IDENTITYPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "identity",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/cfg-configplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling configuration, feature flag, and environment management organs into a unified platform for application configuration orchestration.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-CFG-CONFIGPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "configuration",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/gov-civicplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling citizen engagement, policy management, and public service organs into a unified civic platform for government digital services.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-GOV-CIVICPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "governance",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}

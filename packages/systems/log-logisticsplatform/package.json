@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/systems/log-logisticsplatform",
+  "version": "0.1.0",
+  "description": "A coherent system assembling supply chain, inventory, and fulfillment management organs into a unified logistics platform for supply chain operations.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "systemId": "SYS-LOG-LOGISTICSPLATFORM",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "system",
+    "logistics",
+    "offline-first",
+    "nigeria-first",
+    "pwa"
+  ],
+  "license": "PROPRIETARY"
+}
