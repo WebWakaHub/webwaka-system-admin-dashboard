@@ -1,0 +1,22 @@
+{
+  "name": "@webwaka/organism-platform",
+  "version": "0.1.0",
+  "description": "ORG-WEBWAKA-PLATFORM \u2014 The constitutionally self-regulating WebWaka Platform Organism",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/",
+    "audit:constitutional": "node scripts/audit-constitutional.js"
+  },
+  "keywords": [
+    "webwaka",
+    "organism",
+    "platform",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "license": "UNLICENSED",
+  "private": true
+}
