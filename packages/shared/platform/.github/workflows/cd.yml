@@ -1,0 +1,135 @@
+name: Continuous Deployment (CD)
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
+  ECR_REPOSITORY: webwaka-platform
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Use OIDC for AWS authentication (no long-lived credentials)
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsRole
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/${{ env.ECR_REPOSITORY }}:$IMAGE_TAG \
+                       -t $ECR_REGISTRY/${{ env.ECR_REPOSITORY }}:latest .
+
+      - name: Push Docker image to ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker push $ECR_REGISTRY/${{ env.ECR_REPOSITORY }}:$IMAGE_TAG
+          docker push $ECR_REGISTRY/${{ env.ECR_REPOSITORY }}:latest
+
+      - name: Determine deployment environment
+        id: env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+            echo "ecs_service=webwaka-prod" >> $GITHUB_OUTPUT
+            echo "ecs_cluster=webwaka-prod-cluster" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
+            echo "environment=staging" >> $GITHUB_OUTPUT
+            echo "ecs_service=webwaka-staging" >> $GITHUB_OUTPUT
+            echo "ecs_cluster=webwaka-staging-cluster" >> $GITHUB_OUTPUT
+          else
+            echo "environment=development" >> $GITHUB_OUTPUT
+            echo "ecs_service=webwaka-dev" >> $GITHUB_OUTPUT
+            echo "ecs_cluster=webwaka-dev-cluster" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: webwaka-app
+          image: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+
+      - name: Deploy to ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ steps.env.outputs.ecs_service }}
+          cluster: ${{ steps.env.outputs.ecs_cluster }}
+          wait-for-service-stability: true
+
+      - name: Run smoke tests
+        run: |
+          # Wait for deployment to stabilize
+          sleep 30
+          
+          # Run smoke tests against the deployed environment
+          if [[ "${{ steps.env.outputs.environment }}" == "production" ]]; then
+            ENDPOINT="https://api.webwaka.com"
+          elif [[ "${{ steps.env.outputs.environment }}" == "staging" ]]; then
+            ENDPOINT="https://staging-api.webwaka.com"
+          else
+            ENDPOINT="http://localhost:3000"
+          fi
+          
+          # Test health endpoint
+          curl -f $ENDPOINT/health || exit 1
+          
+          # Test API endpoint
+          curl -f $ENDPOINT/api/v1/status || exit 1
+
+      - name: Send deployment notification
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: 'Deployment to ${{ steps.env.outputs.environment }} ${{ job.status }}'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+
+      - name: Create deployment record
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.ref,
+              environment: '${{ steps.env.outputs.environment }}',
+              description: 'Deployment via GitHub Actions',
+              required_contexts: [],
+              auto_merge: false
+            });
+
+      - name: Rollback on failure
+        if: failure()
+        run: |
+          echo "Deployment failed. Initiating rollback..."
+          ./scripts/rollback.sh ${{ steps.env.outputs.environment }}

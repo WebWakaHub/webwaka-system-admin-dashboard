@@ -1,0 +1,261 @@
+// WebWaka Platform Core - Prisma Schema
+// Based on DATABASE_SCHEMA_DESIGN.md
+// Multi-tenant, offline-first, event-driven architecture
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// CORE MODELS
+// ============================================================================
+
+model Tenant {
+  id               String    @id @default(uuid()) @db.Uuid
+  name             String    @db.VarChar(255)
+  slug             String    @unique @db.VarChar(100)
+  status           String    @default("active") @db.VarChar(50)
+  subscriptionTier String    @default("free") @map("subscription_tier") @db.VarChar(50)
+  settings         Json      @default("{}")
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  deletedAt        DateTime? @map("deleted_at") @db.Timestamptz(6)
+
+  // Relations
+  tenantUsers TenantUser[]
+  roles       Role[]
+  permissions Permission[]
+  events      Event[]
+  auditLogs   AuditLog[]
+  syncQueue   SyncQueue[]
+
+  @@index([slug])
+  @@index([status])
+  @@map("tenants")
+}
+
+model User {
+  id            String    @id @default(uuid()) @db.Uuid
+  email         String    @unique @db.VarChar(255)
+  passwordHash  String    @map("password_hash") @db.VarChar(255)
+  firstName     String?   @map("first_name") @db.VarChar(100)
+  lastName      String?   @map("last_name") @db.VarChar(100)
+  phone         String?   @db.VarChar(50)
+  status        String    @default("active") @db.VarChar(50)
+  emailVerified Boolean   @default(false) @map("email_verified")
+  phoneVerified Boolean   @default(false) @map("phone_verified")
+  lastLoginAt   DateTime? @map("last_login_at") @db.Timestamptz(6)
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  deletedAt     DateTime? @map("deleted_at") @db.Timestamptz(6)
+
+  // Relations
+  tenantUsers TenantUser[]
+  permissions Permission[]
+  events      Event[]
+  auditLogs   AuditLog[]
+
+  @@index([email])
+  @@index([status])
+  @@map("users")
+}
+
+model TenantUser {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  roleId    String   @map("role_id") @db.Uuid
+  status    String   @default("active") @db.VarChar(50)
+  joinedAt  DateTime @default(now()) @map("joined_at") @db.Timestamptz(6)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   Role   @relation(fields: [roleId], references: [id])
+
+  @@unique([tenantId, userId])
+  @@index([tenantId])
+  @@index([userId])
+  @@index([roleId])
+  @@map("tenant_users")
+}
+
+// ============================================================================
+// ROLE & PERMISSION MODELS (WEEG Actor Hierarchy)
+// ============================================================================
+
+model Role {
+  id          String   @id @default(uuid()) @db.Uuid
+  tenantId    String?  @map("tenant_id") @db.Uuid
+  name        String   @db.VarChar(100)
+  slug        String   @db.VarChar(100)
+  description String?  @db.Text
+  actorType   String   @map("actor_type") @db.VarChar(50) // super_admin, partner, tenant, vendor, agent, staff, end_user
+  isSystem    Boolean  @default(false) @map("is_system")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant           Tenant?          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantUsers      TenantUser[]
+  roleCapabilities RoleCapability[]
+  permissions      Permission[]
+
+  @@unique([tenantId, slug])
+  @@index([tenantId])
+  @@index([actorType])
+  @@map("roles")
+}
+
+model Capability {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @db.VarChar(100)
+  slug        String   @unique @db.VarChar(100)
+  description String?  @db.Text
+  category    String?  @db.VarChar(100)
+  isSystem    Boolean  @default(false) @map("is_system")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  roleCapabilities RoleCapability[]
+
+  @@index([slug])
+  @@index([category])
+  @@map("capabilities")
+}
+
+model RoleCapability {
+  id           String   @id @default(uuid()) @db.Uuid
+  roleId       String   @map("role_id") @db.Uuid
+  capabilityId String   @map("capability_id") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Relations
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  capability Capability @relation(fields: [capabilityId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, capabilityId])
+  @@index([roleId])
+  @@index([capabilityId])
+  @@map("role_capabilities")
+}
+
+model Permission {
+  id           String   @id @default(uuid()) @db.Uuid
+  tenantId     String?  @map("tenant_id") @db.Uuid
+  resourceType String   @map("resource_type") @db.VarChar(100)
+  resourceId   String?  @map("resource_id") @db.Uuid
+  action       String   @db.VarChar(50) // create, read, update, delete, execute
+  roleId       String?  @map("role_id") @db.Uuid
+  userId       String?  @map("user_id") @db.Uuid
+  granted      Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  role   Role?   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([resourceType, resourceId])
+  @@index([roleId])
+  @@index([userId])
+  @@map("permissions")
+}
+
+// ============================================================================
+// EVENT-DRIVEN ARCHITECTURE
+// ============================================================================
+
+model Event {
+  id            String   @id @default(uuid()) @db.Uuid
+  tenantId      String?  @map("tenant_id") @db.Uuid
+  eventType     String   @map("event_type") @db.VarChar(100)
+  eventVersion  String   @default("1.0") @map("event_version") @db.VarChar(20)
+  aggregateId   String?  @map("aggregate_id") @db.Uuid
+  aggregateType String?  @map("aggregate_type") @db.VarChar(100)
+  payload       Json
+  metadata      Json     @default("{}")
+  userId        String?  @map("user_id") @db.Uuid
+  publishedAt   DateTime @default(now()) @map("published_at") @db.Timestamptz(6)
+  processed     Boolean  @default(false)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user   User?   @relation(fields: [userId], references: [id])
+
+  @@index([tenantId])
+  @@index([eventType])
+  @@index([aggregateId, aggregateType])
+  @@index([publishedAt])
+  @@index([processed])
+  @@map("events")
+}
+
+// ============================================================================
+// AUDIT & COMPLIANCE
+// ============================================================================
+
+model AuditLog {
+  id           String   @id @default(uuid()) @db.Uuid
+  tenantId     String?  @map("tenant_id") @db.Uuid
+  userId       String?  @map("user_id") @db.Uuid
+  action       String   @db.VarChar(100)
+  resourceType String   @map("resource_type") @db.VarChar(100)
+  resourceId   String?  @map("resource_id") @db.Uuid
+  changes      Json     @default("{}")
+  metadata     Json     @default("{}")
+  ipAddress    String?  @map("ip_address") @db.VarChar(45)
+  userAgent    String?  @map("user_agent") @db.Text
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user   User?   @relation(fields: [userId], references: [id])
+
+  @@index([tenantId])
+  @@index([userId])
+  @@index([resourceType, resourceId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// ============================================================================
+// OFFLINE-FIRST SYNC ENGINE
+// ============================================================================
+
+model SyncQueue {
+  id            String    @id @default(uuid()) @db.Uuid
+  tenantId      String    @map("tenant_id") @db.Uuid
+  userId        String?   @map("user_id") @db.Uuid
+  operationType String    @map("operation_type") @db.VarChar(50) // create, update, delete
+  resourceType  String    @map("resource_type") @db.VarChar(100)
+  resourceId    String    @map("resource_id") @db.Uuid
+  payload       Json
+  status        String    @default("pending") @db.VarChar(50) // pending, processing, completed, failed
+  priority      Int       @default(0)
+  retryCount    Int       @default(0) @map("retry_count")
+  lastError     String?   @map("last_error") @db.Text
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  processedAt   DateTime? @map("processed_at") @db.Timestamptz(6)
+
+  // Relations
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([userId])
+  @@index([status])
+  @@index([priority])
+  @@index([createdAt])
+  @@map("sync_queue")
+}

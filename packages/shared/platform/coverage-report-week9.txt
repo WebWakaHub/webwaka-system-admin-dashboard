@@ -1,0 +1,31 @@
+File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+----------------------------|---------|----------|---------|---------|--------------------------------
+All files                   |   71.07 |     78.8 |   69.67 |    71.9 |                                
+ src                        |       0 |      100 |       0 |       0 |                                
+  index.ts                  |       0 |      100 |       0 |       0 | 6-8                            
+ src/plugin-system          |       0 |      100 |       0 |       0 |                                
+  index.ts                  |       0 |      100 |       0 |       0 | 6-15                           
+ src/plugin-system/api      |       0 |        0 |       0 |       0 |                                
+  plugin-routes.ts          |       0 |        0 |       0 |       0 | 9-281                          
+ src/plugin-system/errors   |   83.33 |        0 |   73.33 |   83.33 |                                
+  index.ts                  |   83.33 |        0 |   73.33 |   83.33 | 75-81,111-116,122-127,167-172  
+ src/plugin-system/manager  |   79.36 |       50 |   91.66 |   78.68 |                                
+  plugin-manager.ts         |   79.36 |       50 |   91.66 |   78.68 | 60,67-72,81-87,189,220-225,276 
+ src/plugin-system/registry |   83.33 |    85.71 |   83.33 |   82.89 |                                
+  plugin-registry.ts        |   83.33 |    85.71 |   83.33 |   82.89 | 79-88,252-270                  
+ src/plugin-system/sandbox  |   95.55 |       85 |     100 |   95.55 |                                
+  plugin-sandbox.ts         |   95.55 |       85 |     100 |   95.55 | 190-191                        
+ src/plugin-system/types    |       0 |        0 |       0 |       0 |                                
+  index.ts                  |       0 |        0 |       0 |       0 | 124-129                        
+ src/plugin-system/utils    |   91.46 |    86.29 |   96.96 |   91.26 |                                
+  config-validator.ts       |      85 |    83.33 |    87.5 |      85 | 79,83,92,116,129,141,151-155   
+  dependency-resolver.ts    |   91.07 |    85.71 |     100 |    90.9 | 48,70,99-102,144               
+  plugin-logger.ts          |     100 |      100 |     100 |     100 |                                
+  version-utils.ts          |   92.45 |       85 |     100 |    92.3 | 61-68,109                      
+ src/shared                 |   43.75 |    66.66 |      40 |   43.75 |                                
+  event-bus.ts              |   43.75 |    66.66 |      40 |   43.75 | 28-47,61-62                    
+----------------------------|---------|----------|---------|---------|--------------------------------
+Test Suites: 3 failed, 5 passed, 8 total
+Tests:       3 failed, 131 passed, 134 total
+Snapshots:   0 total
+Time:        13.959 s

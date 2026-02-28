@@ -1,0 +1,154 @@
+name: Performance Testing
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+  pull_request:
+    branches:
+      - main
+      - staging
+      - develop
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3 AM UTC
+
+jobs:
+  performance-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_DB: webwaka_test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Run performance tests
+        env:
+          DATABASE_URL: postgres://test:test@localhost:5432/webwaka_test
+          REDIS_URL: redis://localhost:6379
+        run: pnpm test:performance
+
+      - name: Load testing with k6
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: tests/performance/load-test.js
+          cloud: false
+
+      - name: Parse performance results
+        id: perf-results
+        run: |
+          # Extract performance metrics
+          if [ -f performance-results.json ]; then
+            echo "results=$(cat performance-results.json)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Compare with baseline
+        run: |
+          # Compare current performance with baseline
+          if [ -f baseline-performance.json ]; then
+            pnpm run compare:performance
+          fi
+
+      - name: Archive performance results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: performance-results-${{ github.run_id }}
+          path: |
+            performance-results.json
+            k6-results.json
+            baseline-performance.json
+          retention-days: 30
+
+      - name: Comment PR with performance results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            let results = {};
+            try {
+              results = JSON.parse(fs.readFileSync('./performance-results.json', 'utf8'));
+            } catch (e) {
+              console.log('No performance results file found');
+            }
+
+            const comment = `## Performance Test Results
+            
+            ### API Response Times
+            - **Median:** ${results.median_response_time || 'N/A'} ms
+            - **P95:** ${results.p95_response_time || 'N/A'} ms
+            - **P99:** ${results.p99_response_time || 'N/A'} ms
+
+            ### Throughput
+            - **Requests/sec:** ${results.requests_per_second || 'N/A'}
+            - **Error Rate:** ${results.error_rate || 'N/A'}%
+
+            ### Resource Usage
+            - **Memory:** ${results.memory_usage || 'N/A'} MB
+            - **CPU:** ${results.cpu_usage || 'N/A'}%`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Send performance report
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: 'Performance testing ${{ job.status }}'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+
+      - name: Fail if performance degraded
+        run: |
+          if [ -f performance-results.json ]; then
+            # Check if performance metrics exceed thresholds
+            MEDIAN_RT=$(jq '.median_response_time' performance-results.json)
+            if (( $(echo "$MEDIAN_RT > 500" | bc -l) )); then
+              echo "Performance degradation detected: median response time > 500ms"
+              exit 1
+            fi
+          fi

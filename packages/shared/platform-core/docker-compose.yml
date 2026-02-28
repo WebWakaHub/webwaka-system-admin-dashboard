@@ -1,0 +1,76 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: webwaka-postgres
+    environment:
+      POSTGRES_USER: webwaka
+      POSTGRES_PASSWORD: webwaka
+      POSTGRES_DB: webwaka_platform_core
+      POSTGRES_INITDB_ARGS: "-E UTF8"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U webwaka"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - webwaka-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: webwaka-redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - webwaka-network
+
+  # Platform Core Application (optional, for full Docker development)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: webwaka-platform-core
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://webwaka:webwaka@postgres:5432/webwaka_platform_core
+      REDIS_URL: redis://redis:6379
+    ports:
+      - "3000:3000"
+      - "9229:9229" # Node.js debugger
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - webwaka-network
+    command: pnpm dev
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  webwaka-network:
+    driver: bridge
