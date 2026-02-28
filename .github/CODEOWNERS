@@ -1,0 +1,65 @@
+# ============================================================================
+# CODEOWNERS — WebWaka Biological Layer Ownership
+# ============================================================================
+# Maps each biological layer to its responsible agent team.
+# All PRs modifying these paths require review from the listed owners.
+#
+# Agent Assignments (from Canonical Agent Specification):
+#   webwakaagent1 — Lead Architect & Orchestrator
+#   webwakaagent2 — Backend & Infrastructure
+#   webwakaagent3 — Frontend & UI/UX
+#   webwakaagent4 — AI & Cognitive Systems
+#   webwakaagent5 — QA & Testing
+#   webwakaagent6 — DevOps & Deployment
+#   webwakaagent7 — Documentation & Governance
+# ============================================================================
+
+# ── Root Configuration ──
+# Changes to root configs require architect review
+/*.json                         @WebWakaHub/webwakaagent1
+/*.yaml                         @WebWakaHub/webwakaagent1
+/*.yml                          @WebWakaHub/webwakaagent1
+/tsconfig.base.json             @WebWakaHub/webwakaagent1
+
+# ── Governance & CI ──
+/.github/                       @WebWakaHub/webwakaagent5 @WebWakaHub/webwakaagent6
+/scripts/governance/            @WebWakaHub/webwakaagent5 @WebWakaHub/webwakaagent7
+
+# ── Organelle Layer (Lowest — Atomic Components) ──
+/packages/organelles/           @WebWakaHub/webwakaagent2 @WebWakaHub/webwakaagent1
+
+# ── AI-Native Organelles ──
+/packages/organelles/cognitive-port/    @WebWakaHub/webwakaagent4
+/packages/organelles/prompt-assembler/  @WebWakaHub/webwakaagent4
+/packages/organelles/result-validator/  @WebWakaHub/webwakaagent4
+/packages/organelles/context-window/    @WebWakaHub/webwakaagent4
+
+# ── Cell Layer ──
+/packages/cells/                @WebWakaHub/webwakaagent2
+
+# ── Tissue Layer ──
+/packages/tissues/              @WebWakaHub/webwakaagent2
+
+# ── Organ Layer (Domain Services) ──
+/packages/organs/               @WebWakaHub/webwakaagent2 @WebWakaHub/webwakaagent1
+
+# ── System Layer (Orchestration) ──
+/packages/systems/              @WebWakaHub/webwakaagent2 @WebWakaHub/webwakaagent6
+
+# ── Organism Layer (Platform) ──
+/packages/organism/             @WebWakaHub/webwakaagent1 @WebWakaHub/webwakaagent6
+
+# ── Shared Libraries ──
+/packages/shared/               @WebWakaHub/webwakaagent2 @WebWakaHub/webwakaagent1
+
+# ── Applications (Frontend) ──
+/apps/                          @WebWakaHub/webwakaagent3
+
+# ── Infrastructure ──
+/infra/                         @WebWakaHub/webwakaagent6
+
+# ── Documentation ──
+/docs/                          @WebWakaHub/webwakaagent7
+
+# ── Universe Governance (All Layers) ──
+/packages/*/universe/           @WebWakaHub/webwakaagent7 @WebWakaHub/webwakaagent1

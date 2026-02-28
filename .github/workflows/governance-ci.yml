@@ -1,0 +1,210 @@
+name: Governance CI — 12 Architectural Invariants
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: governance-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ═══════════════════════════════════════════════════════════════════
+  # BLOCKING INVARIANTS — These MUST pass or the PR is rejected
+  # ═══════════════════════════════════════════════════════════════════
+
+  invariant-01-typescript-only:
+    name: "INV-01: TypeScript-Only"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check TypeScript-only compliance
+        run: bash scripts/governance/check-01-typescript-only.sh
+
+  invariant-09-constitutional:
+    name: "INV-09: Constitutional Compliance"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check constitutional compliance
+        run: bash scripts/governance/check-09-constitutional.sh
+
+  invariant-10-biological-hierarchy:
+    name: "INV-10: Biological Hierarchy"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check biological hierarchy
+        run: bash scripts/governance/check-10-biological-hierarchy.sh
+
+  # ═══════════════════════════════════════════════════════════════════
+  # ADVISORY INVARIANTS — Report status but don't block PRs (Phase 0)
+  # Will become blocking in Phase 1
+  # ═══════════════════════════════════════════════════════════════════
+
+  invariant-02-offline-first:
+    name: "INV-02: Offline-First (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check offline-first compliance
+        run: bash scripts/governance/check-02-offline-first.sh
+
+  invariant-03-event-driven:
+    name: "INV-03: Event-Driven (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check event-driven architecture
+        run: bash scripts/governance/check-03-event-driven.sh
+
+  invariant-04-multi-tenant:
+    name: "INV-04: Multi-Tenant (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check multi-tenant compliance
+        run: bash scripts/governance/check-04-multi-tenant.sh
+
+  invariant-05-api-first:
+    name: "INV-05: API-First (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check API-first compliance
+        run: bash scripts/governance/check-05-api-first.sh
+
+  invariant-06-plugin-first:
+    name: "INV-06: Plugin-First (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check plugin-first extensibility
+        run: bash scripts/governance/check-06-plugin-first.sh
+
+  invariant-07-mobile-first:
+    name: "INV-07: Mobile-First (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check mobile-first compliance
+        run: bash scripts/governance/check-07-mobile-first.sh
+
+  invariant-08-pwa-compliance:
+    name: "INV-08: PWA Compliance (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check PWA compliance
+        run: bash scripts/governance/check-08-pwa-compliance.sh
+
+  invariant-11-test-coverage:
+    name: "INV-11: Test Coverage (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check test coverage
+        run: bash scripts/governance/check-11-test-coverage.sh
+
+  invariant-12-documentation:
+    name: "INV-12: Documentation (advisory)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check documentation
+        run: bash scripts/governance/check-12-documentation.sh
+
+  # ═══════════════════════════════════════════════════════════════════
+  # GOVERNANCE GATE — Final summary of all invariant checks
+  # ═══════════════════════════════════════════════════════════════════
+
+  governance-gate:
+    name: "Governance Gate"
+    runs-on: ubuntu-latest
+    needs:
+      - invariant-01-typescript-only
+      - invariant-09-constitutional
+      - invariant-10-biological-hierarchy
+      - invariant-02-offline-first
+      - invariant-03-event-driven
+      - invariant-04-multi-tenant
+      - invariant-05-api-first
+      - invariant-06-plugin-first
+      - invariant-07-mobile-first
+      - invariant-08-pwa-compliance
+      - invariant-11-test-coverage
+      - invariant-12-documentation
+    if: always()
+    steps:
+      - name: Evaluate governance results
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  GOVERNANCE CI — FINAL REPORT                              ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+          echo ""
+
+          # Check blocking invariants
+          BLOCKING_FAILED=false
+
+          if [ "${{ needs.invariant-01-typescript-only.result }}" != "success" ]; then
+            echo "❌ INV-01: TypeScript-Only — FAILED (BLOCKING)"
+            BLOCKING_FAILED=true
+          else
+            echo "✅ INV-01: TypeScript-Only — PASSED"
+          fi
+
+          if [ "${{ needs.invariant-09-constitutional.result }}" != "success" ]; then
+            echo "❌ INV-09: Constitutional — FAILED (BLOCKING)"
+            BLOCKING_FAILED=true
+          else
+            echo "✅ INV-09: Constitutional — PASSED"
+          fi
+
+          if [ "${{ needs.invariant-10-biological-hierarchy.result }}" != "success" ]; then
+            echo "❌ INV-10: Biological Hierarchy — FAILED (BLOCKING)"
+            BLOCKING_FAILED=true
+          else
+            echo "✅ INV-10: Biological Hierarchy — PASSED"
+          fi
+
+          echo ""
+          echo "── Advisory Invariants (Phase 0) ──"
+
+          for inv in \
+            "02:Offline-First:${{ needs.invariant-02-offline-first.result }}" \
+            "03:Event-Driven:${{ needs.invariant-03-event-driven.result }}" \
+            "04:Multi-Tenant:${{ needs.invariant-04-multi-tenant.result }}" \
+            "05:API-First:${{ needs.invariant-05-api-first.result }}" \
+            "06:Plugin-First:${{ needs.invariant-06-plugin-first.result }}" \
+            "07:Mobile-First:${{ needs.invariant-07-mobile-first.result }}" \
+            "08:PWA:${{ needs.invariant-08-pwa-compliance.result }}" \
+            "11:Test-Coverage:${{ needs.invariant-11-test-coverage.result }}" \
+            "12:Documentation:${{ needs.invariant-12-documentation.result }}"
+          do
+            IFS=':' read -r num name result <<< "$inv"
+            if [ "$result" = "success" ]; then
+              echo "✅ INV-$num: $name — PASSED"
+            else
+              echo "⚠️  INV-$num: $name — $result (advisory)"
+            fi
+          done
+
+          echo ""
+          if [ "$BLOCKING_FAILED" = true ]; then
+            echo "═══════════════════════════════════════════"
+            echo "  GOVERNANCE GATE: ❌ FAILED"
+            echo "  Blocking invariant violations detected."
+            echo "═══════════════════════════════════════════"
+            exit 1
+          else
+            echo "═══════════════════════════════════════════"
+            echo "  GOVERNANCE GATE: ✅ PASSED"
+            echo "  All blocking invariants satisfied."
+            echo "═══════════════════════════════════════════"
+          fi
