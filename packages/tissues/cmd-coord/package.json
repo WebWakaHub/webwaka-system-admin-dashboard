@@ -1,0 +1,20 @@
+{
+  "name": "@webwaka/tissues/cmd-coord",
+  "version": "0.1.0",
+  "description": "Cross-cell command coordination tissue that orchestrates command dispatch, routing, and execution across multiple cells while preserving transactional integrity and offline-first guarantees.",
+  "main": "src/entity.ts",
+  "types": "src/types.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "webwaka",
+    "tissue",
+    "cmd-coord",
+    "offline-first",
+    "nigeria-first"
+  ],
+  "license": "UNLICENSED"
+}
