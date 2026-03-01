@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-cfg-configplatform",
+  "sourceRoot": "packages/systems/cfg-configplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:config",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/cfg-configplatform",
+        "tsConfig": "packages/systems/cfg-configplatform/tsconfig.json",
+        "main": "packages/systems/cfg-configplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/cfg-configplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

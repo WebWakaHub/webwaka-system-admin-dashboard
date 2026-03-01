@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-med-contentplatform",
+  "sourceRoot": "packages/systems/med-contentplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:media",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/med-contentplatform",
+        "tsConfig": "packages/systems/med-contentplatform/tsconfig.json",
+        "main": "packages/systems/med-contentplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/med-contentplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

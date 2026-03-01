@@ -1,0 +1,38 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "cell-ai-streaming-cell",
+  "sourceRoot": "packages/cells/ai-streaming-cell/src",
+  "projectType": "library",
+  "tags": [
+    "layer:cell",
+    "type:capability"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/cells/ai-streaming-cell",
+        "tsConfig": "packages/cells/ai-streaming-cell/tsconfig.json",
+        "main": "packages/cells/ai-streaming-cell/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/cells/ai-streaming-cell/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

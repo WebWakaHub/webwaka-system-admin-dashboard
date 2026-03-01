@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-in-metrics-collection",
+  "sourceRoot": "packages/organs/in-metrics-collection/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:instrumentation",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/in-metrics-collection",
+        "tsConfig": "packages/organs/in-metrics-collection/tsconfig.json",
+        "main": "packages/organs/in-metrics-collection/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/in-metrics-collection/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

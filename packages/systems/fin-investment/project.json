@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-fin-investment",
+  "sourceRoot": "packages/systems/fin-investment/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:finance",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/fin-investment",
+        "tsConfig": "packages/systems/fin-investment/tsconfig.json",
+        "main": "packages/systems/fin-investment/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/fin-investment/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

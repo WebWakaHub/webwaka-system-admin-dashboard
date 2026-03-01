@@ -1,0 +1,38 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "cell-ai-inference-cell",
+  "sourceRoot": "packages/cells/ai-inference-cell/src",
+  "projectType": "library",
+  "tags": [
+    "layer:cell",
+    "type:capability"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/cells/ai-inference-cell",
+        "tsConfig": "packages/cells/ai-inference-cell/tsconfig.json",
+        "main": "packages/cells/ai-inference-cell/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/cells/ai-inference-cell/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

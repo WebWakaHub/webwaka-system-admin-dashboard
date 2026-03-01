@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-geo-location-tracking",
+  "sourceRoot": "packages/organs/geo-location-tracking/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:geolocation",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/geo-location-tracking",
+        "tsConfig": "packages/organs/geo-location-tracking/tsconfig.json",
+        "main": "packages/organs/geo-location-tracking/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/geo-location-tracking/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

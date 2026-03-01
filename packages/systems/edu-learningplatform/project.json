@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-edu-learningplatform",
+  "sourceRoot": "packages/systems/edu-learningplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:education",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/edu-learningplatform",
+        "tsConfig": "packages/systems/edu-learningplatform/tsconfig.json",
+        "main": "packages/systems/edu-learningplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/edu-learningplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

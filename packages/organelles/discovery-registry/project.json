@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-discovery-registry",
+  "sourceRoot": "packages/organelles/discovery-registry/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:discovery-registry",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/discovery-registry",
+        "tsConfig": "packages/organelles/discovery-registry/tsconfig.json",
+        "main": "packages/organelles/discovery-registry/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/discovery-registry/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

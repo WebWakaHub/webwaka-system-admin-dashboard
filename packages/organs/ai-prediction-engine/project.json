@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-ai-prediction-engine",
+  "sourceRoot": "packages/organs/ai-prediction-engine/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:ai",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/ai-prediction-engine",
+        "tsConfig": "packages/organs/ai-prediction-engine/tsconfig.json",
+        "main": "packages/organs/ai-prediction-engine/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/ai-prediction-engine/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

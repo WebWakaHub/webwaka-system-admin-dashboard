@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-audit-logger",
+  "sourceRoot": "packages/organelles/audit-logger/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:audit-trail",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/audit-logger",
+        "tsConfig": "packages/organelles/audit-logger/tsconfig.json",
+        "main": "packages/organelles/audit-logger/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/audit-logger/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

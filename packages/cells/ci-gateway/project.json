@@ -1,0 +1,38 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "cell-ci-gateway",
+  "sourceRoot": "packages/cells/ci-gateway/src",
+  "projectType": "library",
+  "tags": [
+    "layer:cell",
+    "type:capability"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/cells/ci-gateway",
+        "tsConfig": "packages/cells/ci-gateway/tsconfig.json",
+        "main": "packages/cells/ci-gateway/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/cells/ci-gateway/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

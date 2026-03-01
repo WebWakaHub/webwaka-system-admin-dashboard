@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-fin-risk-assessment",
+  "sourceRoot": "packages/organs/fin-risk-assessment/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:finance",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/fin-risk-assessment",
+        "tsConfig": "packages/organs/fin-risk-assessment/tsconfig.json",
+        "main": "packages/organs/fin-risk-assessment/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/fin-risk-assessment/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

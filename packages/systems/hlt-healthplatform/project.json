@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-hlt-healthplatform",
+  "sourceRoot": "packages/systems/hlt-healthplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:health",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/hlt-healthplatform",
+        "tsConfig": "packages/systems/hlt-healthplatform/tsconfig.json",
+        "main": "packages/systems/hlt-healthplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/hlt-healthplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

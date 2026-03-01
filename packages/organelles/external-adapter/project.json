@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-external-adapter",
+  "sourceRoot": "packages/organelles/external-adapter/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:external-adapter",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/external-adapter",
+        "tsConfig": "packages/organelles/external-adapter/tsconfig.json",
+        "main": "packages/organelles/external-adapter/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/external-adapter/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

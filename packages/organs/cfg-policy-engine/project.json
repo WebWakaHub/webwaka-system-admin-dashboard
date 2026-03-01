@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-cfg-policy-engine",
+  "sourceRoot": "packages/organs/cfg-policy-engine/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:config",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/cfg-policy-engine",
+        "tsConfig": "packages/organs/cfg-policy-engine/tsconfig.json",
+        "main": "packages/organs/cfg-policy-engine/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/cfg-policy-engine/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

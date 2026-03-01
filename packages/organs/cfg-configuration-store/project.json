@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-cfg-configuration-store",
+  "sourceRoot": "packages/organs/cfg-configuration-store/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:config",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/cfg-configuration-store",
+        "tsConfig": "packages/organs/cfg-configuration-store/tsconfig.json",
+        "main": "packages/organs/cfg-configuration-store/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/cfg-configuration-store/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

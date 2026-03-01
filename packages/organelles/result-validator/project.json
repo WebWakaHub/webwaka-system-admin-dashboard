@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-result-validator",
+  "sourceRoot": "packages/organelles/result-validator/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:result-validator",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/result-validator",
+        "tsConfig": "packages/organelles/result-validator/tsconfig.json",
+        "main": "packages/organelles/result-validator/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/result-validator/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-log-warehouse-management",
+  "sourceRoot": "packages/organs/log-warehouse-management/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:logistics",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/log-warehouse-management",
+        "tsConfig": "packages/organs/log-warehouse-management/tsconfig.json",
+        "main": "packages/organs/log-warehouse-management/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/log-warehouse-management/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

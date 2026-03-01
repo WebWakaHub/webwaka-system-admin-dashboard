@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-cognitive-port",
+  "sourceRoot": "packages/organelles/cognitive-port/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:cognitive-port",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/cognitive-port",
+        "tsConfig": "packages/organelles/cognitive-port/tsconfig.json",
+        "main": "packages/organelles/cognitive-port/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/cognitive-port/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

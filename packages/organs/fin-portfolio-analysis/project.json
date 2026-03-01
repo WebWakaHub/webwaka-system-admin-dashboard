@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-fin-portfolio-analysis",
+  "sourceRoot": "packages/organs/fin-portfolio-analysis/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:finance",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/fin-portfolio-analysis",
+        "tsConfig": "packages/organs/fin-portfolio-analysis/tsconfig.json",
+        "main": "packages/organs/fin-portfolio-analysis/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/fin-portfolio-analysis/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

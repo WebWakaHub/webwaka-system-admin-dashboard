@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-ai-cognitive-fabric",
+  "sourceRoot": "packages/systems/ai-cognitive-fabric/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:ai",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/ai-cognitive-fabric",
+        "tsConfig": "packages/systems/ai-cognitive-fabric/tsconfig.json",
+        "main": "packages/systems/ai-cognitive-fabric/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/ai-cognitive-fabric/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

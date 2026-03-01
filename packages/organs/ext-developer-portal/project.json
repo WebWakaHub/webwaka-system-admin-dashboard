@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-ext-developer-portal",
+  "sourceRoot": "packages/organs/ext-developer-portal/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:marketplace",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/ext-developer-portal",
+        "tsConfig": "packages/organs/ext-developer-portal/tsconfig.json",
+        "main": "packages/organs/ext-developer-portal/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/ext-developer-portal/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

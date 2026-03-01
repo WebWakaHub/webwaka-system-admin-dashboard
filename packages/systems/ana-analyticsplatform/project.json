@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-ana-analyticsplatform",
+  "sourceRoot": "packages/systems/ana-analyticsplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:analytics",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/ana-analyticsplatform",
+        "tsConfig": "packages/systems/ana-analyticsplatform/tsconfig.json",
+        "main": "packages/systems/ana-analyticsplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/ana-analyticsplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

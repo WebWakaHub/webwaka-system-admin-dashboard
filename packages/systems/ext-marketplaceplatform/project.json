@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "system-ext-marketplaceplatform",
+  "sourceRoot": "packages/systems/ext-marketplaceplatform/src",
+  "projectType": "library",
+  "tags": [
+    "layer:system",
+    "domain:marketplace",
+    "type:platform"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/systems/ext-marketplaceplatform",
+        "tsConfig": "packages/systems/ext-marketplaceplatform/tsconfig.json",
+        "main": "packages/systems/ext-marketplaceplatform/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/systems/ext-marketplaceplatform/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organelle-instrumentation-probe",
+  "sourceRoot": "packages/organelles/instrumentation-probe/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organelle",
+    "scope:instrumentation-probe",
+    "type:primitive"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organelles/instrumentation-probe",
+        "tsConfig": "packages/organelles/instrumentation-probe/tsconfig.json",
+        "main": "packages/organelles/instrumentation-probe/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organelles/instrumentation-probe/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

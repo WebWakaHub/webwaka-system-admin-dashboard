@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "layer:organelle",
+                "onlyDependOnLibsWithTags": ["layer:organelle"],
+                "notDependOnLibsWithTags": ["layer:cell", "layer:tissue", "layer:organ", "layer:system", "layer:organism"]
+              },
+              {
+                "sourceTag": "layer:cell",
+                "onlyDependOnLibsWithTags": ["layer:organelle", "layer:cell"],
+                "notDependOnLibsWithTags": ["layer:tissue", "layer:organ", "layer:system", "layer:organism"]
+              },
+              {
+                "sourceTag": "layer:tissue",
+                "onlyDependOnLibsWithTags": ["layer:cell", "layer:tissue"],
+                "notDependOnLibsWithTags": ["layer:organelle", "layer:organ", "layer:system", "layer:organism"]
+              },
+              {
+                "sourceTag": "layer:organ",
+                "onlyDependOnLibsWithTags": ["layer:tissue", "layer:organ"],
+                "notDependOnLibsWithTags": ["layer:organelle", "layer:cell", "layer:system", "layer:organism"]
+              },
+              {
+                "sourceTag": "layer:system",
+                "onlyDependOnLibsWithTags": ["layer:organ", "layer:system"],
+                "notDependOnLibsWithTags": ["layer:organelle", "layer:cell", "layer:tissue", "layer:organism"]
+              },
+              {
+                "sourceTag": "layer:organism",
+                "onlyDependOnLibsWithTags": ["layer:system", "layer:organism"],
+                "notDependOnLibsWithTags": ["layer:organelle", "layer:cell", "layer:tissue", "layer:organ"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

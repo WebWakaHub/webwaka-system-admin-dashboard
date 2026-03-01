@@ -1,0 +1,38 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "tissue-ai-entitlement",
+  "sourceRoot": "packages/tissues/ai-entitlement/src",
+  "projectType": "library",
+  "tags": [
+    "layer:tissue",
+    "type:coordination"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/tissues/ai-entitlement",
+        "tsConfig": "packages/tissues/ai-entitlement/tsconfig.json",
+        "main": "packages/tissues/ai-entitlement/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/tissues/ai-entitlement/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

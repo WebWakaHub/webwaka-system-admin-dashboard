@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "organ-res-resource-scheduling",
+  "sourceRoot": "packages/organs/res-resource-scheduling/src",
+  "projectType": "library",
+  "tags": [
+    "layer:organ",
+    "domain:resources",
+    "type:business"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/organs/res-resource-scheduling",
+        "tsConfig": "packages/organs/res-resource-scheduling/tsconfig.json",
+        "main": "packages/organs/res-resource-scheduling/src/index.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/organs/res-resource-scheduling/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}
