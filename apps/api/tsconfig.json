@@ -12,9 +12,6 @@
       "jest"
     ]
   },
-  "files": [
-    "../../node_modules/@nx/node/typings/index.d.ts"
-  ],
   "include": [
     "**/*.ts"
   ],
