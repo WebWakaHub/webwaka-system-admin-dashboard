@@ -271,6 +271,12 @@ jobs:
         id: ecr-login
         uses: aws-actions/amazon-ecr-login@v2
 
+      - name: Register API task definition
+        run: |
+          AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          sed "s/ACCOUNT_ID/$AWS_ACCOUNT_ID/g" infra/ecs/task-definition-api.json > /tmp/task-definition-api.json
+          aws ecs register-task-definition --cli-input-json file:///tmp/task-definition-api.json --region ${{ env.AWS_REGION }} || true
+
       - name: Download current task definition
         run: |
           aws ecs describe-task-definition \
@@ -322,6 +328,12 @@ jobs:
       - name: Login to Amazon ECR
         id: ecr-login
         uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Register Worker task definition
+        run: |
+          AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          sed "s/ACCOUNT_ID/$AWS_ACCOUNT_ID/g" infra/ecs/task-definition-worker.json > /tmp/task-definition-worker.json
+          aws ecs register-task-definition --cli-input-json file:///tmp/task-definition-worker.json --region ${{ env.AWS_REGION }} || true
 
       - name: Download current task definition
         run: |
