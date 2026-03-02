@@ -4,13 +4,9 @@
     "outDir": "../../dist/apps/worker",
     "declaration": true,
     "declarationMap": true,
-    "inlineSourceMap": true,
+    "sourceMap": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "types": [
-      "node",
-      "jest"
-    ]
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "**/*.ts"
