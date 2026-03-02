@@ -18,9 +18,5 @@
     "certificate"
   ],
   "author": "webwakaagent5",
-  "license": "UNLICENSED",
-  "peerDependencies": {
-    "@webwaka/orgn-ai-cognitive-port": "^0.1.0",
-    "@webwaka/orgn-ai-audit-emitter": "^0.1.0"
-  }
+  "license": "UNLICENSED"
 }
