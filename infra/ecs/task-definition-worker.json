@@ -1,0 +1,52 @@
+{
+  "family": "webwaka-production-worker",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "worker",
+      "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/webwaka/worker:latest",
+      "essential": true,
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "LOG_LEVEL",
+          "value": "info"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/webwaka-production-worker",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskRole",
+  "tags": [
+    {
+      "key": "Environment",
+      "value": "production"
+    },
+    {
+      "key": "Project",
+      "value": "WebWaka"
+    },
+    {
+      "key": "Service",
+      "value": "Worker"
+    },
+    {
+      "key": "ManagedBy",
+      "value": "GitHub Actions"
+    }
+  ]
+}
