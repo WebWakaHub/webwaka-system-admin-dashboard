@@ -18,7 +18,7 @@ COPY nx.json tsconfig.base.json ./
 # Copy all package.json files for workspace resolution
 COPY packages/ packages/
 COPY apps/ apps/
-COPY shared/ shared/
+COPY packages/shared/ shared/
 
 # Install production dependencies only
 RUN pnpm install --frozen-lockfile --prod
