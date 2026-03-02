@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import { config } from 'dotenv';
 
 // Load environment variables
-dotenv.config();
+config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
