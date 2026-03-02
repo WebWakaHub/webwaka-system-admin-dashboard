@@ -267,6 +267,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
       - name: Download current task definition
         run: |
           aws ecs describe-task-definition \
@@ -280,7 +284,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: api
-          image: ${{ needs.build-api.outputs.image }}
+          image: ${{ steps.ecr-login.outputs.registry }}/webwaka/api:${{ github.sha }}
 
       - name: Deploy to ECS (rolling update)
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
@@ -315,6 +319,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
       - name: Download current task definition
         run: |
           aws ecs describe-task-definition \
@@ -328,7 +336,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: worker
-          image: ${{ needs.build-worker.outputs.image }}
+          image: ${{ steps.ecr-login.outputs.registry }}/webwaka/worker:${{ github.sha }}
 
       - name: Deploy worker to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
