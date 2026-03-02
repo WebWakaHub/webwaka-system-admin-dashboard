@@ -5,6 +5,8 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "types": [
       "node",
       "jest"
