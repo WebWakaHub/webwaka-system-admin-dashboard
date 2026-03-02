@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/apps/api",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSourceMap": true,
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "files": [
+    "../../node_modules/@nx/node/typings/index.d.ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "jest.config.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
